@@ -17,6 +17,7 @@ public class TopDownMovement : MonoBehaviour
     private Vector2 MousePosition;
     public Camera Cam;
     static public float Angle;
+    public float Size;
 
 
     
@@ -39,17 +40,7 @@ public class TopDownMovement : MonoBehaviour
             IsMoving = true;
         }
 
-        transform.localScale = new Vector3 (3.5f + (YReAdj * Scale) ,3.5f + (YReAdj * Scale),3.5f + (YReAdj * Scale));
-
-        // if (WallCheck == false) {
-        //     if (Input.GetKey(KeyCode.W)) {
-        //         transform.localScale -= new Vector3(Scale, Scale, Scale);
-        //         Debug.Log("Growing Smaller");
-        //     }else if (Input.GetKey(KeyCode.S)) {
-        //         transform.localScale += new Vector3(Scale, Scale, Scale); 
-        //         Debug.Log("Growing Bigger");          
-        //      }
-        // }
+        transform.localScale = new Vector3 (Size + (YReAdj * Scale) ,Size + (YReAdj * Scale), Size + (YReAdj * Scale));
 
         Rigid.velocity = new Vector2 (HorizontalMovement * MoveSpeed, VerticalMovement * MoveSpeed);
 

@@ -4,11 +4,11 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class CustomerOrders : MonoBehaviour
+public class CustomerOrders2 : MonoBehaviour
 {
     public int[] Order = new int[3];
     static public string StringOrder;
-    public float TimeRemaining = 30;
+    static public float TimeRemaining = 30;
     public bool OrderCorrect;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = {1,2};
@@ -30,6 +30,7 @@ public class CustomerOrders : MonoBehaviour
         if (TimeRemaining < 0) {
             CreateOrder();
             TimeRemaining = 30;
+            Inventory.PlayerScore--;
         }
 
 
@@ -42,7 +43,7 @@ public class CustomerOrders : MonoBehaviour
                 CreateOrder();
             }else if (Inventory.FoodOnHand != StringOrder) {
                 Inventory.PlayerScore--;
-                Debug.Log("Wrong Order dumbass!, Score is " + Inventory.PlayerScore);
+                Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
             }
         }
      }
