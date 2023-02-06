@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class levelButton : MonoBehaviour
 {
-    public int sceneIndex;
     public void OpenScene()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("currentLevel"));
     }
 }

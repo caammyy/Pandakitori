@@ -10,11 +10,12 @@ TagManager:
   - Food3
   - Customer1
   - Bullet
+  - Background
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Order Chit
   - Water
   - UI
   - 
