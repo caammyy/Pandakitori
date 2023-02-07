@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    static public bool ChangeLevel = false;
 
     static public float Level_Time_Remaining = 60;
     // Start is called before the first frame update
@@ -16,9 +17,8 @@ public class Timer : MonoBehaviour
     {
         if (Level_Time_Remaining > 0) {
             Level_Time_Remaining -= Time.deltaTime;
-        }else if(Level_Time_Remaining == 0) {
-            Debug.Log("Time Run Out!");
-            Level_Time_Remaining = 0;
+        }else {
+            ChangeLevel = true;
         }
     }
 }
