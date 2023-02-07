@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+
+    static public float Level_Time_Remaining = 60;
     // Start is called before the first frame update
-    int TimeRemaining = 60;
     void Start()
     {
     }
@@ -13,8 +14,11 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TimeRemaining > 0) {
-            // TimeRemaining =- Time.deltaTime;
+        if (Level_Time_Remaining > 0) {
+            Level_Time_Remaining -= Time.deltaTime;
+        }else if(Level_Time_Remaining == 0) {
+            Debug.Log("Time Run Out!");
+            Level_Time_Remaining = 0;
         }
     }
 }

@@ -17,7 +17,6 @@ public class CustomerOrders1 : MonoBehaviour
     void Start()
     {
         CreateOrder();
-        
     }
 
     // Update is called once per frame
@@ -30,7 +29,9 @@ public class CustomerOrders1 : MonoBehaviour
         if (TimeRemaining < 0) {
             CreateOrder();
             TimeRemaining = 30;
-            Inventory.PlayerScore--;
+            if (Inventory.PlayerScore >0) {
+                Inventory.PlayerScore--;
+            }   
         }
 
 
@@ -42,7 +43,9 @@ public class CustomerOrders1 : MonoBehaviour
                 Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
                 CreateOrder();
             }else if (Inventory.FoodOnHand != StringOrder) {
+                if (Inventory.PlayerScore > 0) {
                 Inventory.PlayerScore--;
+                }
                 Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
             }
         }

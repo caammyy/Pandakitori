@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class UIManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class UIManager : MonoBehaviour
     public Text Time1;
     public Text Time2;  
     public Text ScoreText;
-
+    public TMP_Text LevelTimeRemaining;
     public Text InventoryText;
     string inventory;
     // Start is called before the first frame update
@@ -28,9 +29,12 @@ public class UIManager : MonoBehaviour
         OrderText2.text = CustomerOrders2.StringOrder;
         ScoreText.text = Inventory.PlayerScore.ToString();
 
-        Time2.text = CustomerOrders1.TimeRemaining.ToString(); //swapped
-        Time1.text = CustomerOrders2.TimeRemaining.ToString();
+        Time2.text = ((int)CustomerOrders1.TimeRemaining).ToString(); //swapped
+        Time1.text = ((int)CustomerOrders2.TimeRemaining).ToString();
         InventoryText.text = inventory;
+
+        LevelTimeRemaining.text = ((int)Timer.Level_Time_Remaining).ToString();
+
     }
 
     void GetInventory() {
