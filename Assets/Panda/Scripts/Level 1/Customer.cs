@@ -4,19 +4,23 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class CustomerOrders2 : MonoBehaviour
+public class Customer : MonoBehaviour
 {
     public int[] Order = new int[3];
-    static public string StringOrder;
-    static public float TimeRemaining = 30;
+    public string StringOrder;
+    public float TimeRemaining = 30;
     public bool OrderCorrect;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = {1,2};
+    private void ChangeOrderToString(int[] Order) {
+        StringOrder = string.Join("", Order);
+        TimeRemaining = 30;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        CreateOrder();
+        ChangeOrderToString(GenerateRandom.CreateOrder(Order,StringOrder));
         
     }
 
@@ -28,7 +32,7 @@ public class CustomerOrders2 : MonoBehaviour
         }
 
         if (TimeRemaining < 0) {
-            CreateOrder();
+            ChangeOrderToString(GenerateRandom.CreateOrder(Order,StringOrder));
             TimeRemaining = 30;
             if (Inventory.PlayerScore >0) {
                 Inventory.PlayerScore--;
@@ -42,7 +46,7 @@ public class CustomerOrders2 : MonoBehaviour
             if (Inventory.FoodOnHand == StringOrder) {
                 Inventory.PlayerScore++;
                 Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
-                CreateOrder();
+                ChangeOrderToString(GenerateRandom.CreateOrder(Order,StringOrder));
             }else if (Inventory.FoodOnHand != StringOrder) {
                 if (Inventory.PlayerScore > 0) {
                 Inventory.PlayerScore--;
@@ -52,14 +56,6 @@ public class CustomerOrders2 : MonoBehaviour
         }
      }
 
-     private void CreateOrder() {
-        for (int i = 0 ; i < 3; i++) {
-            int RandomIndex = Rnd.Next(2) + 1;
-            Order[i] = RandomIndex;
-        } 
-        StringOrder = string.Join("", Order);
-        Debug.Log("Customer wants " + StringOrder);
-        TimeRemaining = 30;
-     }
+
 
 }

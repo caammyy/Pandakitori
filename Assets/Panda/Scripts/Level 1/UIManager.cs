@@ -7,13 +7,9 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public Text OrderText1;
-    public Text OrderText2;
-    public Text Time1;
-    public Text Time2;  
-    public Text ScoreText;
+    public TMP_Text ScoreText;
     public TMP_Text LevelTimeRemaining;
-    public Text InventoryText;
+    public TMP_Text InventoryText;
     string inventory;
     // Start is called before the first frame update
     void Start()
@@ -25,12 +21,12 @@ public class UIManager : MonoBehaviour
     void Update()
     {   
         GetInventory();
-        OrderText1.text = CustomerOrders1.StringOrder; //damn scuff, only for alpha
-        OrderText2.text = CustomerOrders2.StringOrder;
+        // OrderText1.text = CustomerOrders1.StringOrder; //damn scuff, only for alpha
+        // OrderText2.text = CustomerOrders2.StringOrder;
         ScoreText.text = Inventory.PlayerScore.ToString();
 
-        Time2.text = ((int)CustomerOrders1.TimeRemaining).ToString(); //swapped
-        Time1.text = ((int)CustomerOrders2.TimeRemaining).ToString();
+        // Time2.text = ((int)CustomerOrders1.TimeRemaining).ToString(); //swapped
+        // Time1.text = ((int)CustomerOrders2.TimeRemaining).ToString();
         InventoryText.text = inventory;
 
         LevelTimeRemaining.text = ((int)Timer.Level_Time_Remaining).ToString();
