@@ -19,6 +19,7 @@ public class TopDownMovement : MonoBehaviour
     static public float Angle;
     public float Size;
 
+    static public Vector2 CurrentPosition;
 
     
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class TopDownMovement : MonoBehaviour
         Angle = Mathf.Atan2(LookDir.x, LookDir.y) * Mathf.Rad2Deg -90f;
 
         IsMoving = false;
+        CurrentPosition = transform.position;
     }
 
      private void OnCollisionEnter2D(Collision2D other) {

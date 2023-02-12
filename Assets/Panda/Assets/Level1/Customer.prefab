@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 575155249959162987}
   - component: {fileID: 575155249959162986}
   m_Layer: 0
-  m_Name: Customer1
+  m_Name: Customer
   m_TagString: Customer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OrderText: {fileID: 575155251593664831}
-  TimeRemaining: {fileID: 0}
+  TimeRemaining: {fileID: 4023640923373201904}
 --- !u!1 &575155251083017867
 GameObject:
   m_ObjectHideFlags: 0
