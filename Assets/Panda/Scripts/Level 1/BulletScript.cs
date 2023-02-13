@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
     private void Update() {
 
         StartPoint = transform.position;
-        if (Vector2.Distance(transform.position, Target) < 1) {
+        if (Vector2.Distance(transform.position, Target) < 1.1) {
             Debug.Log("CanCollide true");
             CanCollide = true;
         }        
