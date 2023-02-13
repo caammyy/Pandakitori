@@ -6,7 +6,6 @@ using TMPro;
 public class CustomerUI : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TMP_Text OrderText;
     public TMP_Text TimeRemaining;
     Customer customer;
     void Start()
@@ -17,7 +16,6 @@ public class CustomerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OrderText.text = customer.StringOrder;
         TimeRemaining.text = ((int)customer.TimeRemaining).ToString();
     }
 }
