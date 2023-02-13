@@ -6,7 +6,7 @@ using System;
 public class GenerateRandom : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static int[] CreateOrder(int[] Order, string StringOrder) {
+    public static int[] CreateOrder(int[] Order) {
         System.Random Rnd = new System.Random();
         for (int i = 0 ; i < 3; i++) {
             int RandomIndex = Rnd.Next(2) + 1;

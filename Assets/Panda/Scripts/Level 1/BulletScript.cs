@@ -49,6 +49,7 @@ public class BulletScript : MonoBehaviour
 
             rb.velocity = _velocity;
             lr.positionCount = 0;
+            Inventory.ClearItems();
         }
     }
 

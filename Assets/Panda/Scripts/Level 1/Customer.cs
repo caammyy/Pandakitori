@@ -12,15 +12,41 @@ public class Customer : MonoBehaviour
     public bool OrderCorrect;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = {1,2};
-    private void ChangeOrderToString(int[] Order) {
+    private void ChangeOrderToSprite(int[] Order) {
         StringOrder = string.Join("", Order);
+        for (int i = 0; i < 3; i++) {
+            if (Order[i] == 1) {
+                if (i == 0) {
+                    OrderSlot1.sprite = Shrimp;
+                }else if (i == 1) {
+                    OrderSlot2.sprite = Shrimp;
+                }else if (i == 2) {
+                    OrderSlot3.sprite = Shrimp;
+                }
+            }
+            if (Order[i] == 2) {
+                if (i == 0) {
+                    OrderSlot1.sprite = VegMeat;
+                }else if (i == 1) {
+                    OrderSlot2.sprite = VegMeat;
+                }else if (i == 2) {
+                    OrderSlot3.sprite = VegMeat;
+                }
+            }
+
+        }
         TimeRemaining = 30;
     }
+    public SpriteRenderer OrderSlot1;
+    public SpriteRenderer OrderSlot2;
+    public SpriteRenderer OrderSlot3;
+    public Sprite Shrimp;
+    public Sprite VegMeat;
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeOrderToString(GenerateRandom.CreateOrder(Order,StringOrder));
+        ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
         
     }
 
@@ -32,7 +58,7 @@ public class Customer : MonoBehaviour
         }
 
         if (TimeRemaining < 0) {
-            ChangeOrderToString(GenerateRandom.CreateOrder(Order,StringOrder));
+            ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
             TimeRemaining = 30;
             if (Inventory.PlayerScore >0) {
                 Inventory.PlayerScore--;
@@ -46,7 +72,7 @@ public class Customer : MonoBehaviour
             if (Inventory.FoodOnHand == StringOrder) {
                 Inventory.PlayerScore++;
                 Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
-                ChangeOrderToString(GenerateRandom.CreateOrder(Order,StringOrder));
+                ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
             }else if (Inventory.FoodOnHand != StringOrder) {
                 if (Inventory.PlayerScore > 0) {
                 Inventory.PlayerScore--;

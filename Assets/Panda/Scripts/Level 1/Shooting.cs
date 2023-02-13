@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour
             GameObject Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation); 
             // Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
             // rb.AddForce(Firepoint.right * BulletForce, ForceMode2D.Impulse);
-            Inventory.ClearItems();
         }else {
             Debug.Log("Cant shoot!");
         }
