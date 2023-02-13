@@ -9,15 +9,27 @@ public class BulletScript : MonoBehaviour
     Rigidbody2D rb;
     LineRenderer lr;
     Vector2 DragStartPos;
+    Vector3 Target;
+    Vector3 StartPoint;
     bool Stick;
+    static public bool CanCollide;
+
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         Stick = true;
+        CanCollide = false;
     }
 
     private void Update() {
-            if (transform.position.x > 10 || transform.position.y < -5) {
+
+        StartPoint = transform.position;
+        if (Vector2.Distance(transform.position, Target) < 1) {
+            Debug.Log("CanCollide true");
+            CanCollide = true;
+        }        
+
+        if (transform.position.x > 10 || transform.position.y < -5) {
             Destroy(gameObject);
         }
 
@@ -48,6 +60,8 @@ public class BulletScript : MonoBehaviour
             Vector2 _velocity = (DragEndPos - DragStartPos) * power;
 
             rb.velocity = _velocity;
+            Target = lr.GetPosition(lr.positionCount - 1);
+            Debug.Log("target " + Target.x);
             lr.positionCount = 0;
             Inventory.ClearItems();
         }
@@ -73,8 +87,12 @@ public class BulletScript : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-    if (other.gameObject.CompareTag("Customer1")) {
-            Destroy(gameObject);
+    if (CanCollide == true) {
+        if (other.gameObject.CompareTag("Customer1")) {
+                Destroy(gameObject);
         }
-     }
+    }
+
+     
+    }
 }
