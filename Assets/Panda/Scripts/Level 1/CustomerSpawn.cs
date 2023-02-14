@@ -22,6 +22,7 @@ public class CustomerSpawn : MonoBehaviour
     public static bool SeatTaken4;
     static public float TimeRemaining;
     static public int AmountOfCustomer = 0;
+    public int MaxCustomers;
 
 
     int GenerateRandom(int num)
@@ -33,6 +34,7 @@ public class CustomerSpawn : MonoBehaviour
 
     void GenerateCustomer()
     {
+        Debug.Log("Generating new customer");
         int SeatNumber = GenerateRandom(4);
         int TypeofCustomer = GenerateRandom(3);
 
@@ -166,10 +168,10 @@ public class CustomerSpawn : MonoBehaviour
 
         if (TimeRemaining <= 0)
         {
-        
+            if (AmountOfCustomer <= MaxCustomers) {
             GenerateCustomer();
-            TimeRemaining = 20;
-         
+            TimeRemaining = 20;            
+            }
         }
         
 

@@ -143,6 +143,7 @@ MonoBehaviour:
   Order: 000000000000000000000000
   StringOrder: 
   TimeRemaining: 30
+  Timer: 15
   OrderCorrect: 0
   OrderSlot1: {fileID: 3331923137544701208}
   OrderSlot2: {fileID: 7817028492850690528}
@@ -491,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9862439, b: 0.0141509175, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
