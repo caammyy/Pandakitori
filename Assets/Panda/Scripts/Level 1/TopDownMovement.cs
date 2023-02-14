@@ -35,13 +35,14 @@ public class TopDownMovement : MonoBehaviour
         
         HorizontalMovement = Input.GetAxis("Horizontal");
         VerticalMovement = Input.GetAxis("Vertical");
-        YReAdj = (transform.position.y * -1) + 4 ;
+        YReAdj = (transform.position.y * -1) + 4;
 
         if (HorizontalMovement != 0|| VerticalMovement != 0) {
             IsMoving = true;
         }
 
         transform.localScale = new Vector3 (Size + (YReAdj * Scale) ,Size + (YReAdj * Scale), Size + (YReAdj * Scale));
+        // transform.localScale = new Vector3 (YReAdj/100 , YReAdj/100 , YReAdj/100);
 
         Rigid.velocity = new Vector2 (HorizontalMovement * MoveSpeed, VerticalMovement * MoveSpeed);
 

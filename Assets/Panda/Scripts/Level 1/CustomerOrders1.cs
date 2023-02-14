@@ -27,11 +27,13 @@ public class CustomerOrders1 : MonoBehaviour
         }
 
         if (TimeRemaining < 0) {
-            CreateOrder();
-            TimeRemaining = 30;
+            // CreateOrder();
+            // TimeRemaining = 30;
             if (Inventory.PlayerScore >0) {
                 Inventory.PlayerScore--;
-            }   
+            } 
+            Destroy(gameObject);
+            CustomerSpawn.Unseat(gameObject.transform.position);
         }
 
 

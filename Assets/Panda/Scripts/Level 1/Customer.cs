@@ -9,6 +9,7 @@ public class Customer : MonoBehaviour
     public int[] Order = new int[3];
     public string StringOrder;
     public float TimeRemaining = 30;
+    public float Timer = 15;
     public bool OrderCorrect;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = { 1, 2 };
@@ -82,6 +83,17 @@ public class Customer : MonoBehaviour
             }
         }
 
+        // if (Timer > 0)
+        // {
+        //     Timer -= Time.deltaTime;
+        // }
+
+        // if (Timer < 0)
+        // {
+        //     Destroy(gameObject);
+        //     CustomerSpawn.Unseat(gameObject.transform.position);
+        // } 
+
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -103,6 +115,8 @@ public class Customer : MonoBehaviour
                         Inventory.PlayerScore--;
                     }
                     Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
+                    Destroy(gameObject);
+                    CustomerSpawn.Unseat(gameObject.transform.position);
                 }
             }
         }
