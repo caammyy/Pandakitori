@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471074286}
   m_LocalRotation: {x: -0, y: -0, z: -0.20884395, w: 0.977949}
-  m_LocalPosition: {x: -2.65, y: -0.91, z: 0}
+  m_LocalPosition: {x: -2.4, y: -1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -622,7 +622,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.59221053, y: 0.005665779}
+  m_Offset: {x: -0.31112814, y: -1.2873154}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -633,7 +633,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.313233, y: 9.87867}
+  m_Size: {x: 4.751068, y: 7.0678406}
   m_EdgeRadius: 0
 --- !u!212 &910869973
 SpriteRenderer:
@@ -943,6 +943,7 @@ MonoBehaviour:
   Bear: {fileID: 575155249959162989, guid: 6a39936301135bb4d8ea160a9ad183f6, type: 3}
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
+  MaxCustomers: 4
 --- !u!1 &1160086670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395358555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51, y: -0.17, z: 0}
+  m_LocalPosition: {x: -0.72, y: -0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1415,7 +1416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539413949}
   m_LocalRotation: {x: -0, y: -0, z: -0.20884395, w: 0.977949}
-  m_LocalPosition: {x: -7.59, y: -1.2, z: 0}
+  m_LocalPosition: {x: -7.3, y: -1.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -8,7 +8,7 @@ public class Customer_level2 : MonoBehaviour
 {
     public int[] Order = new int[3];
     public string StringOrder;
-    public float TimeRemaining = 30;
+    public float TimeRemaining = 25;
     public float Timer = 15;
     public bool OrderCorrect;
     private System.Random Rnd = new System.Random();
@@ -74,7 +74,7 @@ public class Customer_level2 : MonoBehaviour
             }            
 
         }
-        TimeRemaining = 30;
+        TimeRemaining = 25;
     }
     public SpriteRenderer OrderSlot1;
     public SpriteRenderer OrderSlot2;
@@ -101,7 +101,7 @@ public class Customer_level2 : MonoBehaviour
         if (TimeRemaining < 0)
         {
             ChangeOrderToSprite(GenerateRandom_level2.CreateOrder(Order));
-            TimeRemaining = 30;
+            TimeRemaining = 25;
             if (Inventory.PlayerScore > 0)
             {
                 Inventory.PlayerScore--;
@@ -141,7 +141,7 @@ public class Customer_level2 : MonoBehaviour
                     }
                     Debug.Log("Wrong Order!, Score is " + Inventory_level2.PlayerScore);
                     Destroy(gameObject);
-                    CustomerSpawn.Unseat(gameObject.transform.position);
+                    CustomerSpawn_level2.Unseat(gameObject.transform.position);
                 }
             }
         }

@@ -22,6 +22,7 @@ public class CustomerSpawn_level2 : MonoBehaviour
     public static bool SeatTaken4;
     static public float TimeRemaining;
     static public int AmountOfCustomer = 0;
+    public int MaxCustomers;
 
 
     int GenerateRandom(int num)
@@ -166,10 +167,10 @@ public class CustomerSpawn_level2 : MonoBehaviour
 
         if (TimeRemaining <= 0)
         {
-        
-            GenerateCustomer();
-            TimeRemaining = 20;
-         
+            if (AmountOfCustomer <= MaxCustomers) {
+                GenerateCustomer();
+                TimeRemaining = 20;
+            } 
         }
         
 

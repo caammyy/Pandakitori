@@ -93,7 +93,9 @@ public class BulletScript : MonoBehaviour
                 Destroy(gameObject);
         }
     }
-
-     
+    if (other.gameObject.CompareTag("Obstacle")) {
+        Destroy(gameObject);
     }
+    }
+
 }
