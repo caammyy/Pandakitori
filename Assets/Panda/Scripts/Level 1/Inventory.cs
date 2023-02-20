@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F)) {
-            ClearItems();
+            DiscardItem();
         }
         if (isColliding1 && Input.GetKeyDown(KeyCode.E)) {
             if (AmountOfFood == 2) {
@@ -66,6 +66,15 @@ public class Inventory : MonoBehaviour
         FoodOnHand = string.Join("", InventorySlots);
         Debug.Log(FoodOnHand);
         AmountOfFood++;
+    }
+
+     static public void DiscardItem() {
+            Array.Clear(InventorySlots, 0, InventorySlots.Length);
+            AmountOfFood = 0;
+            Debug.Log("Items Thrown away");
+            if (Inventory.PlayerScore > 0) {
+            Inventory.PlayerScore--;
+            }
     }
 
      static public void ClearItems() {

@@ -25,7 +25,7 @@ public class Inventory_level2 : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F)) {
-            ClearItems();
+            DiscardItem();
         }
         if (isColliding1 && Input.GetKeyDown(KeyCode.E)) {
             if (AmountOfFood == 3) {
@@ -80,6 +80,15 @@ public class Inventory_level2 : MonoBehaviour
         FoodOnHand = string.Join("", InventorySlots);
         Debug.Log(FoodOnHand);
         AmountOfFood++;
+    }
+
+     static public void DiscardItem() {
+            Array.Clear(InventorySlots, 0, InventorySlots.Length);
+            AmountOfFood = 0;
+            Debug.Log("Items thrown away");
+            if (Inventory_level2.PlayerScore > 0) {
+                Inventory_level2.PlayerScore--;
+            }
     }
 
      static public void ClearItems() {

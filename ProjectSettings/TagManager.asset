@@ -11,6 +11,7 @@ TagManager:
   - Customer1
   - Bullet
   - Background
+  - Obstacle
   layers:
   - Default
   - TransparentFX
