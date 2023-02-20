@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 343356219}
   - component: {fileID: 343356218}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: buttonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,6 +860,7 @@ GameObject:
   - component: {fileID: 1269292018}
   - component: {fileID: 1269292017}
   - component: {fileID: 1269292016}
+  - component: {fileID: 1269292019}
   m_Layer: 5
   m_Name: nxtLvl
   m_TagString: Untagged
@@ -931,7 +932,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1269292017}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1269292019}
+        m_TargetAssemblyTypeName: goNextLevel, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1269292017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +983,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269292014}
   m_CullTransparentMesh: 1
+--- !u!114 &1269292019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269292014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6bdf21d820b904a81c1b3e3ae3390c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411323989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1189,7 @@ GameObject:
   - component: {fileID: 1578729164}
   - component: {fileID: 1578729166}
   - component: {fileID: 1578729165}
+  - component: {fileID: 1578729167}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1237,6 +1263,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578729163}
   m_CullTransparentMesh: 1
+--- !u!114 &1578729167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578729163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf75c403b0597994e9afdaef372fc091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerServed: {fileID: 483673258}
+  customerMissed: {fileID: 252461919}
+  totalPoints: {fileID: 1216972839}
+  reputation: {fileID: 2044463783}
+  winLoseText: {fileID: 1867898372}
+  button: {fileID: 343356218}
+  winOrLose: 0
 --- !u!1 &1778102212
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class Timer : MonoBehaviour
             Level_Time_Remaining -= Time.deltaTime;
         }else {
             ChangeLevel = true;
+            OpenScene();
         }
+    }
+
+    public void OpenScene()
+    {
+        SceneManager.LoadScene(3);
     }
 }
