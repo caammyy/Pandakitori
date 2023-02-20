@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 575155249959162991}
   - component: {fileID: 575155249959162988}
   - component: {fileID: 575155249959162990}
-  - component: {fileID: 2040536521447294698}
-  - component: {fileID: 8099972610454720646}
-  - component: {fileID: 8034759496530170026}
+  - component: {fileID: 4784541184428289002}
+  - component: {fileID: 4768009161420085083}
+  - component: {fileID: 3315646620240936705}
   m_Layer: 0
   m_Name: Customer_Bear
   m_TagString: Customer1
@@ -116,7 +116,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.604227, y: 12.866596}
   m_EdgeRadius: 0
---- !u!114 &2040536521447294698
+--- !u!114 &4784541184428289002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +125,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 575155249959162989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3c04e7c370a5a54986ccacda0ba4fb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 195eff02f12d7044ea0eb6b856107d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8099972610454720646
+  TimeRemaining: {fileID: 0}
+  LinearTimer: {fileID: 3215411805543910203}
+--- !u!114 &4768009161420085083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +153,7 @@ MonoBehaviour:
   Shrimp: {fileID: 860017464, guid: 98489b3d75aef98438f63a6c9beaba48, type: 3}
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
---- !u!114 &8034759496530170026
+--- !u!114 &3315646620240936705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,11 +162,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 575155249959162989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195eff02f12d7044ea0eb6b856107d24, type: 3}
+  m_Script: {fileID: 11500000, guid: d3c04e7c370a5a54986ccacda0ba4fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeRemaining: {fileID: 0}
-  LinearTimer: {fileID: 3215411805543910203}
 --- !u!1 &575155251083017867
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 575155251083017879}
   - component: {fileID: 575155251083017876}
   - component: {fileID: 575155251083017877}
-  - component: {fileID: 5975981613534298827}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -267,20 +266,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5975981613534298827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575155251083017867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d494adfb5a2ec53428975a993fa3d7b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 000000000000000000000000
-  OrderCorrect: 0
 --- !u!1 &2465249670517136707
 GameObject:
   m_ObjectHideFlags: 0

@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77854d4421bcb746a2e55cf8a3f066f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bear: {fileID: 575155249959162989, guid: 6a39936301135bb4d8ea160a9ad183f6, type: 3}
+  Bear: {fileID: 575155249959162989, guid: a38a6b4d04649dc419570abadca5f3ef, type: 3}
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
   MaxCustomers: 4

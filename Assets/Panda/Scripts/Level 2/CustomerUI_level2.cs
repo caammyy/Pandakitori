@@ -18,6 +18,8 @@ public class CustomerUI_level2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LinearTimer.fillAmount = customer.TimeRemaining / 30;
+        if (customer != null) {
+           LinearTimer.fillAmount = customer.TimeRemaining / 30; 
+        }
     }
 }
