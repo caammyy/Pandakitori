@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Inventory : MonoBehaviour
+public class Inventory_level2 : MonoBehaviour
 {
-    static public int[] InventorySlots = new int[2];
+    static public int[] InventorySlots = new int[3];
     static public int AmountOfFood = 0;
     private int TypeOfFood;
     static public string FoodOnHand;
     public bool isColliding1;
     public bool isColliding2;
+    public bool isColliding3;
     static public int PlayerScore = 0;
 
 
@@ -27,17 +28,26 @@ public class Inventory : MonoBehaviour
             ClearItems();
         }
         if (isColliding1 && Input.GetKeyDown(KeyCode.E)) {
-            if (AmountOfFood == 2) {
+            if (AmountOfFood == 3) {
             Debug.Log("Inventory full, u have " + FoodOnHand);
-            }
+            }else{
             TypeOfFood = 1;
-            AddItem();
-        }else if (isColliding2 && Input.GetKeyDown(KeyCode.E)) {
-            if (AmountOfFood == 2) {
-            Debug.Log("Inventory full, u have " + FoodOnHand);
+            AddItem();               
             }
+        }else if (isColliding2 && Input.GetKeyDown(KeyCode.E)) {
+            if (AmountOfFood == 3) {
+            Debug.Log("Inventory full, u have " + FoodOnHand);
+            }else{
             TypeOfFood = 2;
+            AddItem();              
+            }
+        }else if (isColliding3 && Input.GetKeyDown(KeyCode.E)) {
+            if (AmountOfFood == 3) {
+            Debug.Log("Inventory full, u have " + FoodOnHand);
+            }else{
+            TypeOfFood = 3;
             AddItem();
+            }
         }
 
     }
@@ -47,6 +57,8 @@ public class Inventory : MonoBehaviour
             isColliding1 = true;
         }else if (other.gameObject.CompareTag("Food2")) {
             isColliding2 = true;
+        }else if (other.gameObject.CompareTag("Food3")) {
+            isColliding3 = true;
         }
     }
 
@@ -55,11 +67,13 @@ public class Inventory : MonoBehaviour
             isColliding1 = false;
         }else if (other.gameObject.CompareTag("Food2")) {
             isColliding2 = false;
+        }else if (other.gameObject.CompareTag("Food3")) {
+            isColliding3 = false;
         }
     }
 
     private void AddItem() {
-        if (AmountOfFood < 2) {
+        if (AmountOfFood < 3) {
             InventorySlots[AmountOfFood] = TypeOfFood;
         }
 

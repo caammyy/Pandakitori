@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CustomerSpawn : MonoBehaviour
+public class CustomerSpawn_level2 : MonoBehaviour
 {
 
 
@@ -130,17 +130,17 @@ public class CustomerSpawn : MonoBehaviour
     }
 
     public static void Unseat(Vector3 Pos){
-        if (Pos == CustomerSpawn.SeatNumber1) {
-            CustomerSpawn.SeatTaken1 = false;
+        if (Pos == CustomerSpawn_level2.SeatNumber1) {
+            CustomerSpawn_level2.SeatTaken1 = false;
             Debug.Log("Seat 1 is " + SeatTaken1);
         }
-        if (Pos == CustomerSpawn.SeatNumber3) {
+        if (Pos == CustomerSpawn_level2.SeatNumber3) {
             CustomerSpawn.SeatTaken2 = false;
         }
-        if (Pos == CustomerSpawn.SeatNumber5) {
+        if (Pos == CustomerSpawn_level2.SeatNumber5) {
             CustomerSpawn.SeatTaken3 = false;
         }
-        if (Pos == CustomerSpawn.SeatNumber7) {
+        if (Pos == CustomerSpawn_level2.SeatNumber7) {
             CustomerSpawn.SeatTaken4 = false;
         }
         AmountOfCustomer--;

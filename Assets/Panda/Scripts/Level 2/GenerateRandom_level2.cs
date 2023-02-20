@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GenerateRandom : MonoBehaviour
+public class GenerateRandom_level2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public static int[] CreateOrder(int[] Order) {
         System.Random Rnd = new System.Random();
-        for (int i = 0 ; i < 2; i++) {
-            int RandomIndex = Rnd.Next(2) + 1;
+        for (int i = 0 ; i < 3; i++) {
+            int RandomIndex = Rnd.Next(3) + 1;
             Order[i] = RandomIndex;
         } 
         return Order;

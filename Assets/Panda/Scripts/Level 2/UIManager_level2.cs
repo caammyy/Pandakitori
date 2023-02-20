@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class UIManager : MonoBehaviour
+public class UIManager_level2 : MonoBehaviour
 {
     public TMP_Text ScoreText;
     public TMP_Text LevelTimeRemaining;
@@ -15,19 +15,20 @@ public class UIManager : MonoBehaviour
     public Image OrderSlot3;
     public Sprite Shrimp;
     public Sprite VegMeat;
+    public Sprite Egg;
     public Sprite Blank;
     string inventory;
     static public int[] InventorySlots = new int[2];
     void GetInventory() {
-        InventorySlots = Inventory.InventorySlots;
-        for (int i = 0; i < 2; i++) {
+        InventorySlots = Inventory_level2.InventorySlots;
+        for (int i = 0; i < 3; i++) {
             if (InventorySlots[i] == 1) {
                 if (i == 0) {
                     OrderSlot1.sprite = Shrimp;
                 }else if (i == 1) {
                     OrderSlot2.sprite = Shrimp;
                 }else if (i == 2) {
-                    // OrderSlot3.sprite = Shrimp;
+                    OrderSlot3.sprite = Shrimp;
                 }
             }
             if (InventorySlots[i] == 2) {
@@ -36,16 +37,25 @@ public class UIManager : MonoBehaviour
                 }else if (i == 1) {
                     OrderSlot2.sprite = VegMeat;
                 }else if (i == 2) {
-                    // OrderSlot3.sprite = VegMeat;
+                    OrderSlot3.sprite = VegMeat;
                 }
             }
+            if (InventorySlots[i] == 3) {
+                if (i == 0) {
+                    OrderSlot1.sprite = Egg;
+                }else if (i == 1) {
+                    OrderSlot2.sprite = Egg;
+                }else if (i == 2) {
+                    OrderSlot3.sprite = Egg;
+                }
+            }  
             if (InventorySlots[i] == 0) {
                 if (i == 0) {
                     OrderSlot1.sprite = Blank;
                 }else if (i == 1) {
                     OrderSlot2.sprite = Blank;
                 }else if (i == 2) {
-                    // OrderSlot3.sprite = Blank;
+                    OrderSlot3.sprite = Blank;
                 }
             }            
         }
@@ -67,7 +77,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {   
         GetInventory();
-        ScoreText.text = Inventory.PlayerScore.ToString();
+        ScoreText.text = Inventory_level2.PlayerScore.ToString();
         LevelTimeRemaining.text = ((int)Timer.Level_Time_Remaining).ToString();
 
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class Customer : MonoBehaviour
+public class Customer_level2 : MonoBehaviour
 {
-    public int[] Order = new int[2];
+    public int[] Order = new int[3];
     public string StringOrder;
     public float TimeRemaining = 30;
     public float Timer = 15;
@@ -16,7 +16,8 @@ public class Customer : MonoBehaviour
     private void ChangeOrderToSprite(int[] Order)
     {
         StringOrder = string.Join("", Order);
-        for (int i = 0; i < 2; i++)
+        Debug.Log(StringOrder);
+        for (int i = 0; i < 3; i++)
         {
             if (Order[i] == 1)
             {
@@ -30,7 +31,7 @@ public class Customer : MonoBehaviour
                 }
                 else if (i == 2)
                 {
-                    // OrderSlot3.sprite = Shrimp;
+                    OrderSlot3.sprite = Shrimp;
                 }
             }
             if (Order[i] == 2)
@@ -45,23 +46,47 @@ public class Customer : MonoBehaviour
                 }
                 else if (i == 2)
                 {
-                    // OrderSlot3.sprite = VegMeat;
+                    OrderSlot3.sprite = VegMeat;
+                }
+                else if (i == 3)
+                {
+                    OrderSlot3.sprite = VegMeat;
                 }
             }
+            if (Order[i] == 3)
+            {
+                if (i == 0)
+                {
+                    OrderSlot1.sprite = Egg;
+                }
+                else if (i == 1)
+                {
+                    OrderSlot2.sprite = Egg;
+                }
+                else if (i == 2)
+                {
+                    OrderSlot3.sprite = Egg;
+                }
+                else if (i == 3)
+                {
+                    OrderSlot3.sprite = Egg;
+                }
+            }            
 
         }
         TimeRemaining = 30;
     }
     public SpriteRenderer OrderSlot1;
     public SpriteRenderer OrderSlot2;
-    // public SpriteRenderer OrderSlot3;
+    public SpriteRenderer OrderSlot3;
     public Sprite Shrimp;
     public Sprite VegMeat;
+    public Sprite Egg;
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
+        ChangeOrderToSprite(GenerateRandom_level2.CreateOrder(Order));
 
     }
 
@@ -75,7 +100,7 @@ public class Customer : MonoBehaviour
 
         if (TimeRemaining < 0)
         {
-            ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
+            ChangeOrderToSprite(GenerateRandom_level2.CreateOrder(Order));
             TimeRemaining = 30;
             if (Inventory.PlayerScore > 0)
             {
@@ -102,19 +127,19 @@ public class Customer : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
-                if (Inventory.FoodOnHand == StringOrder)
+                if (Inventory_level2.FoodOnHand == StringOrder)
                 {
-                    Inventory.PlayerScore++;
-                    Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
+                    Inventory_level2.PlayerScore++;
+                    Debug.Log("Correct Order!, Score is " + Inventory_level2.PlayerScore);
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
                 }
-                else if (Inventory.FoodOnHand != StringOrder)
+                else if (Inventory_level2.FoodOnHand != StringOrder)
                 {
-                    if (Inventory.PlayerScore > 0)
+                    if (Inventory_level2.PlayerScore > 0)
                     {
-                        Inventory.PlayerScore--;
+                        Inventory_level2.PlayerScore--;
                     }
-                    Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
+                    Debug.Log("Wrong Order!, Score is " + Inventory_level2.PlayerScore);
                     Destroy(gameObject);
                     CustomerSpawn.Unseat(gameObject.transform.position);
                 }
