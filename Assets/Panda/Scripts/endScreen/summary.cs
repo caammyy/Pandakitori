@@ -18,7 +18,7 @@ public class summary : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("currentLevel") == 4)
+        if (PlayerPrefs.GetInt("currentLevel") == 5)
         {
             totalPoints.text = Inventory.PlayerScore.ToString();
             if (Inventory.PlayerScore >= pointsForEachLevel.level_1)
@@ -32,13 +32,20 @@ public class summary : MonoBehaviour
                 winOrLose = true;
             }
         }
-            if (winOrLose)
+        if (winOrLose)
         {
-            if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
+            if (PlayerPrefs.GetInt("currentLevel") < 6)
             {
-                PlayerPrefs.SetInt("levelsunlocked", PlayerPrefs.GetInt("levelsunlocked") + 1);
+                if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
+                {
+                    PlayerPrefs.SetInt("levelsunlocked", PlayerPrefs.GetInt("levelsunlocked") + 1);
+                }
+                PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
             }
-            PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
+            else
+            {
+                PlayerPrefs.SetInt("currentLevel", 4);
+            }
             winLoseText.text = "YOU WIN!";
             button.text = "NEXT LEVEL";
         }

@@ -16,14 +16,14 @@ public class levelSwipe : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("currentLevel"))
         {
-            PlayerPrefs.SetInt("currentLevel", 4);
+            PlayerPrefs.SetInt("currentLevel", 5);
         }
         if (!PlayerPrefs.HasKey("levelsunlocked"))
         {
-            PlayerPrefs.SetInt("levelsunlocked", 4);
+            PlayerPrefs.SetInt("levelsunlocked", 5);
         }
         PlayerPrefs.SetInt("levelsunlocked", 5);
-        PlayerPrefs.SetInt("currentLevel", 4);
+        PlayerPrefs.SetInt("currentLevel", 5);
     }
 
     // Update is called once per frame
@@ -71,7 +71,7 @@ public class levelSwipe : MonoBehaviour
                 //Debug.LogWarning(i);
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
                 bgObject.transform.GetComponent<Image>().sprite = background[i];
-                PlayerPrefs.SetInt("currentLevel", i+4);
+                PlayerPrefs.SetInt("currentLevel", i+5);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
