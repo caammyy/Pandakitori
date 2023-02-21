@@ -7,10 +7,11 @@ public class Timer : MonoBehaviour
 {
     static public bool ChangeLevel = false;
 
-    static public float Level_Time_Remaining = 120;
+    static public float Level_Time_Remaining;
     // Start is called before the first frame update
     void Start()
     {
+        Level_Time_Remaining = 120;
     }
 
     // Update is called once per frame
