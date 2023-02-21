@@ -25,9 +25,11 @@ public class Shooting : MonoBehaviour
 
     private void Shoot() {
         if (Inventory.AmountOfFood >= 2) {
-            GameObject Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation); 
+            if (BulletScript.InAir == false) {
+             GameObject Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation); 
             // Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
-            // rb.AddForce(Firepoint.right * BulletForce, ForceMode2D.Impulse);
+            // rb.AddForce(Firepoint.right * BulletForce, ForceMode2D.Impulse);               
+            }
         }else {
             Debug.Log("Cant shoot!");
         }

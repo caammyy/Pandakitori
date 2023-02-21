@@ -18,8 +18,16 @@ public class CustomerUI_level2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (customer != null) {
-           LinearTimer.fillAmount = customer.TimeRemaining / 30; 
+        if (customer.TimeRemaining <30) {
+            LinearTimer.color = new Color32(25,188,5,255);
         }
+        if (customer.TimeRemaining < 20) {
+            LinearTimer.color = new Color32(255,255,17,255);
+        }
+        if (customer.TimeRemaining < 10) {
+            LinearTimer.color = new Color32(255,0,0,255);
+        }
+        LinearTimer.fillAmount = customer.TimeRemaining / 25; 
+    
     }
 }

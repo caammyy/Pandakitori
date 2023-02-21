@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour
     Vector3 StartPoint;
     bool Stick;
     static public bool CanCollide;
-    private bool InAir;
+    static public bool InAir;
     public static string FoodInAir;
 
     private void Start() {

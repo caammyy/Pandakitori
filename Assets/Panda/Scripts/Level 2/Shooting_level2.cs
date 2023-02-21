@@ -25,9 +25,11 @@ public class Shooting_level2 : MonoBehaviour
 
     private void Shoot() {
         if (Inventory_level2.AmountOfFood >= 3) {
-            GameObject Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation); 
-            // Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
-            // rb.AddForce(Firepoint.right * BulletForce, ForceMode2D.Impulse);
+            if (BulletScript.InAir == false) {
+                GameObject Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation); 
+                // Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
+                 // rb.AddForce(Firepoint.right * BulletForce, ForceMode2D.Impulse);
+            }
         }else {
             Debug.Log("Cant shoot! l2");
         }
