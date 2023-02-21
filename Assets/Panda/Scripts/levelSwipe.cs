@@ -22,8 +22,8 @@ public class levelSwipe : MonoBehaviour
         {
             PlayerPrefs.SetInt("levelsunlocked", 5);
         }
-        PlayerPrefs.SetInt("levelsunlocked", 5);
-        PlayerPrefs.SetInt("currentLevel", 5);
+        PlayerPrefs.SetInt("levelsunlocked", 6);
+        PlayerPrefs.SetInt("currentLevel", 6);
     }
 
     // Update is called once per frame
