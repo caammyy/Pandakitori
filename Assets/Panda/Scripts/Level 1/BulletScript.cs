@@ -18,9 +18,9 @@ public class BulletScript : MonoBehaviour
     public static string FoodInAir;
 
     private void Start() {
-        if (SceneManager.GetActiveScene().buildIndex == 4) {
+        if (SceneManager.GetActiveScene().buildIndex == 5) {
             FoodInAir = Inventory.FoodOnHand;
-        }else if (SceneManager.GetActiveScene().buildIndex == 5){
+        }else if (SceneManager.GetActiveScene().buildIndex == 6){
             FoodInAir = Inventory_level2.FoodOnHand;
         }
         rb = GetComponent<Rigidbody2D>();
