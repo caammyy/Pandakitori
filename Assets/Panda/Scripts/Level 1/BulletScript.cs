@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BulletScript : MonoBehaviour
 {
@@ -13,9 +14,15 @@ public class BulletScript : MonoBehaviour
     Vector3 StartPoint;
     bool Stick;
     static public bool CanCollide;
-    public bool InAir;
+    private bool InAir;
+    public static string FoodInAir;
 
     private void Start() {
+        if (SceneManager.GetActiveScene().buildIndex == 4) {
+            FoodInAir = Inventory.FoodOnHand;
+        }else if (SceneManager.GetActiveScene().buildIndex == 5){
+            FoodInAir = Inventory_level2.FoodOnHand;
+        }
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         Stick = true;
@@ -45,6 +52,7 @@ public class BulletScript : MonoBehaviour
         }
 
         if (Input.GetMouseButton(0)) {
+            if (InAir == false) {
             Vector2 DragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 _velocity = (DragEndPos - DragStartPos) * power; 
 
@@ -54,7 +62,8 @@ public class BulletScript : MonoBehaviour
             for (int i = 0; i < trajectory.Length; i++) {
                 positions[i] = trajectory[i];
             }       
-            lr.SetPositions(positions);
+            lr.SetPositions(positions);   
+            }
         }
 
         if (Input.GetMouseButtonUp(0)) {

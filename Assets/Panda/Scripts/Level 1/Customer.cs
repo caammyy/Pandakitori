@@ -102,13 +102,13 @@ public class Customer : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
-                if (Inventory.FoodOnHand == StringOrder)
+                if (BulletScript.FoodInAir == StringOrder)
                 {
                     Inventory.PlayerScore++;
                     Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
                 }
-                else if (Inventory.FoodOnHand != StringOrder)
+                else if (BulletScript.FoodInAir != StringOrder)
                 {
                     if (Inventory.PlayerScore > 0)
                     {
