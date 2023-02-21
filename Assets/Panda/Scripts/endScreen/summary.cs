@@ -18,21 +18,27 @@ public class summary : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        totalPoints.text = Inventory.PlayerScore.ToString();
-        if (Inventory.PlayerScore >= pointsForEachLevel.level_1)
+        if (PlayerPrefs.GetInt("currentLevel") == 4)
         {
-            Debug.LogWarning("Summary");
-            Debug.LogWarning(PlayerPrefs.GetInt("levelsunlocked"));
-            Debug.LogWarning(PlayerPrefs.GetInt("currentLevel"));
-            winOrLose = true;
+            totalPoints.text = Inventory.PlayerScore.ToString();
+            if (Inventory.PlayerScore >= pointsForEachLevel.level_1)
+                winOrLose = true;
+        }
+        else
+        {
+            totalPoints.text = Inventory_level2.PlayerScore.ToString();
+            if (Inventory_level2.PlayerScore >= pointsForEachLevel.level_2)
+            {
+                winOrLose = true;
+            }
+        }
+            if (winOrLose)
+        {
             if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
             {
                 PlayerPrefs.SetInt("levelsunlocked", PlayerPrefs.GetInt("levelsunlocked") + 1);
             }
             PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
-        }
-        if (winOrLose)
-        {
             winLoseText.text = "YOU WIN!";
             button.text = "NEXT LEVEL";
         }

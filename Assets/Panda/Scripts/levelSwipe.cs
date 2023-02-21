@@ -22,7 +22,7 @@ public class levelSwipe : MonoBehaviour
         {
             PlayerPrefs.SetInt("levelsunlocked", 4);
         }
-        PlayerPrefs.SetInt("levelsunlocked", 4);
+        PlayerPrefs.SetInt("levelsunlocked", 5);
         PlayerPrefs.SetInt("currentLevel", 4);
     }
 
