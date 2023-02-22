@@ -86,9 +86,6 @@ public class Inventory_level2 : MonoBehaviour
             Array.Clear(InventorySlots, 0, InventorySlots.Length);
             AmountOfFood = 0;
             Debug.Log("Items thrown away");
-            if (Inventory_level2.PlayerScore > 0) {
-                Inventory_level2.PlayerScore--;
-            }
     }
 
      static public void ClearItems() {

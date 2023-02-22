@@ -72,9 +72,6 @@ public class Inventory : MonoBehaviour
             Array.Clear(InventorySlots, 0, InventorySlots.Length);
             AmountOfFood = 0;
             Debug.Log("Items Thrown away");
-            if (Inventory.PlayerScore > 0) {
-            Inventory.PlayerScore--;
-            }
     }
 
      static public void ClearItems() {
