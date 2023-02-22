@@ -152,8 +152,13 @@ public class CustomerSpawn_level2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
+        AmountOfCustomer = 0;
+        TimeRemaining = 20;
+        SeatTaken1 = false;
+        SeatTaken2 = false;
+        SeatTaken3 = false;
+        SeatTaken4 = false;
+        GenerateCustomer();
     }
 
     // Update is called once per frame

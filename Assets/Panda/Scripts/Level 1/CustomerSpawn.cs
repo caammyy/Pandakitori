@@ -23,11 +23,11 @@ public class CustomerSpawn : MonoBehaviour
     static public float TimeRemaining;
     static public int AmountOfCustomer = 0;
     public int MaxCustomers;
+    System.Random Rnd = new System.Random();
 
 
     int GenerateRandom(int num)
     {
-        System.Random Rnd = new System.Random();
         int RandomIndex = Rnd.Next(num) + 1;
         return RandomIndex;
     }
@@ -152,8 +152,13 @@ public class CustomerSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
+        AmountOfCustomer = 0;
+        TimeRemaining = 20;
+        SeatTaken1 = false;
+        SeatTaken2 = false;
+        SeatTaken3 = false;
+        SeatTaken4 = false;
+        GenerateCustomer();
     }
 
     // Update is called once per frame
