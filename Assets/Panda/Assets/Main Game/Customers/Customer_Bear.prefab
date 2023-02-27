@@ -103,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0035247803, y: -0.06723237}
+  m_Offset: {x: -0.0035247803, y: 2.9031377}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -114,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.604227, y: 12.866596}
+  m_Size: {x: 7.604227, y: 6.9258566}
   m_EdgeRadius: 0
 --- !u!114 &575155249959162984
 MonoBehaviour:
@@ -147,8 +147,10 @@ MonoBehaviour:
   OrderCorrect: 0
   OrderSlot1: {fileID: 3331923137544701208}
   OrderSlot2: {fileID: 7817028492850690528}
+  OrderSlot3: {fileID: 0}
   Shrimp: {fileID: 860017464, guid: 98489b3d75aef98438f63a6c9beaba48, type: 3}
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
+  Egg: {fileID: 0}
 --- !u!114 &575155249959162986
 MonoBehaviour:
   m_ObjectHideFlags: 0

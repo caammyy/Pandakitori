@@ -9,14 +9,12 @@ public class BulletScript : MonoBehaviour
 
     Rigidbody2D rb;
     LineRenderer lr;
-    Vector2 DragStartPos;
-    Vector3 Target;
-    Vector3 StartPoint;
-    bool Stick;
     static public bool CanCollide;
     static public bool InAir;
     public static string FoodInAir;
-
+    public bool Stick;
+    public Vector3 pos;
+    
     private void Start() {
         // if (SceneManager.GetActiveScene().buildIndex == 5) {
         //     FoodInAir = Inventory.FoodOnHand;
@@ -26,80 +24,44 @@ public class BulletScript : MonoBehaviour
         FoodInAir = Inventory.FoodOnHand;
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
+        DeactivateRb();
         Stick = true;
-        CanCollide = false;
         InAir = false;
+        CanCollide = false;
     }
 
-    private void Update() {
-
-        StartPoint = transform.position;
-        if (Vector2.Distance(transform.position, Target) < 1) {
+    private void Update()
+    {
+        pos = transform.position;
+        if (Stick == true)
+        {
+            transform.position = new Vector3(TopDownMovement.CurrentPosition.x, TopDownMovement.CurrentPosition.y, -2f);
+        }
+        if (Vector2.Distance(pos, Trajectory.Target) < 1) {
             Debug.Log("CanCollide true");
             CanCollide = true;
-        }        
-
+        }  
         if (transform.position.x > 10 || transform.position.y < -5) {
             Destroy(gameObject);
             InAir = false;
         }
-
-        if (Stick == true) {
-            transform.position = new Vector3 (TopDownMovement.CurrentPosition.x, TopDownMovement.CurrentPosition.y, -2f);
-        }
-        
-        if (Input.GetMouseButtonDown(0)) {
-            DragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-
-        if (Input.GetMouseButton(0)) {
-            if (InAir == false) {
-            Vector2 DragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 _velocity = (DragEndPos - DragStartPos) * power; 
-
-            Vector2[] trajectory = Plot(rb, (Vector2)transform.position, _velocity, 500);  
-            lr.positionCount = trajectory.Length;
-            Vector3[] positions = new Vector3[trajectory.Length];
-            for (int i = 0; i < trajectory.Length; i++) {
-                positions[i] = trajectory[i];
-            }       
-            lr.SetPositions(positions);   
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0)) {
-            if (InAir == false) {
-            InAir = true;
-            Stick = false;
-            Vector2 DragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 _velocity = (DragEndPos - DragStartPos) * power;
-            rb.velocity = _velocity;
-            Target = lr.GetPosition(lr.positionCount - 1);
-            Debug.Log("target " + Target.x);
-            lr.positionCount = 0;
-            Inventory.ClearItems();
-            Inventory_level2.ClearItems();
-            }
-        }
     }
 
-    public Vector2[] Plot(Rigidbody2D rigidbody, Vector2 pos, Vector2 velocity, int steps) {
-        Vector2[] results = new Vector2[steps];
-
-        float timestep = Time.fixedDeltaTime / Physics2D.velocityIterations;
-        Vector2 gravityAccel = Physics2D.gravity * rigidbody.gravityScale * timestep * timestep;
-
-        float drag = 1f - timestep * rigidbody.drag;
-        Vector2 moveStep = velocity * timestep;
-
-        for (int i = 0 ; i < steps; i++) {
-            moveStep += gravityAccel;
-            moveStep *= drag;
-            pos += moveStep;
-            results[i] = pos;
-        }
-        return results;
+    public void Push(Vector2 force) {
+        rb.AddForce(force, ForceMode2D.Impulse);
+        InAir = true;
     }
+
+    public void ActivateRB() {
+        rb.isKinematic = false;
+    }
+
+    public void DeactivateRb() {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = 0f;
+        rb.isKinematic = true;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other) {
     if (CanCollide == true) {
@@ -113,5 +75,7 @@ public class BulletScript : MonoBehaviour
         InAir = false;
     }
     }
+
+
 
 }

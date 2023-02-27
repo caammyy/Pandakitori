@@ -14,12 +14,14 @@ public class Inventory : MonoBehaviour
     public bool isColliding2;
     public bool isColliding3;
     static public int PlayerScore = 0;
+    static public bool InventoryFull;
 
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerScore = 0;
+        InventoryFull = false;
         if (SceneManager.GetActiveScene().buildIndex == 5)
         {
             InventorySlots = new int[2];
@@ -104,22 +106,33 @@ public class Inventory : MonoBehaviour
             if (AmountOfFood < 2)
             {
                 InventorySlots[AmountOfFood] = TypeOfFood;
+                FoodOnHand = string.Join("", InventorySlots);
+                Debug.Log(FoodOnHand);
+                AmountOfFood++;
+
+                if (AmountOfFood == 2) {
+                    InventoryFull = true;
+                }
             }
 
-            FoodOnHand = string.Join("", InventorySlots);
-            Debug.Log(FoodOnHand);
-            AmountOfFood++;
+
         }
         else if (SceneManager.GetActiveScene().buildIndex == 6)
         {
             if (AmountOfFood < 3)
             {
                 InventorySlots[AmountOfFood] = TypeOfFood;
+                FoodOnHand = string.Join("", InventorySlots);
+                Debug.Log(FoodOnHand);
+                AmountOfFood++;
+
+                if (AmountOfFood == 3)
+                {
+                    InventoryFull = true;
+                }
             }
 
-            FoodOnHand = string.Join("", InventorySlots);
-            Debug.Log(FoodOnHand);
-            AmountOfFood++;
+
         }
     }
 
@@ -128,6 +141,7 @@ public class Inventory : MonoBehaviour
         Array.Clear(InventorySlots, 0, InventorySlots.Length);
         AmountOfFood = 0;
         Debug.Log("Items Thrown away");
+        InventoryFull = false;
     }
 
     static public void ClearItems()
@@ -135,6 +149,7 @@ public class Inventory : MonoBehaviour
         Array.Clear(InventorySlots, 0, InventorySlots.Length);
         AmountOfFood = 0;
         Debug.Log("Items Cleared");
+        InventoryFull = false;
     }
 
 
