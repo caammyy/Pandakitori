@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 575155249959162991}
   - component: {fileID: 575155249959162988}
   - component: {fileID: 575155249959162990}
-  - component: {fileID: 7204906062394809253}
-  - component: {fileID: 3537722590237367796}
-  - component: {fileID: 2002403790070695387}
+  - component: {fileID: 826549701273860595}
+  - component: {fileID: 6560242807950426334}
+  - component: {fileID: 1532381899073608102}
   m_Layer: 0
   m_Name: Customer_Penguin
   m_TagString: Customer1
@@ -116,7 +116,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.604227, y: 12.866596}
   m_EdgeRadius: 0
---- !u!114 &7204906062394809253
+--- !u!114 &826549701273860595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,22 +125,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 575155249959162989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3c04e7c370a5a54986ccacda0ba4fb3, type: 3}
+  m_Script: {fileID: 11500000, guid: c399c3320a842d2449168de1997e1346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3537722590237367796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575155249959162989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ead0b99f2dec340b9530dfa8ec0298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 000000000000000000000000
+  Order: 
   StringOrder: 
   TimeRemaining: 30
   Timer: 15
@@ -151,7 +139,7 @@ MonoBehaviour:
   Shrimp: {fileID: 860017464, guid: 98489b3d75aef98438f63a6c9beaba48, type: 3}
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
---- !u!114 &2002403790070695387
+--- !u!114 &6560242807950426334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,11 +148,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 575155249959162989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195eff02f12d7044ea0eb6b856107d24, type: 3}
+  m_Script: {fileID: 11500000, guid: 26270aa369354244f89f785372a48214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TimeRemaining: {fileID: 0}
   LinearTimer: {fileID: 3215411805543910203}
+--- !u!114 &1532381899073608102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575155249959162989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6176b1f1ad49d454ab6438b2b55ab259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &575155251083017867
 GameObject:
   m_ObjectHideFlags: 0

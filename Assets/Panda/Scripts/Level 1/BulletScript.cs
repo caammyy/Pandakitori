@@ -18,11 +18,12 @@ public class BulletScript : MonoBehaviour
     public static string FoodInAir;
 
     private void Start() {
-        if (SceneManager.GetActiveScene().buildIndex == 5) {
-            FoodInAir = Inventory.FoodOnHand;
-        }else if (SceneManager.GetActiveScene().buildIndex == 6){
-            FoodInAir = Inventory_level2.FoodOnHand;
-        }
+        // if (SceneManager.GetActiveScene().buildIndex == 5) {
+        //     FoodInAir = Inventory.FoodOnHand;
+        // }else if (SceneManager.GetActiveScene().buildIndex == 6){
+        //     FoodInAir = Inventory_level2.FoodOnHand;
+        // }
+        FoodInAir = Inventory.FoodOnHand;
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         Stick = true;

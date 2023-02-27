@@ -16,7 +16,6 @@ public class Customer_level2 : MonoBehaviour
     private void ChangeOrderToSprite(int[] Order)
     {
         StringOrder = string.Join("", Order);
-        Debug.Log(StringOrder);
         for (int i = 0; i < 3; i++)
         {
             if (Order[i] == 1)

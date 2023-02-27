@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Customer : MonoBehaviour
 {
-    public int[] Order = new int[2];
+    public int[] Order;
     public string StringOrder;
     public float TimeRemaining = 30;
     public float Timer = 15;
@@ -16,51 +17,124 @@ public class Customer : MonoBehaviour
     private void ChangeOrderToSprite(int[] Order)
     {
         StringOrder = string.Join("", Order);
-        for (int i = 0; i < 2; i++)
+        if (SceneManager.GetActiveScene().buildIndex == 5)
         {
-            if (Order[i] == 1)
+            for (int i = 0; i < 2; i++)
             {
-                if (i == 0)
+                if (Order[i] == 1)
                 {
-                    OrderSlot1.sprite = Shrimp;
+                    if (i == 0)
+                    {
+                        OrderSlot1.sprite = Shrimp;
+                    }
+                    else if (i == 1)
+                    {
+                        OrderSlot2.sprite = Shrimp;
+                    }
+                    else if (i == 2)
+                    {
+                        // OrderSlot3.sprite = Shrimp;
+                    }
                 }
-                else if (i == 1)
+                if (Order[i] == 2)
                 {
-                    OrderSlot2.sprite = Shrimp;
+                    if (i == 0)
+                    {
+                        OrderSlot1.sprite = VegMeat;
+                    }
+                    else if (i == 1)
+                    {
+                        OrderSlot2.sprite = VegMeat;
+                    }
+                    else if (i == 2)
+                    {
+                        // OrderSlot3.sprite = VegMeat;
+                    }
                 }
-                else if (i == 2)
-                {
-                    // OrderSlot3.sprite = Shrimp;
-                }
-            }
-            if (Order[i] == 2)
-            {
-                if (i == 0)
-                {
-                    OrderSlot1.sprite = VegMeat;
-                }
-                else if (i == 1)
-                {
-                    OrderSlot2.sprite = VegMeat;
-                }
-                else if (i == 2)
-                {
-                    // OrderSlot3.sprite = VegMeat;
-                }
-            }
 
+            }
+            TimeRemaining = 30;
         }
-        TimeRemaining = 30;
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (Order[i] == 1)
+                {
+                    if (i == 0)
+                    {
+                        OrderSlot1.sprite = Shrimp;
+                    }
+                    else if (i == 1)
+                    {
+                        OrderSlot2.sprite = Shrimp;
+                    }
+                    else if (i == 2)
+                    {
+                        OrderSlot3.sprite = Shrimp;
+                    }
+                }
+                if (Order[i] == 2)
+                {
+                    if (i == 0)
+                    {
+                        OrderSlot1.sprite = VegMeat;
+                    }
+                    else if (i == 1)
+                    {
+                        OrderSlot2.sprite = VegMeat;
+                    }
+                    else if (i == 2)
+                    {
+                        OrderSlot3.sprite = VegMeat;
+                    }
+                    else if (i == 3)
+                    {
+                        OrderSlot3.sprite = VegMeat;
+                    }
+                }
+                if (Order[i] == 3)
+                {
+                    if (i == 0)
+                    {
+                        OrderSlot1.sprite = Egg;
+                    }
+                    else if (i == 1)
+                    {
+                        OrderSlot2.sprite = Egg;
+                    }
+                    else if (i == 2)
+                    {
+                        OrderSlot3.sprite = Egg;
+                    }
+                    else if (i == 3)
+                    {
+                        OrderSlot3.sprite = Egg;
+                    }
+                }
+
+            }
+            TimeRemaining = 30;
+        }
     }
     public SpriteRenderer OrderSlot1;
     public SpriteRenderer OrderSlot2;
-    // public SpriteRenderer OrderSlot3;
+    public SpriteRenderer OrderSlot3;
     public Sprite Shrimp;
     public Sprite VegMeat;
+    public Sprite Egg;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            Order = new int[2];
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            Order = new int[3];
+        }
         ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
 
     }

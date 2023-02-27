@@ -584,6 +584,8 @@ GameObject:
   - component: {fileID: 910869979}
   - component: {fileID: 910869980}
   - component: {fileID: 910869981}
+  - component: {fileID: 910869983}
+  - component: {fileID: 910869982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -763,7 +765,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910869970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a374ae9605cd0d408115509a0dc020e, type: 3}
   m_Name: 
@@ -778,13 +780,42 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910869970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dd23ce280eece943a1459ccc3e89ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 6801266904104335246, guid: d280d4957a98c7243b902c589eaf6fc3, type: 3}
   Firepoint: {fileID: 306428686}
+--- !u!114 &910869982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910869970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7d711a18a07b24fae72add83c7412a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 6801266904104335246, guid: d280d4957a98c7243b902c589eaf6fc3, type: 3}
+  Firepoint: {fileID: 306428686}
+--- !u!114 &910869983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910869970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4396e68f7845fdf4bb29ebf54d75be57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding1: 0
+  isColliding2: 0
+  isColliding3: 0
 --- !u!1 &1012601178
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1106828427}
-  - component: {fileID: 1106828428}
+  - component: {fileID: 1106828429}
   m_Layer: 0
   m_Name: Customers
   m_TagString: Untagged
@@ -928,7 +959,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1106828428
+--- !u!114 &1106828429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -937,7 +968,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1106828426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b77854d4421bcb746a2e55cf8a3f066f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b0f7a7fea4d0cc40ab0352007a124c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Bear: {fileID: 575155249959162989, guid: a38a6b4d04649dc419570abadca5f3ef, type: 3}
@@ -1806,6 +1837,7 @@ GameObject:
   - component: {fileID: 1886588651}
   - component: {fileID: 1886588650}
   - component: {fileID: 1886588654}
+  - component: {fileID: 1886588655}
   m_Layer: 5
   m_Name: UI Overlay
   m_TagString: Untagged
@@ -1904,9 +1936,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886588648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aa0a1bed900e414f995426aedbc2237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 1210569909}
+  LevelTimeRemaining: {fileID: 1448483740}
+  OrderSlot1: {fileID: 1797237591}
+  OrderSlot2: {fileID: 1160086671}
+  OrderSlot3: {fileID: 649895066}
+  Shrimp: {fileID: 860017464, guid: 98489b3d75aef98438f63a6c9beaba48, type: 3}
+  VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
+  Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
+  Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
+--- !u!114 &1886588655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886588648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4419a2080a85a444848233d0eae3848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 1210569909}

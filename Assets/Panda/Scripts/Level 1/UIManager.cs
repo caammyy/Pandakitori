@@ -15,19 +15,24 @@ public class UIManager : MonoBehaviour
     public Image OrderSlot3;
     public Sprite Shrimp;
     public Sprite VegMeat;
+    public Sprite Egg;
     public Sprite Blank;
     string inventory;
-    static public int[] InventorySlots = new int[2];
+    static public int[] InventorySlots;
     void GetInventory() {
         InventorySlots = Inventory.InventorySlots;
-        for (int i = 0; i < 2; i++) {
+        int count = 0;
+        foreach (int a in InventorySlots) {
+            count++;
+        }
+        for (int i = 0; i < count; i++) {
             if (InventorySlots[i] == 1) {
                 if (i == 0) {
                     OrderSlot1.sprite = Shrimp;
                 }else if (i == 1) {
                     OrderSlot2.sprite = Shrimp;
                 }else if (i == 2) {
-                    // OrderSlot3.sprite = Shrimp;
+                    OrderSlot3.sprite = Shrimp;
                 }
             }
             if (InventorySlots[i] == 2) {
@@ -36,22 +41,28 @@ public class UIManager : MonoBehaviour
                 }else if (i == 1) {
                     OrderSlot2.sprite = VegMeat;
                 }else if (i == 2) {
-                    // OrderSlot3.sprite = VegMeat;
+                    OrderSlot3.sprite = VegMeat;
                 }
             }
+            if (InventorySlots[i] == 3) {
+                if (i == 0) {
+                    OrderSlot1.sprite = Egg;
+                }else if (i == 1) {
+                    OrderSlot2.sprite = Egg;
+                }else if (i == 2) {
+                    OrderSlot3.sprite = Egg;
+                }
+            }  
             if (InventorySlots[i] == 0) {
                 if (i == 0) {
                     OrderSlot1.sprite = Blank;
                 }else if (i == 1) {
                     OrderSlot2.sprite = Blank;
                 }else if (i == 2) {
-                    // OrderSlot3.sprite = Blank;
+                    OrderSlot3.sprite = Blank;
                 }
             }            
         }
-
-
-
 
         for(int i = 0; i < 3; i++) {
             inventory =  string.Join("", Inventory.InventorySlots);

@@ -26,8 +26,8 @@ public class summary : MonoBehaviour
         }
         else
         {
-            totalPoints.text = Inventory_level2.PlayerScore.ToString();
-            if (Inventory_level2.PlayerScore >= pointsForEachLevel.level_2)
+            totalPoints.text = Inventory.PlayerScore.ToString();
+            if (Inventory.PlayerScore >= pointsForEachLevel.level_2)
             {
                 winOrLose = true;
             }
