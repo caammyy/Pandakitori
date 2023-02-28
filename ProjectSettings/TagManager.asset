@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Background
   - Obstacle
+  - TrajectoryDots
   layers:
   - Default
   - TransparentFX
