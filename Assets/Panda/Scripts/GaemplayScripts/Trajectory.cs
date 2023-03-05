@@ -16,6 +16,7 @@ public class Trajectory : MonoBehaviour
     Vector2 pos;
     float timeStamp;
     public static Vector3 Target;
+	static public float Angle;
     void Start()
     {
         //hide trajectory in the start
@@ -70,6 +71,9 @@ public class Trajectory : MonoBehaviour
 			timeStamp += dotSpacing;
 		}
         Target = dotsList[dotsNumber-1].position;
+
+		Angle = Vector2.SignedAngle(TopDownMovement.CurrentPosition, Dots[4].transform.position) * -1;
+		Debug.Log(Angle);
 	}
 
 	public void Show ()
