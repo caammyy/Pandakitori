@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 		if (Input.GetMouseButtonDown (0)) {
             if (BulletScript.InAir == false && Inventory.InventoryFull == true)
