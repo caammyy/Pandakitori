@@ -47,7 +47,6 @@ public class Trajectory : MonoBehaviour
 		}
 
 
-
 		Dots = new GameObject[dotsNumber];
 		for (int i = 0; i < dotsNumber; i++) {
 			Dots[i] = dotsList[i].gameObject;
