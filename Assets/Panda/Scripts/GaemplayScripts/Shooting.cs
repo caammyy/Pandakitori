@@ -10,7 +10,9 @@ public class Shooting : MonoBehaviour
     GameObject Bullet;
     BulletScript bs;
     public Transform Firepoint;
-    float pushForce = 4f;
+    public float pushForce;
+    // public float DisM;
+    public Vector3 DirM;
     Camera cam;
     public Trajectory trajectory;
     Vector2 startPoint;
@@ -57,18 +59,18 @@ public class Shooting : MonoBehaviour
         Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation);
         bs = Bullet.GetComponent<BulletScript>();
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-        trajectory.Show();
+        // trajectory.Show();
     }
 
     void OnDrag() {
-        
-        endPoint = cam.ScreenToWorldPoint (Input.mousePosition);
+        endPoint = DirM + cam.ScreenToWorldPoint (Input.mousePosition);
 		distance = Vector2.Distance (startPoint, endPoint);
 		direction = (startPoint - endPoint).normalized;
 		force = direction * distance * pushForce;
 		//just for debug
 		Debug.DrawLine (startPoint, endPoint);
 		trajectory.UpdateDots (bs.pos, force);
+        trajectory.Show();
     }
 
 	void OnDragEnd ()

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440bc536a42f04b448b809942ea84e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dotsNumber: 30
+  dotsNumber: 27
   dotsParent: {fileID: 1249741589}
   dotPrefab: {fileID: 528624140524854663, guid: f5d30bba8d0041f49a94a4dad1e49149, type: 3}
   dotSpacing: 0.03
@@ -1007,6 +1007,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
+    - target: {fileID: 1911949481832152773, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+      propertyPath: DisM
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911949481832152773, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+      propertyPath: DirM.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911949481832152773, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+      propertyPath: DirM.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911949481832152773, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+      propertyPath: DirM.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911949481832152773, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+      propertyPath: pushForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1911949481832152773, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
       propertyPath: trajectory
       value: 
