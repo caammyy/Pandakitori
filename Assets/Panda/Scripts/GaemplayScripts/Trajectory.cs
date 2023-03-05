@@ -12,14 +12,14 @@ public class Trajectory : MonoBehaviour
 	[SerializeField] [Range (0.01f, 0.3f)] float dotMinScale;
 	[SerializeField] [Range (0.3f, 1f)] float dotMaxScale;
     Transform[] dotsList;
-	static public GameObject[] Dots;
+	public GameObject[] Dots;
     Vector2 pos;
     float timeStamp;
     public static Vector3 Target;
     void Start()
     {
         //hide trajectory in the start
-		Hide ();
+		Hide();
 		//prepare dots
 		PrepareDots ();
     }
@@ -33,7 +33,6 @@ public class Trajectory : MonoBehaviour
 
     void PrepareDots() {
         dotsList = new Transform[dotsNumber];
-		Dots = new GameObject[dotsNumber];
         dotPrefab.transform.localScale = Vector3.one * dotMaxScale;
 		float scale = dotMaxScale;
 		float scaleFactor = scale / dotsNumber;
@@ -47,6 +46,9 @@ public class Trajectory : MonoBehaviour
 				scale -= scaleFactor;
 		}
 
+
+
+		Dots = new GameObject[dotsNumber];
 		for (int i = 0; i < dotsNumber; i++) {
 			Dots[i] = dotsList[i].gameObject;
 		}

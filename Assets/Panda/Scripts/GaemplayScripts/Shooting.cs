@@ -21,6 +21,7 @@ public class Shooting : MonoBehaviour
 	Vector2 force;
 	float distance;
     bool isDragging = false;
+    public GameObject hand;
 
     // Start is called before the first frame update
     void Start()
@@ -56,10 +57,10 @@ public class Shooting : MonoBehaviour
 
 
     void OnDragStart() {
+        trajectory.Hide();
         Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation);
         bs = Bullet.GetComponent<BulletScript>();
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-        // trajectory.Show();
     }
 
     void OnDrag() {
@@ -76,10 +77,11 @@ public class Shooting : MonoBehaviour
 	void OnDragEnd ()
 	{
 		//push the ball
+        trajectory.Hide();
         bs.Stick = false;
         bs.ActivateRB();
 		bs.Push (force);
-		trajectory.Hide ();
+		
 	}
 
 

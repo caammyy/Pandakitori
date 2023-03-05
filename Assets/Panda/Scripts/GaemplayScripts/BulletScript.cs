@@ -14,8 +14,10 @@ public class BulletScript : MonoBehaviour
     public static string FoodInAir;
     public bool Stick;
     public Vector3 pos;
+    public GameObject fp; 
     
     private void Start() {
+        fp = GameObject.Find("FirePoint");
         // if (SceneManager.GetActiveScene().buildIndex == 5) {
         //     FoodInAir = Inventory.FoodOnHand;
         // }else if (SceneManager.GetActiveScene().buildIndex == 6){
@@ -35,7 +37,7 @@ public class BulletScript : MonoBehaviour
         pos = transform.position;
         if (Stick == true)
         {
-            transform.position = new Vector3(TopDownMovement.CurrentPosition.x, TopDownMovement.CurrentPosition.y, -2f);
+            transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2f);
         }
         if (Vector2.Distance(pos, Trajectory.Target) < 1) {
             Debug.Log("CanCollide true");
