@@ -159,6 +159,7 @@ MonoBehaviour:
   dotMinScale: 0.178
   dotMaxScale: 0.5
   Dots: []
+  TrajActive: 0
 --- !u!4 &322747689
 Transform:
   m_ObjectHideFlags: 0
@@ -875,8 +876,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7ea17416cadc5c438ada0e06bb74ff6, type: 2}
+  m_sharedMaterial: {fileID: -2094212075502415002, guid: c7ea17416cadc5c438ada0e06bb74ff6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -906,7 +907,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -967,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -822, y: 451}
+  m_AnchoredPosition: {x: -801.22, y: 462}
   m_SizeDelta: {x: 212.338, y: 117.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1249741589
@@ -1377,8 +1378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 60
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7ea17416cadc5c438ada0e06bb74ff6, type: 2}
+  m_sharedMaterial: {fileID: -2094212075502415002, guid: c7ea17416cadc5c438ada0e06bb74ff6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1408,8 +1409,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1469,7 +1470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: 459}
+  m_AnchoredPosition: {x: 53.6, y: 462}
   m_SizeDelta: {x: 212.338, y: 117.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1471266394
@@ -2023,7 +2024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036cd8f2d56656446bd13c04dd6daca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Multiplier: 0.8
+  Multiplier: 1
+  Traj: {fileID: 322747688}
 --- !u!1 &2131726525
 GameObject:
   m_ObjectHideFlags: 0

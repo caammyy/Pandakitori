@@ -31,78 +31,79 @@ public class BulletScript : MonoBehaviour
     
     private void Start() {
         fp = GameObject.Find("FirePoint");
-        // if (SceneManager.GetActiveScene().buildIndex == 5) {
-        //     FoodInAir = Inventory.FoodOnHand;
-        // }else if (SceneManager.GetActiveScene().buildIndex == 6){
-        //     FoodInAir = Inventory_level2.FoodOnHand;
-        // }
         FoodInAir = Inventory.FoodOnHand;
         FoodOnBullet = Inventory.InventorySlots;
-        // Debug.Log("Food on bullet is" + FoodOnBullet[0] + FoodOnBullet[1] + FoodOnBullet[2]);
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         DeactivateRb();
         Stick = true;
         InAir = false;
         CanCollide = false;
-        for (int i = 0; i < 3; i++)
+        int i = 0;
+        if (SceneManager.GetActiveScene().buildIndex == 5) {
+            i = 2;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 6) {
+            i = 3;
+        }
+        for (int k = 0; k < i; k++)
         {
-            if (FoodOnBullet[i] == 1)
+            if (FoodOnBullet[k] == 1)
             {
-                if (i == 0)
+                if (k == 0)
                 {
                     Food1.sprite = Shrimp;
                 }
-                else if (i == 1)
+                else if (k == 1)
                 {
                     Food2.sprite = Shrimp;
                 }
-                else if (i == 2)
+                else if (k == 2)
                 {
                     Food3.sprite = Shrimp;
                 }
             }
-            if (FoodOnBullet[i] == 2)
+            if (FoodOnBullet[k] == 2)
             {
-                if (i == 0)
+                if (k == 0)
                 {
                     Food1.sprite = VegMeat;
                 }
-                else if (i == 1)
+                else if (k == 1)
                 {
                     Food2.sprite = VegMeat;
                 }
-                else if (i == 2)
+                else if (k == 2)
                 {
                     Food3.sprite = VegMeat;
                 }
             }
-            if (FoodOnBullet[i] == 3)
+            if (FoodOnBullet[k] == 3)
             {
-                if (i == 0)
+                if (k == 0)
                 {
                     Food1.sprite = Egg;
                 }
-                else if (i == 1)
+                else if (k == 1)
                 {
                     Food2.sprite = Egg;
                 }
-                else if (i == 2)
+                else if (k == 2)
                 {
                     Food3.sprite = Egg;
                 }
             }
-            if (FoodOnBullet[i] == 0)
+            if (FoodOnBullet[k] == 0)
             {
-                if (i == 0)
+                if (k == 0)
                 {
                     Food1.sprite = Blank;
                 }
-                else if (i == 1)
+                else if (k == 1)
                 {
                     Food2.sprite = Blank;
                 }
-                else if (i == 2)
+                else if (k == 2)
                 {
                     Food3.sprite = Blank;
                 }

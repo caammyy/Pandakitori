@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AmountOfFood = 0;
         PlayerScore = 0;
         InventoryFull = false;
         if (SceneManager.GetActiveScene().buildIndex == 5)

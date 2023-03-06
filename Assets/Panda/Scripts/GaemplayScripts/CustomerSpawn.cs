@@ -7,8 +7,8 @@ public class CustomerSpawn : MonoBehaviour
 {
 
 
-    static Vector3 SeatNumber1 = new Vector3(2.69f, 0.29f, -1f); // index 1
-    static Vector3 SeatNumber3 = new Vector3(3.16f, -0.28f, -1.1f); // index 2
+    static Vector3 SeatNumber1 = new Vector3(2.73f, 0.51f, -1f); // index 1
+    static Vector3 SeatNumber3 = new Vector3(3.37f, -0.256f, -1.1f); // index 2
     static Vector3 SeatNumber5 = new Vector3(3.99f, -1.18f, -1.2f); // index 3 
     static Vector3 SeatNumber7 = new Vector3(5.19f, -2.48f, -1.3f); // index 4
 

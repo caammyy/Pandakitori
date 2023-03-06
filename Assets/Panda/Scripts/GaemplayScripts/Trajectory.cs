@@ -17,6 +17,7 @@ public class Trajectory : MonoBehaviour
     float timeStamp;
     public static Vector3 Target;
 	static public float Angle;
+	public bool TrajActive;
     void Start()
     {
         //hide trajectory in the start
@@ -72,18 +73,20 @@ public class Trajectory : MonoBehaviour
 		}
         Target = dotsList[dotsNumber-1].position;
 
-		Angle = Vector2.SignedAngle(TopDownMovement.CurrentPosition, Dots[4].transform.position) * -1;
+		// Angle = Vector2.SignedAngle(TopDownMovement.CurrentPosition, Dots[4].transform.position) * -1;
 		// Debug.Log(Angle);
 	}
 
 	public void Show ()
 	{
 		dotsParent.SetActive (true);
+		TrajActive = true;
 	}
 
 	public void Hide ()
 	{
 		dotsParent.SetActive (false);
+		TrajActive = false;
 	}
 
     // void OnTriggerEnter2D(Collider2D other)

@@ -12,6 +12,9 @@ public class Customer : MonoBehaviour
     public float TimeRemaining = 30;
     public float Timer = 15;
     public bool OrderCorrect;
+    public bool PlayCorrect;
+    public bool PlayWrong;
+    public Animator Anim;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = { 1, 2 };
     private void ChangeOrderToSprite(int[] Order)
@@ -142,6 +145,8 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Anim.ResetTrigger("OrderWrong");
+        // Anim.ResetTrigger("OrderCorrect");
         if (TimeRemaining > 0)
         {
             TimeRemaining -= Time.deltaTime;
@@ -178,22 +183,28 @@ public class Customer : MonoBehaviour
             {
                 if (BulletScript.FoodInAir == StringOrder)
                 {
+                    Anim.SetTrigger("OrderCorrect");
                     Inventory.PlayerScore++;
                     Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
+                    // Anim.ResetTrigger("OrderCorrect");
                 }
                 else if (BulletScript.FoodInAir != StringOrder)
                 {
+                    Anim.SetTrigger("OrderWrong");
                     if (Inventory.PlayerScore > 0)
                     {
                         Inventory.PlayerScore--;
                     }
+                    // Anim.ResetTrigger("OrderWrong");
                     Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
                     Destroy(gameObject);
                     CustomerSpawn.Unseat(gameObject.transform.position);
                 }
             }
         }
+        // Anim.SetBool("OrderCorrect", false);
+        // Anim.SetBool("OrderWrong", false);
     }
 
 
