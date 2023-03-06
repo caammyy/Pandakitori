@@ -73,7 +73,7 @@ public class Trajectory : MonoBehaviour
         Target = dotsList[dotsNumber-1].position;
 
 		Angle = Vector2.SignedAngle(TopDownMovement.CurrentPosition, Dots[4].transform.position) * -1;
-		Debug.Log(Angle);
+		// Debug.Log(Angle);
 	}
 
 	public void Show ()

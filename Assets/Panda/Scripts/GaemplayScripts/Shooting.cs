@@ -69,7 +69,7 @@ public class Shooting : MonoBehaviour
 		direction = (startPoint - endPoint).normalized;
 		force = direction * distance * pushForce;
 		//just for debug
-		Debug.DrawLine (startPoint, endPoint);
+		// Debug.DrawLine (startPoint, endPoint);
 		trajectory.UpdateDots (bs.pos, force);
     }
 
