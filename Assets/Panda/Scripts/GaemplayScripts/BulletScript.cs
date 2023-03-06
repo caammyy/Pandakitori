@@ -126,7 +126,9 @@ public class BulletScript : MonoBehaviour
         } 
         if (pos.x > Trajectory.Target.x) {
             // Debug.Log("CanCollide true");
-            CanCollide = false;
+            CanCollide = false;  
+            // Destroy(gameObject);  // consult john about this
+            // InAir = false;
         } 
         if (transform.position.x > 10 || transform.position.y < -5) {
             Destroy(gameObject);
