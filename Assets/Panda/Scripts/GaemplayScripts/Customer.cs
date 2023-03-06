@@ -17,6 +17,9 @@ public class Customer : MonoBehaviour
     public Animator Anim;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = { 1, 2 };
+
+    static public int noOfCustomersServed = 0;
+    static public int noOfCustomersMissed = 0;
     private void ChangeOrderToSprite(int[] Order)
     {
         StringOrder = string.Join("", Order);
@@ -130,6 +133,8 @@ public class Customer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        noOfCustomersMissed = 0;
+        noOfCustomersServed = 0;
         if (SceneManager.GetActiveScene().buildIndex == 5)
         {
             Order = new int[2];
@@ -156,6 +161,7 @@ public class Customer : MonoBehaviour
         {
             ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
             TimeRemaining = 30;
+            noOfCustomersMissed += 1;
             if (Inventory.PlayerScore > 0)
             {
                 Inventory.PlayerScore--;
@@ -186,6 +192,7 @@ public class Customer : MonoBehaviour
                     Anim.SetTrigger("OrderCorrect");
                     Inventory.PlayerScore++;
                     Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
+                    noOfCustomersServed += 1;
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
                     // Anim.ResetTrigger("OrderCorrect");
                 }
@@ -198,6 +205,7 @@ public class Customer : MonoBehaviour
                     }
                     // Anim.ResetTrigger("OrderWrong");
                     Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
+                    noOfCustomersMissed += 1;
                     Destroy(gameObject);
                     CustomerSpawn.Unseat(gameObject.transform.position);
                 }

@@ -8,7 +8,6 @@ public class summary : MonoBehaviour
     public Text customerServed;
     public Text customerMissed;
     public Text totalPoints;
-    public Text reputation;
 
     public Text winLoseText;
 
@@ -18,19 +17,19 @@ public class summary : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        totalPoints.text = Inventory.PlayerScore.ToString();
+        customerServed.text = Customer.noOfCustomersServed.ToString();
+        customerMissed.text = Customer.noOfCustomersMissed.ToString();
+
         if (PlayerPrefs.GetInt("currentLevel") == 5)
         {
-            totalPoints.text = Inventory.PlayerScore.ToString();
             if (Inventory.PlayerScore >= pointsForEachLevel.level_1)
                 winOrLose = true;
         }
         else
         {
-            totalPoints.text = Inventory.PlayerScore.ToString();
             if (Inventory.PlayerScore >= pointsForEachLevel.level_2)
-            {
                 winOrLose = true;
-            }
         }
         if (winOrLose)
         {
