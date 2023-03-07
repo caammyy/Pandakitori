@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prologue.unity
     guid: 68b4a887ee5468a43a9e09bdcc9c72dc
   - enabled: 0
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 15440f8cdfd0c014d9757c7ae2dbe4b1
+  - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   m_configObjects: {}
