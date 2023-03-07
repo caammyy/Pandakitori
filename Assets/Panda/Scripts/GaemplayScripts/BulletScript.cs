@@ -43,7 +43,7 @@ public class BulletScript : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 5) {
             i = 2;
         }
-        if (SceneManager.GetActiveScene().buildIndex == 6) {
+        if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7) {
             i = 3;
         }
         for (int k = 0; k < i; k++)

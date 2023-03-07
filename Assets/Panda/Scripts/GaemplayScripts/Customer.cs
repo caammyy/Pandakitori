@@ -61,7 +61,7 @@ public class Customer : MonoBehaviour
             }
             TimeRemaining = 30;
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -139,7 +139,7 @@ public class Customer : MonoBehaviour
         {
             Order = new int[2];
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7) 
         {
             Order = new int[3];
         }

@@ -172,7 +172,7 @@ public class CustomerSpawn : MonoBehaviour
 
         if (TimeRemaining <= 0)
         {
-            if (AmountOfCustomer <= MaxCustomers){
+            if (AmountOfCustomer < MaxCustomers){
                 GenerateCustomer();
                 TimeRemaining = 20;
             }         

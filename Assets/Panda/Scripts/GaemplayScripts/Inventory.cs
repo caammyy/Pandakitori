@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
             Anim3 = null;
             Interact3 = null;
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             InventorySlots = new int[3];
         }
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
                 Interact2.SetActive(false);
             }
         }
-        if (SceneManager.GetActiveScene().buildIndex == 6)
+        if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             if (isColliding1 && AmountOfFood < 3)
             {
@@ -179,7 +179,7 @@ public class Inventory : MonoBehaviour
 
 
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             if (AmountOfFood < 3)
             {

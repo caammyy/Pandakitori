@@ -1776,7 +1776,7 @@ MonoBehaviour:
   Bear: {fileID: 575155249959162989, guid: a38a6b4d04649dc419570abadca5f3ef, type: 3}
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
-  MaxCustomers: 3
+  MaxCustomers: 4
 --- !u!212 &1106828430
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3351,7 +3351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1894393913
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class GenerateRandom : MonoBehaviour
             }
             return Order;
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             System.Random Rnd = new System.Random();
             for (int i = 0; i < 3; i++)
