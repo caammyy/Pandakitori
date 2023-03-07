@@ -119,7 +119,7 @@ public class BulletScript : MonoBehaviour
         pos = transform.position;
         if (Stick == true)
         {
-            transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2f);
+            transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2.5f);
         }
         if (Vector2.Distance(pos, Trajectory.Target) < 1) {
             // Debug.Log("CanCollide true");

@@ -57,7 +57,7 @@ public class Shooting : MonoBehaviour
 
 
     void OnDragStart() {
-        Vector3 pos = new Vector3 (Firepoint.transform.position.x, Firepoint.transform.position.y, -1);
+        Vector3 pos = new Vector3 (Firepoint.transform.position.x, Firepoint.transform.position.y, -2.5f);
         Bullet = Instantiate(BulletPrefab, pos, Firepoint.transform.rotation);
         bs = Bullet.GetComponent<BulletScript>();
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
