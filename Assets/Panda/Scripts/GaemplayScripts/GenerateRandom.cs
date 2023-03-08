@@ -9,7 +9,7 @@ public class GenerateRandom : MonoBehaviour
     // Start is called before the first frame update
     public static int[] CreateOrder(int[] Order)
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             System.Random Rnd = new System.Random();
             for (int i = 0; i < 2; i++)

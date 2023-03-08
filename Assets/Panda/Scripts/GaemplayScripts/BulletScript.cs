@@ -40,7 +40,7 @@ public class BulletScript : MonoBehaviour
         InAir = false;
         CanCollide = false;
         int i = 0;
-        if (SceneManager.GetActiveScene().buildIndex == 5) {
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9) {
             i = 2;
         }
         if (SceneManager.GetActiveScene().buildIndex == 6 || SceneManager.GetActiveScene().buildIndex == 7) {
