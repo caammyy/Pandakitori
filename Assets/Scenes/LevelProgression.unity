@@ -1187,9 +1187,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 096563ca569dc3042af66634d9f32f4c, type: 3}
   - {fileID: 21300000, guid: d77570feed93a904e8c2b87330496641, type: 3}
   - {fileID: 21300000, guid: 2171f0681aee11d43af38a41389199c3, type: 3}
-  - {fileID: 21300000, guid: b39ef748ae6f44c47b02ad86b8b89196, type: 3}
-  - {fileID: 21300000, guid: 236089c5030d49c49befe389385ad7d7, type: 3}
-  - {fileID: 21300000, guid: 257fbd67ff0c79c4284bac502a677e4a, type: 3}
   scrollbar: {fileID: 98352999}
   bgObject: {fileID: 2086999451}
 --- !u!1 &1953821236
