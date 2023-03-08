@@ -22,6 +22,8 @@ public class Inventory : MonoBehaviour
     public Animator Anim2;
     public Animator Anim3;
 
+    static public int noOfCustomersServed = 0;
+    static public int noOfCustomersMissed = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class Inventory : MonoBehaviour
         // Interact3.SetActive(false);
         AmountOfFood = 0;
         PlayerScore = 0;
+        noOfCustomersServed = 0;
+        noOfCustomersMissed = 0;
         InventoryFull = false;
         if (SceneManager.GetActiveScene().buildIndex == 5)
         {

@@ -18,22 +18,18 @@ public class summary : MonoBehaviour
     void Start()
     {
         totalPoints.text = Inventory.PlayerScore.ToString();
-        customerServed.text = Customer.noOfCustomersServed.ToString();
-        customerMissed.text = Customer.noOfCustomersMissed.ToString();
+        customerServed.text = Inventory.noOfCustomersServed.ToString();
+        customerMissed.text = Inventory.noOfCustomersMissed.ToString();
 
-        if (PlayerPrefs.GetInt("currentLevel") == 5)
+        int currentLevel = PlayerPrefs.GetInt("currentLevel") - 5;
+
+        if (Inventory.PlayerScore >= levelDB.levelScore[currentLevel])
         {
-            if (Inventory.PlayerScore >= pointsForEachLevel.level_1)
-                winOrLose = true;
-        }
-        else
-        {
-            if (Inventory.PlayerScore >= pointsForEachLevel.level_2)
-                winOrLose = true;
+            winOrLose = true;
         }
         if (winOrLose)
         {
-            if (PlayerPrefs.GetInt("currentLevel") < 6)
+            if (currentLevel != levelDB.maxLevel)
             {
                 if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
                 {
