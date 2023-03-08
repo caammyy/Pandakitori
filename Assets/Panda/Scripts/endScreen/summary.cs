@@ -23,17 +23,22 @@ public class summary : MonoBehaviour
 
         int currentLevel = PlayerPrefs.GetInt("currentLevel") - 5;
 
+        Debug.LogWarning(Inventory.PlayerScore);
+        Debug.LogWarning(levelDB.levelScore[currentLevel]);
         if (Inventory.PlayerScore >= levelDB.levelScore[currentLevel])
         {
             winOrLose = true;
+            Debug.LogWarning(winOrLose);
         }
-        if (winOrLose)
+        if (winOrLose == true)
         {
             if (currentLevel != levelDB.maxLevel)
             {
                 if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
                 {
+                    Debug.LogWarning(PlayerPrefs.GetInt("levelsunlocked"));
                     PlayerPrefs.SetInt("levelsunlocked", PlayerPrefs.GetInt("levelsunlocked") + 1);
+                    Debug.LogWarning(PlayerPrefs.GetInt("levelsunlocked"));
                 }
                 PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
             }
