@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
         noOfCustomersServed = 0;
         noOfCustomersMissed = 0;
         InventoryFull = false;
-        if (SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             InventorySlots = new int[2];
             Anim3 = null;
@@ -51,7 +51,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             if (isColliding1 && AmountOfFood < 2)
             {
@@ -167,7 +167,7 @@ public class Inventory : MonoBehaviour
 
     private void AddItem()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             if (AmountOfFood < 2)
             {

@@ -30,7 +30,6 @@ public class nextEvent : MonoBehaviour
         index = 0;
         play.gameObject.SetActive(false);
         previous.gameObject.SetActive(false);
-        Time.timeScale = 0f;
     }
 
     // Update is called once per frame

@@ -18,11 +18,11 @@ public class Customer : MonoBehaviour
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = { 1, 2 };
 
-    
+
     private void ChangeOrderToSprite(int[] Order)
     {
         StringOrder = string.Join("", Order);
-        if (SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -132,7 +132,7 @@ public class Customer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             Order = new int[2];
         }
