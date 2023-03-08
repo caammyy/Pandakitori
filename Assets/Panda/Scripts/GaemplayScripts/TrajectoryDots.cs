@@ -28,7 +28,7 @@ public class TrajectoryDots : MonoBehaviour
         if (other.gameObject.CompareTag("Customer1"))
         {
            IsTouching = true;
-           Debug.Log("Touching");
+        //    Debug.Log("Touching");
         }
 
     }
@@ -38,7 +38,7 @@ public class TrajectoryDots : MonoBehaviour
         if (other.gameObject.CompareTag("Customer1"))
         {
           IsTouching = false;
-          Debug.Log("not touching");
+        //   Debug.Log("not touching");
         }
 
     }

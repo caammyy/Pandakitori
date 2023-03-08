@@ -7,10 +7,10 @@ public class CustomerSpawn : MonoBehaviour
 {
 
 
-    static Vector3 SeatNumber1 = new Vector3(2.73f, 0.51f, -2f); // index 1
-    static Vector3 SeatNumber3 = new Vector3(3.37f, -0.256f, -2.1f); // index 2
-    static Vector3 SeatNumber5 = new Vector3(3.99f, -1.18f, -2.2f); // index 3 
-    static Vector3 SeatNumber7 = new Vector3(5.19f, -2.48f, -2.3f); // index 4
+    static Vector3 SeatNumber1 = new Vector3(2.558f, 0.502f, -2f); // index 1
+    static Vector3 SeatNumber3 = new Vector3(3.342f, -0.241f, -2.1f); // index 2
+    static Vector3 SeatNumber5 = new Vector3(4.409f, -1.497f, -2.2f); // index 3 
+    static Vector3 SeatNumber7 = new Vector3(5.95f, -3.11f, -2.3f); // index 4
 
     public GameObject Bear; // index 1
     public GameObject Penguin; // index 2

@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
 		if (Input.GetMouseButtonDown (0)) {
             if (BulletScript.InAir == false && Inventory.InventoryFull == true)
@@ -75,15 +75,17 @@ public class Shooting : MonoBehaviour
 		trajectory.UpdateDots (bs.pos, force);
     }
 
-	void OnDragEnd ()
-	{
-		//push the ball
+    public void OnDragEnd()
+    {
+        //push the ball
         trajectory.Hide();
-        bs.Stick = false;
-        bs.ActivateRB();
-		bs.Push (force);
-		
-	}
+        if (bs != null)
+        {
+            bs.Stick = false;
+            bs.ActivateRB();
+            bs.Push(force);
+        }
+    }
 
 
 

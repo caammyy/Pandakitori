@@ -131,7 +131,7 @@ public class FoodOnStickEastWest : MonoBehaviour
         GetInventory();
 
         if (isPlaying(Anim, "Player_Idle")) {
-            Debug.Log("player is idle");
+            // Debug.Log("player is idle");
             SetInvisible();
         }
 

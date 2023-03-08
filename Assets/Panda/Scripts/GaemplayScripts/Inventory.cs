@@ -21,6 +21,11 @@ public class Inventory : MonoBehaviour
     public Animator Anim1;
     public Animator Anim2;
     public Animator Anim3;
+    public Shooting Shooting;
+    public Trajectory Trajectory;
+    public static bool DiscAim;
+  
+
 
     static public int noOfCustomersServed = 0;
     static public int noOfCustomersMissed = 0;
@@ -101,7 +106,10 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            DiscAim = true;
+            Trajectory.Hide();
             DiscardItem();
+
         }
         if (isColliding1 && Input.GetKeyDown(KeyCode.E))
         {

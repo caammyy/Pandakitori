@@ -249,6 +249,7 @@ MonoBehaviour:
   Food1: {fileID: 602499400483399728}
   Food2: {fileID: 3492814430535014473}
   Food3: {fileID: 303579988824079457}
+  Skewer: {fileID: 2109098790192888325}
   Shrimp: {fileID: 860017464, guid: 98489b3d75aef98438f63a6c9beaba48, type: 3}
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}

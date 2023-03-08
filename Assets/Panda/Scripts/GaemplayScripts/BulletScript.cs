@@ -12,6 +12,7 @@ public class BulletScript : MonoBehaviour
     static public bool CanCollide;
     static public bool InAir;
     public static string FoodInAir;
+    static public bool AimingRight;
     public bool Stick;
     public Vector3 pos;
     public GameObject fp; 
@@ -21,6 +22,7 @@ public class BulletScript : MonoBehaviour
     public SpriteRenderer Food1;
     public SpriteRenderer Food2;
     public SpriteRenderer Food3;
+    public SpriteRenderer Skewer;
 
     public Sprite Shrimp;
     public Sprite VegMeat;
@@ -116,26 +118,54 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
+        if (Inventory.DiscAim) {
+            Destroy(gameObject);
+            Inventory.DiscAim = false; 
+        }
+        if (InAir == false) {
+            SetInvisible();
+        }else if (InAir == true) {
+            SetVisible();
+        }
         pos = transform.position;
         if (Stick == true)
         {
             transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2.5f);
         }
+
         if (Vector2.Distance(pos, Trajectory.Target) < 1) {
             // Debug.Log("CanCollide true");
             CanCollide = true;
-        } 
-        if (pos.x > Trajectory.Target.x) {
-            // Debug.Log("CanCollide true");
-            CanCollide = false;  
-            // Destroy(gameObject);  // consult john about this
-            // InAir = false;
-        } 
+        }
+
+        if (InAir == true)
+        {
+            if (AimingRight)
+            {
+                if (pos.x > Trajectory.Target.x)
+                {
+                    // Debug.Log("CanCollide true");
+                    Destroy(gameObject);
+                    // CanCollide = false;
+                    // Destroy(gameObject);  // consult john about this
+                    InAir = false;
+                }
+            }
+
+        }
+
         if (transform.position.x > 10 || transform.position.y < -5) {
             Destroy(gameObject);
             InAir = false;
         }
-        // transform.Rotate(Vector3)
+
+        if (InAir == false && pos.x < Trajectory.Target.x) {
+            AimingRight = true;
+            // Debug.Log("Aiming right");
+        }else if (InAir == false && pos.x > Trajectory.Target.x) {
+            AimingRight = false;
+            // Debug.Log("Aiming left");
+        }
     }
 
     public void Push(Vector2 force) {
@@ -145,14 +175,27 @@ public class BulletScript : MonoBehaviour
         InAir = true;
     }
 
-    public void ActivateRB() {
-        rb.isKinematic = false;
+    public void ActivateRB()
+    {
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }else {
+            Debug.Log("rb is null");
+        }
     }
 
-    public void DeactivateRb() {
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = 0f;
-        rb.isKinematic = true;
+    public void DeactivateRb()
+    {
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0f;
+            rb.isKinematic = true;
+        }else {
+            Debug.Log("rb is null");
+        }
+
     }
 
 
@@ -167,6 +210,19 @@ public class BulletScript : MonoBehaviour
         Destroy(gameObject);
         InAir = false;
     }
+    }
+
+    public void SetVisible() {
+        Food1.enabled = true;
+        Food2.enabled = true;
+        Food3.enabled = true;
+        Skewer.enabled = true;
+    }
+    public void SetInvisible() {
+        Food1.enabled = false;
+        Food2.enabled = false;
+        Food3.enabled = false;
+        Skewer.enabled = false;
     }
 
 
