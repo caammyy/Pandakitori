@@ -34,14 +34,15 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            Debug.Log("Mouse1 down");
             if (BulletScript.InAir == false && Inventory.InventoryFull == true)
             {
                 isDragging = true;
                 OnDragStart();
             }
         }
-		if (Input.GetMouseButtonUp (0)) {
+		if (Input.GetKeyUp(KeyCode.Mouse0)) {
             if (BulletScript.InAir == false && Inventory.InventoryFull == true)
             {
                 isDragging = false;
@@ -58,6 +59,7 @@ public class Shooting : MonoBehaviour
 
 
     void OnDragStart() {
+        Debug.Log("On drag start");
         Vector3 pos = new Vector3 (Firepoint.transform.position.x, Firepoint.transform.position.y, -2.5f);
         Bullet = Instantiate(BulletPrefab, pos, Firepoint.transform.rotation);
         bs = Bullet.GetComponent<BulletScript>();
@@ -77,6 +79,7 @@ public class Shooting : MonoBehaviour
 
     public void OnDragEnd()
     {
+        Debug.Log("On drag end");
         //push the ball
         trajectory.Hide();
         if (bs != null)
