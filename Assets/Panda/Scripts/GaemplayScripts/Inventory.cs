@@ -192,7 +192,7 @@ public class Inventory : MonoBehaviour
                 Debug.Log(FoodOnHand);
                 AmountOfFood++;
 
-                if (AmountOfFood == 3)
+                if (AmountOfFood >= 3)
                 {
                     InventoryFull = true;
                 }
