@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoodOnStick : MonoBehaviour
+public class FoodOnStickEastWest : MonoBehaviour
 {
     // Start is called before the first frame update
     public SpriteRenderer Food1;
@@ -10,7 +10,6 @@ public class FoodOnStick : MonoBehaviour
     public SpriteRenderer Food3;
     public TopDownMovement Movement;
     public Animator Anim;
-    public FoodOnStickEastWest EastWest;
 
     public Sprite Shrimp;
     public Sprite VegMeat;
@@ -19,6 +18,17 @@ public class FoodOnStick : MonoBehaviour
 
     string inventory;
     static public int[] InventorySlots;
+    bool flipped;
+    public bool visible;
+    bool isPlaying(Animator anim, string stateName)
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
+                anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+            return true;
+        else
+            return false;
+    }
+
     void GetInventory()
     {
         InventorySlots = Inventory.InventorySlots;
@@ -97,52 +107,78 @@ public class FoodOnStick : MonoBehaviour
         }
     }
 
-    void SetVisible()
-    {
+    void SetVisible() {
+        visible = true;
         Food1.enabled = true;
         Food2.enabled = true;
         Food3.enabled = true;
     }
 
-    void SetInvisible()
-    {
+    void SetInvisible() {
+        visible = false;
         Food1.enabled = false;
         Food2.enabled = false;
         Food3.enabled = false;
     }
-
-    bool isPlaying(Animator anim, string stateName)
-    {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
-                anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-            return true;
-        else
-            return false;
-    }
     void Start()
     {
-
+        flipped = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         GetInventory();
-        if (EastWest.visible) {
+
+        if (isPlaying(Anim, "Player_Idle")) {
+            Debug.Log("player is idle");
             SetInvisible();
-        } 
-        if (EastWest.visible == false) {
+        }
+
+        if (isPlaying(Anim,"Player_East")) {
+            if (flipped) {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                SetVisible();
+                flipped = false;
+            }else{
+                SetVisible();
+            }   
+        }
+
+        if (isPlaying(Anim,"Player_West")) {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            transform.position = new Vector3 (transform.position.x,transform.position.y,-2.5f);
+            flipped = true;
             SetVisible();
         }
-        if (Movement.VerticalMovement > 0.01)
-        {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-            transform.position = new Vector3(transform.position.x, transform.position.y, -2.5f);
-        }
-        else
-        {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
+
+        // if (AnimatorIsPlaying("Player_East")) {
+        //     Debug.Log("Player running left");
+        //     SetVisible();
+        // }else{
+        //     SetInvisible();
+        // }
+
+
+        // if (AnimatorIsPlaying("Player_West")) {
+        //     Debug.Log("Player running right");
+        //     SetVisible();
+        //     gameObject.SetActive(true);
+        //     transform.localRotation = Quaternion.Euler(0, 180, 0);
+        //     transform.position = new Vector3 (transform.position.x,transform.position.y,-2.5f);
+        // }else{
+        //     transform.localRotation = Quaternion.Euler(0, 0, 0);
+        //     SetInvisible();
+        // }
+        // if (Movement.VerticalMovement > 0.01)
+        // {
+        //     transform.localRotation = Quaternion.Euler(0, 180, 0);
+        //     transform.position = new Vector3 (transform.position.x,transform.position.y,-2.5f);
+        // }
+        // else
+        // {
+        //     transform.localRotation = Quaternion.Euler(0, 0, 0);
+        // }
 
     }
 }

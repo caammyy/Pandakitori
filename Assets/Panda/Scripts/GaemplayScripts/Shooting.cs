@@ -20,13 +20,14 @@ public class Shooting : MonoBehaviour
 	Vector2 direction;
 	Vector2 force;
 	float distance;
-    bool isDragging = false;
+    bool isDragging;
     public GameObject hand;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+        isDragging = false;
 
     }
 
