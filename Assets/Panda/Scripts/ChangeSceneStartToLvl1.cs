@@ -5,8 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class ChangeSceneStartToLvl1 : MonoBehaviour
 {
-    public void MoveToScene(int sceneID)
+    public void MoveToScene()
     {
-        SceneManager.LoadScene(sceneID);
+        if (PlayerPrefs.HasKey("currentLevel"))
+        {
+            SceneManager.LoadScene(2);
+
+        }
+        else
+        {
+            SceneManager.LoadScene(9);
+        }
+    }
+    public void Home()
+    {
+        SceneManager.LoadScene(0);
     }
 }

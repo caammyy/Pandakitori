@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class summary : MonoBehaviour
 {
+    public Sprite[] bg;
+    public GameObject bgObject;
+
     public Text customerServed;
     public Text customerMissed;
     public Text totalPoints;
@@ -22,6 +25,8 @@ public class summary : MonoBehaviour
         customerMissed.text = Inventory.noOfCustomersMissed.ToString();
 
         int currentLevel = PlayerPrefs.GetInt("currentLevel") - 5;
+
+        bgObject.transform.GetComponent<Image>().sprite = bg[currentLevel];
 
         Debug.LogWarning(Inventory.PlayerScore);
         Debug.LogWarning(levelDB.levelScore[currentLevel]);

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class levelSwipe : MonoBehaviour
 {
     public Sprite[] background;
-    public GameObject scrollbar, bgObject;
+    public GameObject scrollbar, bgObject, locked, go;
     private float scroll_pos = 0;
     float[] pos;
     private bool runIt = false;
@@ -70,6 +70,16 @@ public class levelSwipe : MonoBehaviour
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
                 bgObject.transform.GetComponent<Image>().sprite = background[i];
                 PlayerPrefs.SetInt("currentLevel", i+5);
+                if (PlayerPrefs.GetInt("currentLevel") > PlayerPrefs.GetInt("levelsunlocked"))
+                {
+                    locked.SetActive(true);
+                    go.SetActive(false);
+                }
+                else
+                {
+                    locked.SetActive(false);
+                    go.SetActive(true);
+                }
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
