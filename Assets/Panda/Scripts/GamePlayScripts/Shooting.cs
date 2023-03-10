@@ -43,6 +43,7 @@ public class Shooting : MonoBehaviour
             }
         }
 		if (Input.GetKeyUp(KeyCode.Mouse0)) {
+            Debug.Log("Mouse1 up");
             if (BulletScript.InAir == false && Inventory.InventoryFull == true)
             {
                 isDragging = false;
@@ -68,6 +69,7 @@ public class Shooting : MonoBehaviour
     }
 
     void OnDrag() {
+        // Debug.Log("On drag");
         endPoint = DirM + cam.ScreenToWorldPoint (Input.mousePosition);
 		distance = Vector2.Distance (startPoint, endPoint);
 		direction = (startPoint - endPoint).normalized;
@@ -84,6 +86,7 @@ public class Shooting : MonoBehaviour
         trajectory.Hide();
         if (bs != null)
         {
+            Debug.Log("bs not null, OnDragEnd Push");
             bs.Stick = false;
             bs.ActivateRB();
             bs.Push(force);

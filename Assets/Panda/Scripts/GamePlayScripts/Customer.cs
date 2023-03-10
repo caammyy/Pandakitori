@@ -159,7 +159,7 @@ public class Customer : MonoBehaviour
             ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
             TimeRemaining = 30;
             Inventory.noOfCustomersMissed += 1;
-            Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
+            // Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
 
             if (Inventory.PlayerScore > 0)
             {
@@ -190,9 +190,9 @@ public class Customer : MonoBehaviour
                 {
                     Anim.SetTrigger("OrderCorrect");
                     Inventory.PlayerScore++;
-                    Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
+                    // Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
                     Inventory.noOfCustomersServed += 1;
-                    Debug.Log("Customers Served: " + Inventory.noOfCustomersServed);
+                    // Debug.Log("Customers Served: " + Inventory.noOfCustomersServed);
 
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
                     // Anim.ResetTrigger("OrderCorrect");
@@ -205,9 +205,9 @@ public class Customer : MonoBehaviour
                         Inventory.PlayerScore--;
                     }
                     // Anim.ResetTrigger("OrderWrong");
-                    Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
+                    // Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
                     Inventory.noOfCustomersMissed += 1;
-                    Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
+                    // Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
 
                     Destroy(gameObject);
                     CustomerSpawn.Unseat(gameObject.transform.position);

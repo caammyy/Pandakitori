@@ -119,6 +119,7 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         if (Inventory.DiscAim) {
+            Debug.Log("DiscAim Destroy");
             Destroy(gameObject);
             Inventory.DiscAim = false; 
         }
@@ -169,6 +170,7 @@ public class BulletScript : MonoBehaviour
     }
 
     public void Push(Vector2 force) {
+        Debug.Log("BulletScript Push");
         rb.AddForce(force, ForceMode2D.Impulse);
         // var impulse = (torque * Mathf.Deg2Rad) * rb.inertia;
         rb.AddTorque(torque, ForceMode2D.Force);
@@ -177,6 +179,7 @@ public class BulletScript : MonoBehaviour
 
     public void ActivateRB()
     {
+        Debug.Log("RB Activated");
         if (rb != null)
         {
             rb.isKinematic = false;
@@ -187,6 +190,7 @@ public class BulletScript : MonoBehaviour
 
     public void DeactivateRb()
     {
+        Debug.Log("RB Deactivated");
         if (rb != null)
         {
             rb.velocity = Vector3.zero;
@@ -213,12 +217,14 @@ public class BulletScript : MonoBehaviour
     }
 
     public void SetVisible() {
+        // Debug.Log("FoodVisible");
         Food1.enabled = true;
         Food2.enabled = true;
         Food3.enabled = true;
         Skewer.enabled = true;
     }
     public void SetInvisible() {
+        // Debug.Log("FoodInvisible");
         Food1.enabled = false;
         Food2.enabled = false;
         Food3.enabled = false;

@@ -32,6 +32,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DiscAim = false;
         // Interact1.SetActive(false);
         // Interact2.SetActive(false);
         // Interact3.SetActive(false);
@@ -110,6 +111,8 @@ public class Inventory : MonoBehaviour
             Trajectory.Hide();
             DiscardItem();
 
+        }else if (Input.GetKeyUp(KeyCode.F)) {
+            DiscAim = false;
         }
         if (isColliding1 && Input.GetKeyDown(KeyCode.E))
         {
