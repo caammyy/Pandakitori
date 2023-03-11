@@ -254,6 +254,7 @@ MonoBehaviour:
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
   Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
+  DestroyParticle: {fileID: 4156258574685230597, guid: fa4fb8412f2662d41a55997807efc8f6, type: 3}
 --- !u!60 &7609432912091930978
 PolygonCollider2D:
   m_ObjectHideFlags: 0

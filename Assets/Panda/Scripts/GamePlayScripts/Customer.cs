@@ -164,6 +164,7 @@ public class Customer : MonoBehaviour
             if (Inventory.PlayerScore > 0)
             {
                 Inventory.PlayerScore--;
+                Anim.SetTrigger("OrderWrong");
             }
         }
 
@@ -199,18 +200,7 @@ public class Customer : MonoBehaviour
                 }
                 else if (BulletScript.FoodInAir != StringOrder)
                 {
-                    Anim.SetTrigger("OrderWrong");
-                    if (Inventory.PlayerScore > 0)
-                    {
-                        Inventory.PlayerScore--;
-                    }
-                    // Anim.ResetTrigger("OrderWrong");
-                    // Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
-                    Inventory.noOfCustomersMissed += 1;
-                    // Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
-
-                    Destroy(gameObject);
-                    CustomerSpawn.Unseat(gameObject.transform.position);
+                    StartCoroutine(WrongOrder());
                 }
             }
         }
@@ -218,6 +208,20 @@ public class Customer : MonoBehaviour
         // Anim.SetBool("OrderWrong", false);
     }
 
-
+    IEnumerator WrongOrder()
+    {
+        if (Inventory.PlayerScore > 0)
+        {
+            Anim.SetTrigger("OrderWrong");
+            Inventory.PlayerScore--;
+        }
+        // Anim.ResetTrigger("OrderWrong");
+        // Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
+        Inventory.noOfCustomersMissed += 1;
+        // Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
+        CustomerSpawn.Unseat(gameObject.transform.position);
+    }
 
 }

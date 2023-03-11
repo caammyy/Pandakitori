@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour
     {
         cam = Camera.main;
         isDragging = false;
-
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class Shooting : MonoBehaviour
     {
 		if (Input.GetKeyDown(KeyCode.Mouse0)) {
             Debug.Log("Mouse1 down");
-            if (BulletScript.InAir == false && Inventory.InventoryFull == true)
+            if (BulletScript.InAir == false )
             {
                 isDragging = true;
                 OnDragStart();
@@ -44,7 +43,7 @@ public class Shooting : MonoBehaviour
         }
 		if (Input.GetKeyUp(KeyCode.Mouse0)) {
             Debug.Log("Mouse1 up");
-            if (BulletScript.InAir == false && Inventory.InventoryFull == true)
+            if (BulletScript.InAir == false )
             {
                 isDragging = false;
                 OnDragEnd();

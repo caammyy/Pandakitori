@@ -28,19 +28,10 @@ public class BulletScript : MonoBehaviour
     public Sprite VegMeat;
     public Sprite Egg;
     public Sprite Blank;
+    public GameObject DestroyParticle;
 
-
-    
-    private void Start() {
-        fp = GameObject.Find("FirePoint");
-        FoodInAir = Inventory.FoodOnHand;
+    public void GetFoodOnStick() {
         FoodOnBullet = Inventory.InventorySlots;
-        rb = GetComponent<Rigidbody2D>();
-        lr = GetComponent<LineRenderer>();
-        DeactivateRb();
-        Stick = true;
-        InAir = false;
-        CanCollide = false;
         int i = 0;
         if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9) {
             i = 2;
@@ -111,10 +102,23 @@ public class BulletScript : MonoBehaviour
                 }
             }
         }
+    }
+    
+
+    
+    private void Start() {
+        fp = GameObject.Find("FirePoint");
+        rb = GetComponent<Rigidbody2D>();
+        lr = GetComponent<LineRenderer>();
+        DeactivateRb();
+        Stick = true;
+        InAir = false;
+        CanCollide = false;
+        }
         // Food1.transform.position = new Vector3(Food1.transform.position.x,Food1.transform.position.y,-5f);
         // Food2.transform.position = new Vector3(Food2.transform.position.x,Food2.transform.position.y,-5f);
         // Food3.transform.position = new Vector3(Food3.transform.position.x,Food3.transform.position.y,-5f);
-    }
+    
 
     private void Update()
     {
@@ -125,6 +129,8 @@ public class BulletScript : MonoBehaviour
         }
         if (InAir == false) {
             SetInvisible();
+            FoodInAir = Inventory.FoodOnHand;
+            GetFoodOnStick();
         }else if (InAir == true) {
             SetVisible();
         }
@@ -134,26 +140,31 @@ public class BulletScript : MonoBehaviour
             transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2.5f);
         }
 
-        if (Vector2.Distance(pos, Trajectory.Target) < 1) {
-            // Debug.Log("CanCollide true");
-            CanCollide = true;
-        }
-
-        if (InAir == true)
+        if (Vector2.Distance(pos, Trajectory.Target) < 1)
         {
-            if (AimingRight)
+            // Debug.Log("CanCollide true");
+            // CanCollide = true;
+            if (InAir)
             {
-                if (pos.x > Trajectory.Target.x)
-                {
-                    // Debug.Log("CanCollide true");
-                    Destroy(gameObject);
-                    // CanCollide = false;
-                    // Destroy(gameObject);  // consult john about this
-                    InAir = false;
-                }
+                StartCoroutine(DestroyAtTarget());
             }
-
         }
+
+        // if (InAir == true)
+        // {
+        //     if (AimingRight)
+        //     {
+        //         if (pos.x > Trajectory.Target.x)
+        //         {
+        //             // Debug.Log("CanCollide true");
+        //             Destroy(gameObject);
+        //             // CanCollide = false;
+        //             // Destroy(gameObject);  // consult john about this
+        //             InAir = false;
+        //         }
+        //     }
+
+        // }
 
         if (transform.position.x > 10 || transform.position.y < -5) {
             Destroy(gameObject);
@@ -231,6 +242,13 @@ public class BulletScript : MonoBehaviour
         Skewer.enabled = false;
     }
 
-
+    IEnumerator DestroyAtTarget()
+    {
+        CanCollide = true;
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(DestroyParticle, pos, transform.rotation);
+        Destroy(gameObject);
+        InAir = false;        
+    }
 
 }
