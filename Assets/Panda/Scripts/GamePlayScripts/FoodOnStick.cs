@@ -97,14 +97,14 @@ public class FoodOnStick : MonoBehaviour
         }
     }
 
-    void SetVisible()
+    public void SetVisible()
     {
         Food1.enabled = true;
         Food2.enabled = true;
         Food3.enabled = true;
     }
 
-    void SetInvisible()
+    public void SetInvisible()
     {
         Food1.enabled = false;
         Food2.enabled = false;
@@ -128,10 +128,10 @@ public class FoodOnStick : MonoBehaviour
     void Update()
     {
         GetInventory();
-        if (EastWest.visible) {
+        if (EastWest.visible && Shooting.Aiming == false) {
             SetInvisible();
         } 
-        if (EastWest.visible == false) {
+        if (EastWest.visible == false && Shooting.Aiming == false) {
             SetVisible();
         }
         if (Movement.VerticalMovement > 0.01)

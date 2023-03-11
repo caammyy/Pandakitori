@@ -21,13 +21,32 @@ public class Shooting : MonoBehaviour
 	Vector2 force;
 	float distance;
     bool isDragging;
-    public GameObject hand;
+    public Animator Anim;
+    public FoodOnStick FoodOnStick;
+    public FoodOnStickEastWest FoodOnStickEastWest;
+    static public bool Aiming;
+    public GameObject Arm;
+    SpriteRenderer armSR;
+    public SpriteRenderer Player;
+    public SpriteRenderer Food1;
+    public SpriteRenderer Food2;
+    public SpriteRenderer Food3;
+    // public SpriteRenderer Food1Flipped;
+    // public SpriteRenderer Food2Flipped;
+    // public SpriteRenderer Food3Flipped;
 
     // Start is called before the first frame update
     void Start()
     {
+        Aiming = false;
         cam = Camera.main;
         isDragging = false;
+        armSR = Arm.GetComponent<SpriteRenderer>();
+        armSR.enabled = false;
+        Food1.enabled = false;
+        Food2.enabled = false;
+        Food3.enabled = false;
+        BulletScript.InAir = false;
     }
 
     // Update is called once per frame
@@ -37,6 +56,14 @@ public class Shooting : MonoBehaviour
             Debug.Log("Mouse1 down");
             if (BulletScript.InAir == false )
             {
+                armSR.enabled = true;
+                Food1.enabled = true;
+                Food2.enabled = true;
+                Food3.enabled = true;
+                Aiming = true;
+                FoodOnStick.SetInvisible();
+                FoodOnStickEastWest.SetInvisible();
+                Anim.SetBool("Aiming", true);
                 isDragging = true;
                 OnDragStart();
             }
@@ -45,6 +72,14 @@ public class Shooting : MonoBehaviour
             Debug.Log("Mouse1 up");
             if (BulletScript.InAir == false )
             {
+                armSR.enabled = false;
+                Food1.enabled = false;
+                Food2.enabled = false;
+                Food3.enabled = false;
+                Aiming = false;
+                FoodOnStick.SetVisible();
+                FoodOnStickEastWest.SetVisible();
+                Anim.SetBool("Aiming", false);
                 isDragging = false;
                 OnDragEnd();
                 Inventory.ClearItems();
@@ -68,6 +103,13 @@ public class Shooting : MonoBehaviour
     }
 
     void OnDrag() {
+        if (BulletScript.AimingRight == false) {
+            Flip();
+        }
+        if (BulletScript.AimingRight) {
+            UnFlip();
+        }
+
         // Debug.Log("On drag");
         endPoint = DirM + cam.ScreenToWorldPoint (Input.mousePosition);
 		distance = Vector2.Distance (startPoint, endPoint);
@@ -80,6 +122,7 @@ public class Shooting : MonoBehaviour
 
     public void OnDragEnd()
     {
+        UnFlip();
         Debug.Log("On drag end");
         //push the ball
         trajectory.Hide();
@@ -91,6 +134,50 @@ public class Shooting : MonoBehaviour
             bs.Push(force);
         }
     }
+
+    public void Flip(){
+        Player.flipX = true;
+        armSR.flipY = true;
+        Food1.flipY = true;
+        Food2.flipY = true;
+        Food3.flipY = true;
+    }
+    public void UnFlip(){
+        Player.flipX = false;
+        armSR.flipY = false;
+        Food1.flipY = false;
+        Food2.flipY = false;
+        Food3.flipY = false;
+    }
+
+    // public void EnableFood()
+    // {
+    //     armSR.enabled = true;
+    //     Food1.enabled = true;
+    //     Food2.enabled = true;
+    //     Food3.enabled = true;
+    // }
+
+    // public void DisableFood()
+    // {
+    //     armSR.enabled = false;
+    //     Food1.enabled = false;
+    //     Food2.enabled = false;
+    //     Food3.enabled = false;
+    // }
+
+    // public void EnableFoodFlipped() {
+    //     armSR.enabled = true;
+    //     Food1Flipped.enabled = true;
+    //     Food2Flipped.enabled = true;
+    //     Food3Flipped.enabled = true;
+    // }
+    // public void DisableFoodFlipped() {
+    //     armSR.enabled = false;
+    //     Food1Flipped.enabled = false;
+    //     Food2Flipped.enabled = false;
+    //     Food3Flipped.enabled = true;
+    // }
 
 
 

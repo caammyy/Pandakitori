@@ -107,14 +107,14 @@ public class FoodOnStickEastWest : MonoBehaviour
         }
     }
 
-    void SetVisible() {
+    public void SetVisible() {
         visible = true;
         Food1.enabled = true;
         Food2.enabled = true;
         Food3.enabled = true;
     }
 
-    void SetInvisible() {
+    public void SetInvisible() {
         visible = false;
         Food1.enabled = false;
         Food2.enabled = false;
@@ -129,28 +129,38 @@ public class FoodOnStickEastWest : MonoBehaviour
     void Update()
     {
         GetInventory();
+        if (Shooting.Aiming == false)
+        {
+            if (isPlaying(Anim, "Player_Idle"))
+            {
+                // Debug.Log("player is idle");
+                SetInvisible();
+            }
 
-        if (isPlaying(Anim, "Player_Idle")) {
-            // Debug.Log("player is idle");
-            SetInvisible();
-        }
+            if (isPlaying(Anim, "Player_East"))
+            {
+                if (flipped)
+                {
+                    transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    SetVisible();
+                    flipped = false;
+                }
+                else
+                {
+                    SetVisible();
+                }
+            }
 
-        if (isPlaying(Anim,"Player_East")) {
-            if (flipped) {
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            if (isPlaying(Anim, "Player_West"))
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.position = new Vector3(transform.position.x, transform.position.y, -2.5f);
+                flipped = true;
                 SetVisible();
-                flipped = false;
-            }else{
-                SetVisible();
-            }   
+            }
+
         }
 
-        if (isPlaying(Anim,"Player_West")) {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-            transform.position = new Vector3 (transform.position.x,transform.position.y,-2.5f);
-            flipped = true;
-            SetVisible();
-        }
 
         // if (AnimatorIsPlaying("Player_East")) {
         //     Debug.Log("Player running left");

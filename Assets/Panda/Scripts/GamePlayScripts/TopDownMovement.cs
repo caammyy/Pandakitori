@@ -18,7 +18,6 @@ public class TopDownMovement : MonoBehaviour
     public Camera Cam;
     static public float Angle;
     public float Size;
-
     static public Vector2 CurrentPosition;
 
     
@@ -38,7 +37,9 @@ public class TopDownMovement : MonoBehaviour
         YReAdj = (transform.position.y * -1) + 4;
 
         if (HorizontalMovement != 0|| VerticalMovement != 0) {
-            // IsMoving = true;
+            Anim.SetBool("Moving", true);
+        }else{
+            Anim.SetBool("Moving", false);
         }
 
         transform.localScale = new Vector3 (Size + (YReAdj * Scale) ,Size + (YReAdj * Scale), Size + (YReAdj * Scale));
