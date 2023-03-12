@@ -23,21 +23,26 @@ public class StartMenu : MonoBehaviour
     public void Credits()
     {
         CreditsMenu.SetActive(true);
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
     public void CloseCredits()
     {
         CreditsMenu.SetActive(false);
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
     public void Settings()
     {
         SettingsMenu.SetActive(true);
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
     public void CloseSettings()
     {
         SettingsMenu.SetActive(false);
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
     public void HowToPlay()
     {
         SceneManager.LoadScene(1);
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
 }

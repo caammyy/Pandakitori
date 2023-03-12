@@ -7,6 +7,7 @@ public class ChangeSceneStartToLvl1 : MonoBehaviour
 {
     public void MoveToScene()
     {
+        SoundManager.Instance.PlaySFX("Start");
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             SceneManager.LoadScene(2);
