@@ -705,6 +705,37 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1911949481832152827, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
   m_PrefabInstance: {fileID: 1911949480997042971}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &297115584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297115585}
+  m_Layer: 0
+  m_Name: VegEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &297115585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297115584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.476, y: 1.758, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830815701}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &344127626
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,8 +864,9 @@ GameObject:
   - component: {fileID: 418155450}
   - component: {fileID: 418155452}
   - component: {fileID: 418155451}
+  - component: {fileID: 418155453}
   m_Layer: 0
-  m_Name: 2
+  m_Name: VegMeat
   m_TagString: Food2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418155449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.61, y: 1.66, z: -1}
+  m_LocalPosition: {x: -3.504, y: 1.748, z: -1}
   m_LocalScale: {x: 0.3186081, y: 0.3186081, z: 0.3186081}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -934,6 +966,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &418155453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418155449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e7be4435dae945865ab374ec78e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory: {fileID: 1911949480997042979}
+  StartPos: {fileID: 1701708399}
+  EndPos: {fileID: 297115584}
 --- !u!1 &419335608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1379,37 @@ RectTransform:
   m_AnchoredPosition: {x: 123.79993, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &661289129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661289130}
+  m_Layer: 0
+  m_Name: EggStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &661289130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661289129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.197, y: 1.674, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830815701}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &668332501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1911949481832152776, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
@@ -1554,8 +1632,9 @@ GameObject:
   - component: {fileID: 1012601179}
   - component: {fileID: 1012601181}
   - component: {fileID: 1012601180}
+  - component: {fileID: 1012601182}
   m_Layer: 0
-  m_Name: 1
+  m_Name: Shrimp
   m_TagString: Food1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1655,6 +1734,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1012601182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012601178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e7be4435dae945865ab374ec78e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory: {fileID: 1911949480997042979}
+  StartPos: {fileID: 1910779023}
+  EndPos: {fileID: 1456958316}
 --- !u!1 &1106828426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +2797,37 @@ RectTransform:
   m_AnchoredPosition: {x: 53.6, y: 462}
   m_SizeDelta: {x: 212.338, y: 117.756}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1456958316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456958317}
+  m_Layer: 0
+  m_Name: ShrimpEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1456958317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456958316}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.495, y: -0.964, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830815701}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471266394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,6 +3230,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1701708399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701708400}
+  m_Layer: 0
+  m_Name: VegStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701708400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701708399}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.365, y: 2.238, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830815701}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797237590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,8 +3383,9 @@ GameObject:
   - component: {fileID: 1830254906}
   - component: {fileID: 1830254908}
   - component: {fileID: 1830254907}
+  - component: {fileID: 1830254909}
   m_Layer: 0
-  m_Name: 3
+  m_Name: Egg
   m_TagString: Food3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3242,7 +3399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830254905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.36, y: 0.61, z: -1}
+  m_LocalPosition: {x: -4.25, y: 0.88, z: -1}
   m_LocalScale: {x: 0.42279297, y: 0.42279297, z: 0.42279297}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3328,6 +3485,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1830254909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830254905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e7be4435dae945865ab374ec78e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory: {fileID: 1911949480997042979}
+  StartPos: {fileID: 661289129}
+  EndPos: {fileID: 1938973807}
 --- !u!1 &1830815700
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,6 +3531,12 @@ Transform:
   - {fileID: 1012601179}
   - {fileID: 418155450}
   - {fileID: 1830254906}
+  - {fileID: 1701708400}
+  - {fileID: 297115585}
+  - {fileID: 1910779024}
+  - {fileID: 1456958317}
+  - {fileID: 661289130}
+  - {fileID: 1938973808}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3641,6 +3819,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1910779023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910779024}
+  m_Layer: 0
+  m_Name: ShrimpStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1910779024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910779023}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.716, y: 0.255, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830815701}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1938973807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938973808}
+  m_Layer: 0
+  m_Name: EggEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1938973808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938973807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.267, y: 0.88, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830815701}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945290223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,3 +4452,14 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1911949481832152782, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
   m_PrefabInstance: {fileID: 1911949480997042971}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911949480997042979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1911949481832152772, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+  m_PrefabInstance: {fileID: 1911949480997042971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4396e68f7845fdf4bb29ebf54d75be57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

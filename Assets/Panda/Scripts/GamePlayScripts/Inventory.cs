@@ -24,6 +24,9 @@ public class Inventory : MonoBehaviour
     public Shooting Shooting;
     public Trajectory Trajectory;
     public static bool DiscAim;
+    public bool ResetVeg;
+    public bool ResetShrimp;
+    public bool ResetEgg;
   
 
 
@@ -32,6 +35,9 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetEgg = false;
+        ResetShrimp = false;
+        ResetVeg = false;
         DiscAim = false;
         // Interact1.SetActive(false);
         // Interact2.SetActive(false);
@@ -107,7 +113,9 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            DiscAim = true;
+            if (BulletScript.InAir == false) {
+                DiscAim = true;
+            }
             Trajectory.Hide();
             DiscardItem();
 
@@ -182,6 +190,12 @@ public class Inventory : MonoBehaviour
         {
             if (AmountOfFood < 2)
             {
+                if (TypeOfFood == 2) {
+                    ResetVeg = true;
+                }
+                if (TypeOfFood == 1) {
+                    ResetShrimp = true;
+                }
                 InventorySlots[AmountOfFood] = TypeOfFood;
                 FoodOnHand = string.Join("", InventorySlots);
                 Debug.Log(FoodOnHand);
@@ -198,6 +212,15 @@ public class Inventory : MonoBehaviour
         {
             if (AmountOfFood < 3)
             {
+                if (TypeOfFood == 2) {
+                    ResetVeg = true;
+                }
+                if (TypeOfFood == 1) {
+                    ResetShrimp = true;
+                }
+                if (TypeOfFood == 3) {
+                    ResetEgg = true;
+                }
                 InventorySlots[AmountOfFood] = TypeOfFood;
                 FoodOnHand = string.Join("", InventorySlots);
                 Debug.Log(FoodOnHand);
