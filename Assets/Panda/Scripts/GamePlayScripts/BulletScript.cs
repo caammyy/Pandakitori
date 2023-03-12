@@ -226,7 +226,9 @@ public class BulletScript : MonoBehaviour
         InAir = false;
     }
     }
-
+    // public void ClearFoodInAir() {
+    //     FoodInAir = "000";
+    // }
     public void SetVisible() {
         // Debug.Log("FoodVisible");
         Food1.enabled = true;

@@ -15,6 +15,8 @@ public class Customer : MonoBehaviour
     public bool PlayCorrect;
     public bool PlayWrong;
     public Animator Anim;
+    public GameObject Nom;
+    public GameObject NomParticle;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = { 1, 2 };
 
@@ -187,8 +189,10 @@ public class Customer : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
+                
                 if (BulletScript.FoodInAir == StringOrder)
                 {
+                    Instantiate(NomParticle,Nom.transform.position,Quaternion.identity);
                     Anim.SetTrigger("OrderCorrect");
                     Inventory.PlayerScore++;
                     // Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
@@ -197,10 +201,16 @@ public class Customer : MonoBehaviour
 
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
                     // Anim.ResetTrigger("OrderCorrect");
+                    BulletScript.FoodInAir = "000";
+                    Inventory.ClearItems();
+                    Inventory.FoodOnHand = "000";
                 }
                 else if (BulletScript.FoodInAir != StringOrder)
                 {
                     StartCoroutine(WrongOrder());
+                    BulletScript.FoodInAir = "000";
+                    Inventory.ClearItems();
+                    Inventory.FoodOnHand = "000";
                 }
             }
         }
