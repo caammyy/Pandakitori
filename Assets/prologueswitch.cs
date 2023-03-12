@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class imageswitch : MonoBehaviour
+public class Prologueswitch : MonoBehaviour
 {
 
     public GameObject[] background;
@@ -23,6 +23,8 @@ public class imageswitch : MonoBehaviour
 
     void Update()
     {
+        if (index >= 11)
+            index = 11;
 
         if (index < 0)
             index = 0;
@@ -40,7 +42,7 @@ public class imageswitch : MonoBehaviour
             previous.gameObject.SetActive(true);
         }
 
-        if (index == (background.Length - 1))
+        if (index == 11)
         {
             next.gameObject.SetActive(false);
             play.gameObject.SetActive(true);
