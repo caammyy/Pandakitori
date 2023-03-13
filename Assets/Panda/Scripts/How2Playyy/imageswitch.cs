@@ -11,6 +11,7 @@ public class imageswitch : MonoBehaviour
     int index;
     public Button next;
     public Button play;
+    public Button skip;
     public Button previous;
 
     void Start()
@@ -18,6 +19,7 @@ public class imageswitch : MonoBehaviour
         index = 0;
         play.gameObject.SetActive(false);
         previous.gameObject.SetActive(false);
+        skip.gameObject.SetActive(true);
     }
 
 
@@ -26,7 +28,6 @@ public class imageswitch : MonoBehaviour
 
         if (index < 0)
             index = 0;
-
 
 
         if (index == 0)
@@ -44,11 +45,13 @@ public class imageswitch : MonoBehaviour
         {
             next.gameObject.SetActive(false);
             play.gameObject.SetActive(true);
+            skip.gameObject.SetActive(false);
         }
     }
 
     public void Next()
     {
+        SoundManager.Instance.PlaySFX("ButtonClick");
         index += 1;
 
         for (int i = 0; i < background.Length; i++)
@@ -61,6 +64,7 @@ public class imageswitch : MonoBehaviour
 
     public void Previous()
     {
+        SoundManager.Instance.PlaySFX("ButtonBack");
         index -= 1;
 
         for (int i = 0; i < background.Length; i++)

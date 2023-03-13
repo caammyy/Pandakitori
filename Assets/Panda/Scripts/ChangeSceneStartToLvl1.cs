@@ -22,4 +22,17 @@ public class ChangeSceneStartToLvl1 : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void MoveToPrologue()
+    {
+        SoundManager.Instance.PlaySFX("ButtonClick");
+        SceneManager.LoadScene(8);
+    }
+
+    public void MoveToTutorial()
+    {
+        SoundManager.Instance.PlaySFX("ButtonClick");
+        SceneManager.LoadScene(9);
+    }
+
 }
