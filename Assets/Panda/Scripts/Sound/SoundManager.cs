@@ -26,6 +26,14 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         PlayMusic("Background");
+        if (PlayerPrefs.HasKey("musicVol"))
+        {
+            MusicVolume(PlayerPrefs.GetFloat("musicVol"));
+        }
+        if (PlayerPrefs.HasKey("sfxVol"))
+        {
+            MusicVolume(PlayerPrefs.GetFloat("sfxVol"));
+        }
     }
 
     public void PlayMusic(string name)
@@ -39,6 +47,11 @@ public class SoundManager : MonoBehaviour
         {
             musicSource.clip = s.clip;
             musicSource.Play();
+            if (PlayerPrefs.HasKey("musicVol"))
+            {
+                Debug.Log("has music volume preset");
+                MusicVolume(PlayerPrefs.GetFloat("musicVol"));
+            }
         }
     }
     public void PlaySFX(string name)
@@ -65,9 +78,15 @@ public class SoundManager : MonoBehaviour
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+        PlayerPrefs.SetFloat("musicVol", volume);
+        Debug.Log("music vol set");
+
     }
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
+        PlayerPrefs.SetFloat("sfxVol", volume);
+        Debug.Log("sfx vol set");
+
     }
 }

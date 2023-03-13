@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e5f3775bc68c4484497335948bcc4c63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2312c9ede58c5e4f8c8c7a72ec24265, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1714,7 +1714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b49b9399832fa69419264ac48f6dcf5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa6cdfe6378673418b05b95e5fe33dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1923,7 +1923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b7c121fb64fa27418b789792e7f5323, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4bd10e1bc1feaa43974f1e13955e4d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2590,6 +2590,7 @@ MonoBehaviour:
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
   MaxCustomers: 4
+  Poof: {fileID: 0}
 --- !u!212 &1106828430
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3033,8 +3034,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281413968
+  m_fontColor: {r: 0.3137255, g: 0.19215687, b: 0.19215687, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3235,8 +3236,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281413968
+  m_fontColor: {r: 0.3137255, g: 0.19215687, b: 0.19215687, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3681,7 +3682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fffdf8db320c8f48a9766e8da3bd6d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8575596790b81cf4a985e24659862d3e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4105,6 +4106,8 @@ MonoBehaviour:
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
   Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
+  Countdown: 0
+  StopCount: 0
 --- !u!1 &1894393912
 GameObject:
   m_ObjectHideFlags: 0

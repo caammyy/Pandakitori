@@ -39,6 +39,48 @@ public class summary : MonoBehaviour
         {
             if (currentLevel != levelDB.maxLevel)
             {
+                if (currentLevel == 0)
+                {
+                    if (PlayerPrefs.HasKey("Level1_HS"))
+                    {
+                        if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level1_HS"))
+                        {
+                            PlayerPrefs.SetInt("Level1_HS", Inventory.PlayerScore);
+                        }
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("Level1_HS", Inventory.PlayerScore);
+                    }
+                }
+                if (currentLevel == 1)
+                {
+                    if (PlayerPrefs.HasKey("Level2_HS"))
+                    {
+                        if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level2_HS"))
+                        {
+                            PlayerPrefs.SetInt("Level2_HS", Inventory.PlayerScore);
+                        }
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("Level2_HS", Inventory.PlayerScore);
+                    }
+                }
+                if (currentLevel == 2)
+                {
+                    if (PlayerPrefs.HasKey("Level3_HS"))
+                    {
+                        if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level3_HS"))
+                        {
+                            PlayerPrefs.SetInt("Level3_HS", Inventory.PlayerScore);
+                        }
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("Level3_HS", Inventory.PlayerScore);
+                    }
+                }
                 if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
                 {
                     Debug.LogWarning(PlayerPrefs.GetInt("levelsunlocked"));
