@@ -29,6 +29,7 @@ public class BulletScript : MonoBehaviour
     public Sprite Egg;
     public Sprite Blank;
     public GameObject DestroyParticle;
+    public static bool BlankSkewer;
 
     public void GetFoodOnStick() {
         FoodOnBullet = Inventory.InventorySlots;
@@ -107,6 +108,7 @@ public class BulletScript : MonoBehaviour
 
     
     private void Start() {
+        BlankSkewer = false;
         fp = GameObject.Find("FirePoint");
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
@@ -122,8 +124,13 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
+        if (Food1.sprite == Blank && Food2.sprite == Blank && Food3.sprite == Blank) {
+            BlankSkewer = true;
+        }else{
+            BlankSkewer = false;
+        }
         if (Inventory.DiscAim) {
-            Debug.Log("DiscAim Destroy");
+            // Debug.Log("DiscAim Destroy");
             Destroy(gameObject);
             Inventory.DiscAim = false; 
         }
@@ -140,10 +147,8 @@ public class BulletScript : MonoBehaviour
             transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2.5f);
         }
 
-        if (Vector2.Distance(pos, Trajectory.Target) < 1)
+        if (Vector2.Distance(pos, Trajectory.Target) < 0.8)
         {
-            // Debug.Log("CanCollide true");
-            // CanCollide = true;
             if (InAir)
             {
                 StartCoroutine(DestroyAtTarget());
@@ -181,7 +186,7 @@ public class BulletScript : MonoBehaviour
     }
 
     public void Push(Vector2 force) {
-        Debug.Log("BulletScript Push");
+        // Debug.Log("BulletScript Push");
         rb.AddForce(force, ForceMode2D.Impulse);
         // var impulse = (torque * Mathf.Deg2Rad) * rb.inertia;
         rb.AddTorque(torque, ForceMode2D.Force);
@@ -190,25 +195,25 @@ public class BulletScript : MonoBehaviour
 
     public void ActivateRB()
     {
-        Debug.Log("RB Activated");
+        // Debug.Log("RB Activated");
         if (rb != null)
         {
             rb.isKinematic = false;
         }else {
-            Debug.Log("rb is null");
+            // Debug.Log("rb is null");
         }
     }
 
     public void DeactivateRb()
     {
-        Debug.Log("RB Deactivated");
+        // Debug.Log("RB Deactivated");
         if (rb != null)
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = 0f;
             rb.isKinematic = true;
         }else {
-            Debug.Log("rb is null");
+            // Debug.Log("rb is null");
         }
 
     }

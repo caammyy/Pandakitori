@@ -23,6 +23,7 @@ public class CustomerSpawn : MonoBehaviour
     static public float TimeRemaining;
     static public int AmountOfCustomer = 0;
     public int MaxCustomers;
+    public GameObject Poof;
     System.Random Rnd = new System.Random();
 
 
@@ -44,16 +45,19 @@ public class CustomerSpawn : MonoBehaviour
                 AmountOfCustomer++;
                 if (TypeofCustomer == 1)
                 {
+                    Instantiate(Poof,SeatNumber1,Quaternion.identity);
                     Instantiate(Bear, SeatNumber1, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
+                    Instantiate(Poof,SeatNumber1,Quaternion.identity);
                     Instantiate(Penguin, SeatNumber1, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
+                    Instantiate(Poof,SeatNumber1,Quaternion.identity);
                     Instantiate(Dog, SeatNumber1, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
@@ -70,16 +74,19 @@ public class CustomerSpawn : MonoBehaviour
                 AmountOfCustomer++;
                 if (TypeofCustomer == 1)
                 {
+                    Instantiate(Poof,SeatNumber3,Quaternion.identity);
                     Instantiate(Bear, SeatNumber3, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
+                    Instantiate(Poof,SeatNumber3,Quaternion.identity);
                     Instantiate(Penguin, SeatNumber3, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
+                    Instantiate(Poof,SeatNumber3,Quaternion.identity);
                     Instantiate(Dog, SeatNumber3, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
@@ -96,16 +103,19 @@ public class CustomerSpawn : MonoBehaviour
                 AmountOfCustomer++;
                 if (TypeofCustomer == 1)
                 {
+                    Instantiate(Poof,SeatNumber5,Quaternion.identity);
                     Instantiate(Bear, SeatNumber5, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
+                    Instantiate(Poof,SeatNumber5,Quaternion.identity);
                     Instantiate(Penguin, SeatNumber5, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
+                    Instantiate(Poof,SeatNumber5,Quaternion.identity);
                     Instantiate(Dog, SeatNumber5, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
@@ -122,16 +132,19 @@ public class CustomerSpawn : MonoBehaviour
             {
                 if (TypeofCustomer == 1)
                 {
+                    Instantiate(Poof,SeatNumber7,Quaternion.identity);
                     Instantiate(Bear, SeatNumber7, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
+                    Instantiate(Poof,SeatNumber7,Quaternion.identity);
                     Instantiate(Penguin, SeatNumber7, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
+                    Instantiate(Poof,SeatNumber7,Quaternion.identity);
                     Instantiate(Dog, SeatNumber7, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("Bell");
                 }

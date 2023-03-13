@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
 {
     public TMP_Text ScoreText;
     public TMP_Text LevelTimeRemaining;
-
     public Image OrderSlot1;
     public Image OrderSlot2;
     public Image OrderSlot3;
@@ -71,7 +71,12 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (SceneManager.GetActiveScene().buildIndex == 5) {
+            SoundManager.Instance.PlayMusic("Forest");
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 6) {
+            SoundManager.Instance.PlayMusic("City");
+        }
     }
 
     // Update is called once per frame
@@ -80,10 +85,9 @@ public class UIManager : MonoBehaviour
         GetInventory();
         ScoreText.text = Inventory.PlayerScore.ToString();
         LevelTimeRemaining.text = ((int)Timer.Level_Time_Remaining).ToString();
-        if ((int)Timer.Level_Time_Remaining == 30) {
-                SoundManager.Instance.PlaySFX("Last30Sec");
-        }
-
+        // if ((int)Timer.Level_Time_Remaining == 30) {
+        //         SoundManager.Instance.PlaySFX("Last30Sec");
+        // }
     }
 
 

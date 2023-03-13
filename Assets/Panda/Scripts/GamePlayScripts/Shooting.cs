@@ -53,7 +53,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
 		if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Debug.Log("Mouse1 down");
+            // Debug.Log("Mouse1 down");
             if (BulletScript.InAir == false )
             {
                 SoundManager.Instance.PlaySFX("Aim(Stretch)");
@@ -70,7 +70,7 @@ public class Shooting : MonoBehaviour
             }
         }
 		if (Input.GetKeyUp(KeyCode.Mouse0)) {
-            Debug.Log("Mouse1 up");
+            // Debug.Log("Mouse1 up");
             if (BulletScript.InAir == false )
             {
                 SoundManager.Instance.PlaySFX("Release");
@@ -96,7 +96,7 @@ public class Shooting : MonoBehaviour
 
 
     void OnDragStart() {
-        Debug.Log("On drag start");
+        // Debug.Log("On drag start");
         Vector3 pos = new Vector3 (Firepoint.transform.position.x, Firepoint.transform.position.y, -2.5f);
         Bullet = Instantiate(BulletPrefab, pos, Firepoint.transform.rotation);
         bs = Bullet.GetComponent<BulletScript>();
@@ -125,7 +125,7 @@ public class Shooting : MonoBehaviour
     public void OnDragEnd()
     {
         UnFlip();
-        Debug.Log("On drag end");
+        // Debug.Log("On drag end");
         //push the ball
         trajectory.Hide();
         if (bs != null)

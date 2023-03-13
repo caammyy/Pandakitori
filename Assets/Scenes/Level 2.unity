@@ -2012,6 +2012,7 @@ MonoBehaviour:
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
   MaxCustomers: 3
+  Poof: {fileID: 4156258574685230597, guid: 89484407d57c8af43b71c134097601d6, type: 3}
 --- !u!212 &1106828430
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4262,7 +4263,7 @@ MonoBehaviour:
   - name: Aim(Stretch)
     clip: {fileID: 8300000, guid: 0fd6f5a47809f9243b0b6f68176d3291, type: 3}
   - name: Release
-    clip: {fileID: 8300000, guid: 180d8f28243b02847af4661cc3deee8e, type: 3}
+    clip: {fileID: 8300000, guid: 87cbd6854f682b84eb99caff53e324e1, type: 3}
   - name: Discard
     clip: {fileID: 8300000, guid: 4ce95df6ebb509f44b131147d7e75a13, type: 3}
   - name: FoodSplat
@@ -4273,8 +4274,24 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6bc02e4bbfcf524499ef228bb5f63d97, type: 3}
   - name: Eating
     clip: {fileID: 8300000, guid: 0650061358711ac41b7879c08c805426, type: 3}
-  - name: CustomerImpatient
-    clip: {fileID: 8300000, guid: 858143ccc9e9c2342b43a4a5ac55e3ee, type: 3}
+  - name: Plus1
+    clip: {fileID: 8300000, guid: 33eaf445a11983e48b4e3bdb0aec325f, type: 3}
+  - name: Min1
+    clip: {fileID: 8300000, guid: 07097c3012ecd6243b09932ff4aea3cc, type: 3}
+  - name: Min1
+    clip: {fileID: 8300000, guid: 07097c3012ecd6243b09932ff4aea3cc, type: 3}
+  - name: Bell
+    clip: {fileID: 8300000, guid: 1735bfa007e868e4faf85ee35b02958f, type: 3}
+  - name: Bell
+    clip: {fileID: 8300000, guid: 07097c3012ecd6243b09932ff4aea3cc, type: 3}
+  - name: CustomerHappy
+    clip: {fileID: 8300000, guid: a64b5e7443b3b274780a3d9ec5893fa2, type: 3}
+  - name: Bell
+    clip: {fileID: 8300000, guid: 07097c3012ecd6243b09932ff4aea3cc, type: 3}
+  - name: CustomerLeave
+    clip: {fileID: 8300000, guid: d4a4c2e02d8f8fd43a6d3b6f5d4d725c, type: 3}
+  - name: Last30Sec
+    clip: {fileID: 8300000, guid: fb5a1b02360840f48a508e56daf46a15, type: 3}
   musicSource: {fileID: 1242317232}
   sfxSource: {fileID: 164195519}
 --- !u!4 &1941083140

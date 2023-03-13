@@ -10,6 +10,8 @@ public class CustomerUI : MonoBehaviour
     public TMP_Text TimeRemaining;
     public Image LinearTimer;
     Customer customer;
+    public Animator Anim;
+
     void Start()
     {
         customer = gameObject.GetComponent<Customer>();
@@ -20,12 +22,17 @@ public class CustomerUI : MonoBehaviour
     {
         if (customer.TimeRemaining <30) {
             LinearTimer.color = new Color32(25,188,5,255);
+            Anim.SetBool("Annoyed", false);
+            Anim.SetBool("Angry", false);
         }
         if (customer.TimeRemaining < 20) {
             LinearTimer.color = new Color32(255,255,17,255);
+            Anim.SetBool("Annoyed", true);
         }
         if (customer.TimeRemaining < 10) {
             LinearTimer.color = new Color32(255,0,0,255);
+            Anim.SetBool("Annoyed", false);
+            Anim.SetBool("Angry", true);
         }
         if (customer.TimeRemaining <10 && customer.TimeRemaining >9.9f) {
             SoundManager.Instance.PlaySFX("CustomerImpatient"); 

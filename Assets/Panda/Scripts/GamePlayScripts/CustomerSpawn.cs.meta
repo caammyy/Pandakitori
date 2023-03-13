@@ -3,7 +3,11 @@ guid: 3b0f7a7fea4d0cc40ab0352007a124c7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Bear: {instanceID: 0}
+  - Penguin: {instanceID: 0}
+  - Dog: {instanceID: 0}
+  - Poof: {fileID: 4156258574685230597, guid: 89484407d57c8af43b71c134097601d6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

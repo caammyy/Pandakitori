@@ -15,10 +15,12 @@ public class Customer : MonoBehaviour
     public bool PlayCorrect;
     public bool PlayWrong;
     public Animator Anim;
+    public Animator AnimFood;
     public GameObject Nom;
     public GameObject NomParticle;
     private System.Random Rnd = new System.Random();
     int[] TypeOfOrder = { 1, 2 };
+    public GameObject Poof;
 
 
     private void ChangeOrderToSprite(int[] Order)
@@ -152,8 +154,7 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Anim.ResetTrigger("OrderWrong");
-        // Anim.ResetTrigger("OrderCorrect");
+
         if (TimeRemaining > 0)
         {
             TimeRemaining -= Time.deltaTime;
@@ -172,19 +173,10 @@ public class Customer : MonoBehaviour
                 Inventory.PlayerScore--;
                 Anim.SetTrigger("OrderWrong");
                 SoundManager.Instance.PlaySFX("Min1");
+                SoundManager.Instance.PlaySFX("CustomerLeave");
             }
         }
 
-        // if (Timer > 0)
-        // {
-        //     Timer -= Time.deltaTime;
-        // }
-
-        // if (Timer < 0)
-        // {
-        //     Destroy(gameObject);
-        //     CustomerSpawn.Unseat(gameObject.transform.position);
-        // } 
 
 
     }
@@ -195,34 +187,26 @@ public class Customer : MonoBehaviour
             if (other.gameObject.CompareTag("Bullet"))
             {
                 SoundManager.Instance.PlaySFX("Eating");
-                
-                if (BulletScript.FoodInAir == StringOrder)
+                AnimFood.SetTrigger("Eating");
+                if (BulletScript.FoodInAir == StringOrder && BulletScript.BlankSkewer == false)
                 {
                     Instantiate(NomParticle,Nom.transform.position,Quaternion.identity);
                     Anim.SetTrigger("OrderCorrect");
                     Inventory.PlayerScore++;
                     SoundManager.Instance.PlaySFX("Plus1");
-                    // Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
+                    SoundManager.Instance.PlaySFX("CustomerHappy");
                     Inventory.noOfCustomersServed += 1;
-                    // Debug.Log("Customers Served: " + Inventory.noOfCustomersServed);
-
                     ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
-                    // Anim.ResetTrigger("OrderCorrect");
-                    BulletScript.FoodInAir = "000";
-                    Inventory.ClearItems();
-                    Inventory.FoodOnHand = "000";
+
                 }
-                else if (BulletScript.FoodInAir != StringOrder)
+                else if (BulletScript.FoodInAir != StringOrder || BulletScript.BlankSkewer == true)
                 {
                     StartCoroutine(WrongOrder());
-                    BulletScript.FoodInAir = "000";
-                    Inventory.ClearItems();
-                    Inventory.FoodOnHand = "000";
+
                 }
             }
         }
-        // Anim.SetBool("OrderCorrect", false);
-        // Anim.SetBool("OrderWrong", false);
+
     }
 
     IEnumerator WrongOrder()
@@ -233,11 +217,10 @@ public class Customer : MonoBehaviour
             Inventory.PlayerScore--;
             SoundManager.Instance.PlaySFX("Min1");
         }
-        // Anim.ResetTrigger("OrderWrong");
-        // Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);
         Inventory.noOfCustomersMissed += 1;
-        // Debug.Log("Customers Missed: " + Inventory.noOfCustomersMissed);
-        yield return new WaitForSeconds(0.3f);
+        SoundManager.Instance.PlaySFX("CustomerLeave");
+        Instantiate(Poof,transform.position,Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
         CustomerSpawn.Unseat(gameObject.transform.position);
     }

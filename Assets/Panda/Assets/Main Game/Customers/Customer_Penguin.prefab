@@ -105,7 +105,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1235633, y: 1.986437}
+  m_Offset: {x: 0.12356329, y: 3.3481445}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -116,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.991039, y: 8.836317}
+  m_Size: {x: 6.991039, y: 6.1129017}
   m_EdgeRadius: 0
 --- !u!114 &575155249959162984
 MonoBehaviour:
@@ -150,8 +150,10 @@ MonoBehaviour:
   PlayCorrect: 0
   PlayWrong: 0
   Anim: {fileID: 4021809597769861637}
+  AnimFood: {fileID: 0}
   Nom: {fileID: 4967417382880761188}
   NomParticle: {fileID: 4156258574685230597, guid: 729947de473805042ac82de806df000d, type: 3}
+  Poof: {fileID: 4156258574685230597, guid: 89484407d57c8af43b71c134097601d6, type: 3}
   OrderSlot1: {fileID: 3331923137544701208}
   OrderSlot2: {fileID: 7817028492850690528}
   OrderSlot3: {fileID: 0}
@@ -172,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeRemaining: {fileID: 0}
   LinearTimer: {fileID: 3215411805543910203}
+  Anim: {fileID: 0}
 --- !u!1 &575155251083017867
 GameObject:
   m_ObjectHideFlags: 0
