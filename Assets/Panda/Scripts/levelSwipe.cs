@@ -11,6 +11,9 @@ public class levelSwipe : MonoBehaviour
     float[] pos;
     private bool runIt = false;
     private float time;
+
+    public Text lvl1, lvl2, lvl3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,19 @@ public class levelSwipe : MonoBehaviour
         if (!PlayerPrefs.HasKey("levelsunlocked"))
         {
             PlayerPrefs.SetInt("levelsunlocked", 5);
-        };
+        }
+        if (PlayerPrefs.HasKey("Level1_HS"))
+        {
+            lvl1.text = PlayerPrefs.GetInt("Level1_HS").ToString();
+        }
+        if (PlayerPrefs.HasKey("Level2_HS"))
+        {
+            lvl2.text = PlayerPrefs.GetInt("Level2_HS").ToString();
+        }
+        if (PlayerPrefs.HasKey("Level3_HS"))
+        {
+            lvl3.text = PlayerPrefs.GetInt("Level3_HS").ToString();
+        }
     }
 
     // Update is called once per frame
