@@ -51,11 +51,13 @@ public class summary : MonoBehaviour
             {
                 PlayerPrefs.SetInt("currentLevel", 4);
             }
+            SoundManager.Instance.PlaySFX("SummaryWin");
             winLoseText.text = "YOU WIN!";
             button.text = "NEXT LEVEL";
         }
         else
         {
+            SoundManager.Instance.PlaySFX("SummaryLose");
             winLoseText.text = "YOU LOSE!";
             button.text = "TRY AGAIN";
         }
