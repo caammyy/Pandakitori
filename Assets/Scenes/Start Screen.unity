@@ -1483,6 +1483,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d4a4c2e02d8f8fd43a6d3b6f5d4d725c, type: 3}
   - name: Last30Sec
     clip: {fileID: 8300000, guid: fb5a1b02360840f48a508e56daf46a15, type: 3}
+  - name: YellowWarning
+    clip: {fileID: 8300000, guid: 858143ccc9e9c2342b43a4a5ac55e3ee, type: 3}
+  - name: RedWarning
+    clip: {fileID: 8300000, guid: 52e0b0c69aa6f164a9e30359ffd566fe, type: 3}
   musicSource: {fileID: 861853517}
   sfxSource: {fileID: 1750925604}
 --- !u!4 &1024140556

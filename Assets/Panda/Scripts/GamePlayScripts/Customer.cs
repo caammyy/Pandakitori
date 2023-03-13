@@ -172,9 +172,10 @@ public class Customer : MonoBehaviour
             {
                 Inventory.PlayerScore--;
                 Anim.SetTrigger("OrderWrong");
-                SoundManager.Instance.PlaySFX("Min1");
-                SoundManager.Instance.PlaySFX("CustomerLeave");
             }
+            SoundManager.Instance.PlaySFX("Min1");
+            SoundManager.Instance.PlaySFX("CustomerLeave");
+            StartCoroutine(WrongOrder());
         }
 
 

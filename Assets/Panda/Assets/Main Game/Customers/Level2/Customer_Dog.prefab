@@ -162,6 +162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeRemaining: {fileID: 0}
   LinearTimer: {fileID: 3215411805543910203}
+  YellowWarning: 0
+  YelloWarned: 0
+  RedWarning: 0
+  RedWarned: 0
   Anim: {fileID: 0}
 --- !u!114 &8272522283366448571
 MonoBehaviour:
@@ -678,7 +682,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
