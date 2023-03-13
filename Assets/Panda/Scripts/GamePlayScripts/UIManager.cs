@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     public Sprite VegMeat;
     public Sprite Egg;
     public Sprite Blank;
+    public bool Countdown;
+    public bool StopCount;
     string inventory;
     static public int[] InventorySlots;
     void GetInventory() {
@@ -71,6 +73,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StopCount = false;
+        Countdown = false;
         if (SceneManager.GetActiveScene().buildIndex == 5) {
             SoundManager.Instance.PlayMusic("Forest");
         }
@@ -85,9 +89,14 @@ public class UIManager : MonoBehaviour
         GetInventory();
         ScoreText.text = Inventory.PlayerScore.ToString();
         LevelTimeRemaining.text = ((int)Timer.Level_Time_Remaining).ToString();
-        // if ((int)Timer.Level_Time_Remaining == 30) {
-        //         SoundManager.Instance.PlaySFX("Last30Sec");
-        // }
+        if ((int)Timer.Level_Time_Remaining < 30 && StopCount == false) {
+                Countdown = true;
+        }
+        if (Countdown) {
+            SoundManager.Instance.PlaySFX("Last30Sec");
+            StopCount = true;
+            Countdown = false;
+        }
     }
 
 

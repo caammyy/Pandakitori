@@ -147,7 +147,7 @@ public class BulletScript : MonoBehaviour
             transform.position = new Vector3(fp.transform.position.x, fp.transform.position.y, -2.5f);
         }
 
-        if (Vector2.Distance(pos, Trajectory.Target) < 0.8)
+        if (Vector2.Distance(pos, Trajectory.Target) < 1)
         {
             if (InAir)
             {

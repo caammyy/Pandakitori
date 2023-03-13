@@ -35,6 +35,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PauseMenu.GameIsPaused = false;
         ResetEgg = false;
         ResetShrimp = false;
         ResetVeg = false;
@@ -111,7 +112,7 @@ public class Inventory : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && PauseMenu.GameIsPaused == false)
         {
             SoundManager.Instance.PlaySFX("Discard");
             if (BulletScript.InAir == false) {
@@ -120,10 +121,10 @@ public class Inventory : MonoBehaviour
             Trajectory.Hide();
             DiscardItem();
 
-        }else if (Input.GetKeyUp(KeyCode.F)) {
+        }else if (Input.GetKeyUp(KeyCode.F) && PauseMenu.GameIsPaused == false) {
             DiscAim = false;
         }
-        if (isColliding1 && Input.GetKeyDown(KeyCode.E))
+        if (isColliding1 && Input.GetKeyDown(KeyCode.E) && PauseMenu.GameIsPaused == false)
         {
             // if (AmountOfFood == 2)
             // {
@@ -133,7 +134,7 @@ public class Inventory : MonoBehaviour
             TypeOfFood = 1;
             AddItem();
         }
-        else if (isColliding2 && Input.GetKeyDown(KeyCode.E))
+        else if (isColliding2 && Input.GetKeyDown(KeyCode.E) && PauseMenu.GameIsPaused == false)
         {
             // if (AmountOfFood == 2)
             // {
@@ -142,7 +143,7 @@ public class Inventory : MonoBehaviour
             Anim2.SetTrigger("ButtonPressed");
             TypeOfFood = 2;
             AddItem();
-        }else if (isColliding3 && Input.GetKeyDown(KeyCode.E))
+        }else if (isColliding3 && Input.GetKeyDown(KeyCode.E) && PauseMenu.GameIsPaused == false)
         {
             // if (AmountOfFood == 2)
             // {
