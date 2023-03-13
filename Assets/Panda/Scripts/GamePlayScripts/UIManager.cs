@@ -80,6 +80,9 @@ public class UIManager : MonoBehaviour
         GetInventory();
         ScoreText.text = Inventory.PlayerScore.ToString();
         LevelTimeRemaining.text = ((int)Timer.Level_Time_Remaining).ToString();
+        if ((int)Timer.Level_Time_Remaining == 30) {
+                SoundManager.Instance.PlaySFX("Last30Sec");
+        }
 
     }
 

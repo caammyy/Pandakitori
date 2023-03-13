@@ -56,6 +56,7 @@ public class Shooting : MonoBehaviour
             Debug.Log("Mouse1 down");
             if (BulletScript.InAir == false )
             {
+                SoundManager.Instance.PlaySFX("Aim(Stretch)");
                 armSR.enabled = true;
                 Food1.enabled = true;
                 Food2.enabled = true;
@@ -72,6 +73,7 @@ public class Shooting : MonoBehaviour
             Debug.Log("Mouse1 up");
             if (BulletScript.InAir == false )
             {
+                SoundManager.Instance.PlaySFX("Release");
                 armSR.enabled = false;
                 Food1.enabled = false;
                 Food2.enabled = false;

@@ -36,7 +36,7 @@ public class TopDownMovement : MonoBehaviour
         VerticalMovement = Input.GetAxis("Vertical");
         YReAdj = (transform.position.y * -1) + 4;
 
-        if (HorizontalMovement != 0|| VerticalMovement != 0) {
+        if (HorizontalMovement != 0 || VerticalMovement != 0) {
             Anim.SetBool("Moving", true);
         }else{
             Anim.SetBool("Moving", false);
@@ -74,4 +74,5 @@ public class TopDownMovement : MonoBehaviour
 
         }
     }
+
 }

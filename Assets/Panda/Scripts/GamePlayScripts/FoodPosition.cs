@@ -25,6 +25,7 @@ public class FoodPosition : MonoBehaviour
     {
         if (Inventory.ResetVeg && gameObject.tag == "Food2")
         {
+            SoundManager.Instance.PlaySFX("ConveyerBelt");
             Debug.Log("Reset");
             transform.position = StartPos.transform.position;
             Inventory.ResetVeg = false;
@@ -33,6 +34,7 @@ public class FoodPosition : MonoBehaviour
 
         if (Inventory.ResetShrimp && gameObject.tag == "Food1")
         {
+            SoundManager.Instance.PlaySFX("ConveyerBelt");
             Debug.Log("Reset");
             transform.position = StartPos.transform.position;
             Inventory.ResetShrimp = false;
@@ -40,6 +42,7 @@ public class FoodPosition : MonoBehaviour
         }
         if (Inventory.ResetEgg && gameObject.tag == "Food3")
         {
+            SoundManager.Instance.PlaySFX("ConveyerBelt");
             Debug.Log("Reset");
             transform.position = StartPos.transform.position;
             Inventory.ResetEgg = false;

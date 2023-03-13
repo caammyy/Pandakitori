@@ -250,7 +250,8 @@ public class BulletScript : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Instantiate(DestroyParticle, pos, transform.rotation);
         Destroy(gameObject);
-        InAir = false;        
+        InAir = false;
+        SoundManager.Instance.PlaySFX("FoodSplat");        
     }
 
 }

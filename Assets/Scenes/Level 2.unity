@@ -1882,7 +1882,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7740307, y: -0.08771542}
+  m_Offset: {x: 0.43, y: -0.69}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4046,7 +4046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1894393913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4253,12 +4253,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Background
-    clip: {fileID: 8300000, guid: b6e51e99643108d49a51626ca5cda67b, type: 3}
+    clip: {fileID: 8300000, guid: 94cbac4a3bd7d5b409980ad626975118, type: 3}
   sfxSounds:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 2e8e4eefca2c76c46b09e7e88428172c, type: 3}
   - name: Start
     clip: {fileID: 8300000, guid: d2293f93d31f1e446ac3832fb7b0db6a, type: 3}
+  - name: Aim(Stretch)
+    clip: {fileID: 8300000, guid: 0fd6f5a47809f9243b0b6f68176d3291, type: 3}
+  - name: Release
+    clip: {fileID: 8300000, guid: 180d8f28243b02847af4661cc3deee8e, type: 3}
+  - name: Discard
+    clip: {fileID: 8300000, guid: 4ce95df6ebb509f44b131147d7e75a13, type: 3}
+  - name: FoodSplat
+    clip: {fileID: 8300000, guid: c088eceb00d48eb499e284f3ea4923a8, type: 3}
+  - name: ConveyerBelt
+    clip: {fileID: 8300000, guid: 4790b2551e45e4d44810b15b38a6e7cb, type: 3}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 6bc02e4bbfcf524499ef228bb5f63d97, type: 3}
+  - name: Eating
+    clip: {fileID: 8300000, guid: 0650061358711ac41b7879c08c805426, type: 3}
+  - name: CustomerImpatient
+    clip: {fileID: 8300000, guid: 858143ccc9e9c2342b43a4a5ac55e3ee, type: 3}
   musicSource: {fileID: 1242317232}
   sfxSource: {fileID: 164195519}
 --- !u!4 &1941083140

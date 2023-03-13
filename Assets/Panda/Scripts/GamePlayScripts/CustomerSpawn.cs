@@ -45,14 +45,17 @@ public class CustomerSpawn : MonoBehaviour
                 if (TypeofCustomer == 1)
                 {
                     Instantiate(Bear, SeatNumber1, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
                     Instantiate(Penguin, SeatNumber1, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
                     Instantiate(Dog, SeatNumber1, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 SeatTaken1 = true;
             }else {
@@ -68,14 +71,17 @@ public class CustomerSpawn : MonoBehaviour
                 if (TypeofCustomer == 1)
                 {
                     Instantiate(Bear, SeatNumber3, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
                     Instantiate(Penguin, SeatNumber3, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
                     Instantiate(Dog, SeatNumber3, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 SeatTaken2 = true;
             }else {
@@ -91,14 +97,17 @@ public class CustomerSpawn : MonoBehaviour
                 if (TypeofCustomer == 1)
                 {
                     Instantiate(Bear, SeatNumber5, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
                     Instantiate(Penguin, SeatNumber5, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
                     Instantiate(Dog, SeatNumber5, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 SeatTaken3 = true;
             }else {
@@ -114,14 +123,17 @@ public class CustomerSpawn : MonoBehaviour
                 if (TypeofCustomer == 1)
                 {
                     Instantiate(Bear, SeatNumber7, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 2)
                 {
                     Instantiate(Penguin, SeatNumber7, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 else if (TypeofCustomer == 3)
                 {
                     Instantiate(Dog, SeatNumber7, Quaternion.identity);
+                    SoundManager.Instance.PlaySFX("Bell");
                 }
                 SeatTaken4 = true;
             }else {

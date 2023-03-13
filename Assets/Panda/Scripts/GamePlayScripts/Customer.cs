@@ -130,10 +130,13 @@ public class Customer : MonoBehaviour
     public Sprite Shrimp;
     public Sprite VegMeat;
     public Sprite Egg;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+     
+
         if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             Order = new int[2];
@@ -156,6 +159,7 @@ public class Customer : MonoBehaviour
             TimeRemaining -= Time.deltaTime;
         }
 
+
         if (TimeRemaining < 0)
         {
             ChangeOrderToSprite(GenerateRandom.CreateOrder(Order));
@@ -167,6 +171,7 @@ public class Customer : MonoBehaviour
             {
                 Inventory.PlayerScore--;
                 Anim.SetTrigger("OrderWrong");
+                SoundManager.Instance.PlaySFX("Min1");
             }
         }
 
@@ -189,12 +194,14 @@ public class Customer : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
+                SoundManager.Instance.PlaySFX("Eating");
                 
                 if (BulletScript.FoodInAir == StringOrder)
                 {
                     Instantiate(NomParticle,Nom.transform.position,Quaternion.identity);
                     Anim.SetTrigger("OrderCorrect");
                     Inventory.PlayerScore++;
+                    SoundManager.Instance.PlaySFX("Plus1");
                     // Debug.Log("Correct Order!, Score is " + Inventory.PlayerScore);
                     Inventory.noOfCustomersServed += 1;
                     // Debug.Log("Customers Served: " + Inventory.noOfCustomersServed);
@@ -224,6 +231,7 @@ public class Customer : MonoBehaviour
         {
             Anim.SetTrigger("OrderWrong");
             Inventory.PlayerScore--;
+            SoundManager.Instance.PlaySFX("Min1");
         }
         // Anim.ResetTrigger("OrderWrong");
         // Debug.Log("Wrong Order!, Score is " + Inventory.PlayerScore);

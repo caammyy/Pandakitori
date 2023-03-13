@@ -27,6 +27,9 @@ public class CustomerUI : MonoBehaviour
         if (customer.TimeRemaining < 10) {
             LinearTimer.color = new Color32(255,0,0,255);
         }
+        if (customer.TimeRemaining <10 && customer.TimeRemaining >9.9f) {
+            SoundManager.Instance.PlaySFX("CustomerImpatient"); 
+        }
         LinearTimer.fillAmount = customer.TimeRemaining / 30;
     }
 }

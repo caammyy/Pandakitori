@@ -1403,6 +1403,20 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2e8e4eefca2c76c46b09e7e88428172c, type: 3}
   - name: Start
     clip: {fileID: 8300000, guid: d2293f93d31f1e446ac3832fb7b0db6a, type: 3}
+  - name: Aim(Stretch)
+    clip: {fileID: 8300000, guid: 0fd6f5a47809f9243b0b6f68176d3291, type: 3}
+  - name: Release
+    clip: {fileID: 8300000, guid: 180d8f28243b02847af4661cc3deee8e, type: 3}
+  - name: Discard
+    clip: {fileID: 8300000, guid: 4ce95df6ebb509f44b131147d7e75a13, type: 3}
+  - name: FoodSplat
+    clip: {fileID: 8300000, guid: c088eceb00d48eb499e284f3ea4923a8, type: 3}
+  - name: ConveyerBelt
+    clip: {fileID: 8300000, guid: 4790b2551e45e4d44810b15b38a6e7cb, type: 3}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 6bc02e4bbfcf524499ef228bb5f63d97, type: 3}
+  - name: Eating
+    clip: {fileID: 8300000, guid: 0650061358711ac41b7879c08c805426, type: 3}
   musicSource: {fileID: 861853517}
   sfxSource: {fileID: 1750925604}
 --- !u!4 &1024140556

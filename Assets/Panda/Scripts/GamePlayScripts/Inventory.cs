@@ -113,6 +113,7 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            SoundManager.Instance.PlaySFX("Discard");
             if (BulletScript.InAir == false) {
                 DiscAim = true;
             }
@@ -190,6 +191,7 @@ public class Inventory : MonoBehaviour
         {
             if (AmountOfFood < 2)
             {
+                SoundManager.Instance.PlaySFX("PickUp");
                 if (TypeOfFood == 2) {
                     ResetVeg = true;
                 }
@@ -212,6 +214,7 @@ public class Inventory : MonoBehaviour
         {
             if (AmountOfFood < 3)
             {
+                SoundManager.Instance.PlaySFX("PickUp");
                 if (TypeOfFood == 2) {
                     ResetVeg = true;
                 }
