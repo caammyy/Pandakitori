@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour
         }
         if (PlayerPrefs.HasKey("sfxVol"))
         {
-            MusicVolume(PlayerPrefs.GetFloat("sfxVol"));
+            SFXVolume(PlayerPrefs.GetFloat("sfxVol"));
         }
     }
 
@@ -75,14 +75,14 @@ public class SoundManager : MonoBehaviour
     {
         sfxSource.mute = !sfxSource.mute;
     }
-    public void MusicVolume(float volume)
+    public void MusicVolume(float musvolume)
     {
-        musicSource.volume = volume;
-        PlayerPrefs.SetFloat("musicVol", volume);
+        musicSource.volume = musvolume;
+        PlayerPrefs.SetFloat("musicVol", musvolume);
     }
-    public void SFXVolume(float volume)
+    public void SFXVolume(float sfxvolume)
     {
-        sfxSource.volume = volume;
-        PlayerPrefs.SetFloat("sfxVol", volume);
+        sfxSource.volume = sfxvolume;
+        PlayerPrefs.SetFloat("sfxVol", sfxvolume);
     }
 }

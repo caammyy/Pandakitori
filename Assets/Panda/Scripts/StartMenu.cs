@@ -25,7 +25,16 @@ public class StartMenu : MonoBehaviour
     {
         startTransition.SetActive(true);
         Invoke("startTransitionFalse", 5f);
-
+        if (!PlayerPrefs.HasKey("musicVol"))
+        {
+            Debug.Log("musicVol doesnt exist");
+            PlayerPrefs.SetFloat("musicVol", 0.5f);
+        }
+        if (!PlayerPrefs.HasKey("sfxVol"))
+        {
+            Debug.Log("sfxVol doesnt exist");
+            PlayerPrefs.SetFloat("sfxVol", 0.5f);
+        }
         MusicSlider.value = PlayerPrefs.GetFloat("musicVol");
         SFXSlider.value = PlayerPrefs.GetFloat("sfxVol");
         if(PlayerPrefs.GetFloat("musicVol") == 0)

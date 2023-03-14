@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c44e9445fcf704546aa6ac23e94f4589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c84d53851e8f50e4f949087a5316ff81, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -821,8 +821,8 @@ RectTransform:
   m_Father: {fileID: 1310509766}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 109, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1303,8 +1303,8 @@ RectTransform:
   m_Father: {fileID: 154241773}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 109, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c44e9445fcf704546aa6ac23e94f4589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcdd89d9a525a4b4cbe9cf1de84a0bc5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2053,7 +2053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &935431264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4464,11 +4464,11 @@ MonoBehaviour:
   musicInc: {fileID: 628769827}
   sfxInc: {fileID: 62782488}
   musicIndicator:
-  - {fileID: 21300000, guid: 256606d212c431d41a1c69fa8cc9e699, type: 3}
-  - {fileID: 21300000, guid: c44e9445fcf704546aa6ac23e94f4589, type: 3}
+  - {fileID: 21300000, guid: 2f11a579728baf84d8f68fe741a9ad4d, type: 3}
+  - {fileID: 21300000, guid: fcdd89d9a525a4b4cbe9cf1de84a0bc5, type: 3}
   sfxIndicator:
-  - {fileID: 21300000, guid: 256606d212c431d41a1c69fa8cc9e699, type: 3}
-  - {fileID: 21300000, guid: c44e9445fcf704546aa6ac23e94f4589, type: 3}
+  - {fileID: 21300000, guid: 0f06b334df7e3ff48bcdcc7e3e7c4641, type: 3}
+  - {fileID: 21300000, guid: c84d53851e8f50e4f949087a5316ff81, type: 3}
   startTransition: {fileID: 6148779528298843577}
   endTransition: {fileID: 3709108849616413825}
 --- !u!1 &2091212006
@@ -4505,7 +4505,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4716,7 +4716,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
