@@ -11,11 +11,13 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject EndPoint;
     public GameObject Obstacle;
     public Animator Anim;
+    public GameObject Poof;
     void Start()
     {
         TimeRemaining = TimeGiven;
         // Instantiate(Obstacle, StartPoint.transform.position, Quaternion.identity);
         Anim.SetTrigger("ObstacleSpawn");
+        // Instantiate(Poof, StartPoint.transform.position, transform.rotation);
 
     }
 
@@ -28,6 +30,7 @@ public class ObstacleSpawner : MonoBehaviour
             // Instantiate(Obstacle, transform.position, Quaternion.identity);
             TimeRemaining = TimeGiven;
             Anim.SetTrigger("ObstacleSpawn");
+            Instantiate(Poof, StartPoint.transform.position, transform.rotation);
         }
         
     }
