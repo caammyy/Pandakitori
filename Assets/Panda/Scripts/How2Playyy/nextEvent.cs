@@ -88,7 +88,9 @@ public class nextEvent : MonoBehaviour
     {
         endTransition.SetActive(true);
         Invoke("Scene2", 1.5f);
+
     }
+
     public void startTransitionFalse()
     {
         startTransition.SetActive(false);

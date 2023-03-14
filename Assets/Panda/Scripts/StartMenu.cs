@@ -8,7 +8,12 @@ public class StartMenu : MonoBehaviour
 {
     [SerializeField] public GameObject CreditsMenu;
     [SerializeField] public GameObject SettingsMenu;
+
     public Slider MusicSlider, SFXSlider;
+    public GameObject musicInc;
+    public GameObject sfxInc;
+    public Sprite[] musicIndicator;
+    public Sprite[] sfxIndicator;
 
     [SerializeField] public GameObject startTransition;
     [SerializeField] public GameObject endTransition;
@@ -19,10 +24,16 @@ public class StartMenu : MonoBehaviour
         startTransition.SetActive(true);
         Invoke("startTransitionFalse", 5f);
 
-        Debug.Log(PlayerPrefs.GetFloat("musicVol"));
-        Debug.Log(PlayerPrefs.GetFloat("sfxVol"));
         MusicSlider.value = PlayerPrefs.GetFloat("musicVol");
         SFXSlider.value = PlayerPrefs.GetFloat("sfxVol");
+        if(PlayerPrefs.GetFloat("musicVol") == 0)
+        {
+            musicInc.transform.GetComponent<Image>().sprite = musicIndicator[1];
+        }
+        if (PlayerPrefs.GetFloat("sfxVol") == 0)
+        {
+            sfxInc.transform.GetComponent<Image>().sprite = sfxIndicator[1];
+        }
         SoundManager.Instance.PlayMusic("Background");
     }
 
@@ -68,17 +79,50 @@ public class StartMenu : MonoBehaviour
     public void ToggleMusic()
     {
         SoundManager.Instance.ToggleMusic();
+        //if (musicInc.GetComponent<Image>().sprite == musicIndicator[1])
+        //{
+        //    musicInc.transform.GetComponent<Image>().sprite == musicIndicator[0];
+        //}
+        //else
+        //{
+        //    musicInc.transform.GetComponent<Image>().sprite == musicIndicator[1];
+        //}
     }
     public void ToggleSFX()
     {
         SoundManager.Instance.ToggleSFX();
+        //if (sfxInc.GetComponent<Image>().sprite == sfxIndicator[1])
+        //{
+        //    sfxInc.transform.GetComponent<Image>().sprite == sfxIndicator[0];
+        //}
+        //else
+        //{
+        //    sfxInc.transform.GetComponent<Image>().sprite == sfxIndicator[1];
+        //}
     }
     public void MusicVolume()
     {
         SoundManager.Instance.MusicVolume(MusicSlider.value);
+        //if(MusicSlider.value == 0)
+        //{
+        //    musicInc.transform.GetComponent<Image>().sprite == musicIndicator[1];
+        //}
+        //else
+        //{
+        //    musicInc.transform.GetComponent<Image>().sprite == musicIndicator[0];
+
+        //}
     }
     public void SFXVolume()
     {
         SoundManager.Instance.SFXVolume(SFXSlider.value);
+        //if (SFXSlider.value == 0)
+        //{
+        //    sfxInc.transform.GetComponent<Image>().sprite == sfxIndicator[1];
+        //}
+        //else
+        //{
+        //    sfxInc.transform.GetComponent<Image>().sprite == sfxIndicator[0];
+        //}
     }
 }
