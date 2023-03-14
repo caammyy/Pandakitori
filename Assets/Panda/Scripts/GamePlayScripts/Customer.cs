@@ -15,7 +15,7 @@ public class Customer : MonoBehaviour
     public bool PlayCorrect;
     public bool PlayWrong;
     public Animator Anim;
-    // public Animator AnimFood;
+    public Animator AnimFood;
     public GameObject Nom;
     public GameObject NomParticle;
     private System.Random Rnd = new System.Random();
@@ -188,7 +188,7 @@ public class Customer : MonoBehaviour
             if (other.gameObject.CompareTag("Bullet"))
             {
                 SoundManager.Instance.PlaySFX("Eating");
-                // AnimFood.SetTrigger("Eating");
+                AnimFood.SetTrigger("Eating");
                 if (BulletScript.FoodInAir == StringOrder && BulletScript.BlankSkewer == false)
                 {
                     Instantiate(NomParticle,Nom.transform.position,Quaternion.identity);

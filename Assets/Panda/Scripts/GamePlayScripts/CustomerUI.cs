@@ -14,7 +14,7 @@ public class CustomerUI : MonoBehaviour
     public bool YelloWarned;
     public bool RedWarning;
     public bool RedWarned;
-    // public Animator Anim;
+    public Animator Anim;
 
 
     void Start()
@@ -31,17 +31,17 @@ public class CustomerUI : MonoBehaviour
     {
         if (customer.TimeRemaining <30) {
             LinearTimer.color = new Color32(25,188,5,255);
-            // Anim.SetBool("Annoyed", false);
-            // Anim.SetBool("Angry", false);
+            Anim.SetBool("Annoyed", false);
+            Anim.SetBool("Angry", false);
         }
         if (customer.TimeRemaining < 20) {
             LinearTimer.color = new Color32(255,255,17,255);
-            // Anim.SetBool("Annoyed", true);
+            Anim.SetBool("Annoyed", true);
         }
         if (customer.TimeRemaining < 10) {
             LinearTimer.color = new Color32(255,0,0,255);
-            // Anim.SetBool("Annoyed", false);
-            // Anim.SetBool("Angry", true);
+            Anim.SetBool("Annoyed", false);
+            Anim.SetBool("Angry", true);
         }
         if (customer.TimeRemaining < 20 && YelloWarned == false) {
             YellowWarning = true;
