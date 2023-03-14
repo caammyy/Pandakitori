@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/End Screen.unity
     guid: 9021b511a75085445b61096e6919386f
   - enabled: 1
-    path: Assets/Scenes/WIP.unity
+    path: Assets/Scenes/FinalSummary.unity
     guid: f008f1867fb665a45abab15c4857b99d
   - enabled: 1
     path: Assets/Scenes/Level 1.unity

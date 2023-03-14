@@ -79,14 +79,10 @@ public class SoundManager : MonoBehaviour
     {
         musicSource.volume = volume;
         PlayerPrefs.SetFloat("musicVol", volume);
-        Debug.Log("music vol set");
-
     }
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
         PlayerPrefs.SetFloat("sfxVol", volume);
-        Debug.Log("sfx vol set");
-
     }
 }

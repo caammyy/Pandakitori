@@ -14,9 +14,14 @@ public class levelSwipe : MonoBehaviour
 
     public Text lvl1, lvl2, lvl3;
 
+    [SerializeField] public GameObject startTransition;
+
     // Start is called before the first frame update
     void Start()
     {
+        startTransition.SetActive(true);
+        Invoke("startTransitionFalse", 5f);
+
         SoundManager.Instance.PlaySFX("ButtonClick");
         if (!PlayerPrefs.HasKey("currentLevel"))
         {
@@ -105,8 +110,10 @@ public class levelSwipe : MonoBehaviour
                 }
             }
         }
-
-
+    }
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
     }
 
 }

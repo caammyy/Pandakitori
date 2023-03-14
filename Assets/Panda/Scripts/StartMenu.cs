@@ -10,10 +10,19 @@ public class StartMenu : MonoBehaviour
     [SerializeField] public GameObject SettingsMenu;
     public Slider MusicSlider, SFXSlider;
 
+    [SerializeField] public GameObject startTransition;
+    [SerializeField] public GameObject endTransition;
 
     // Start is called before the first frame update
     void Start()
     {
+        startTransition.SetActive(true);
+        Invoke("startTransitionFalse", 5f);
+
+        Debug.Log(PlayerPrefs.GetFloat("musicVol"));
+        Debug.Log(PlayerPrefs.GetFloat("sfxVol"));
+        MusicSlider.value = PlayerPrefs.GetFloat("musicVol");
+        SFXSlider.value = PlayerPrefs.GetFloat("sfxVol");
         SoundManager.Instance.PlayMusic("Background");
     }
 
@@ -44,10 +53,18 @@ public class StartMenu : MonoBehaviour
     }
     public void HowToPlay()
     {
-        SceneManager.LoadScene(1);
         SoundManager.Instance.PlaySFX("ButtonClick");
+        endTransition.SetActive(true);
+        Invoke("Scene1", 1.5f);
     }
-
+    public void Scene1()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
+    }
     public void ToggleMusic()
     {
         SoundManager.Instance.ToggleMusic();

@@ -8,6 +8,9 @@ public class Timer : MonoBehaviour
     static public bool ChangeLevel = false;
 
     static public float Level_Time_Remaining;
+
+    [SerializeField] public GameObject endTransition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,8 @@ public class Timer : MonoBehaviour
             Level_Time_Remaining -= Time.deltaTime;
         }else {
             ChangeLevel = true;
-            OpenScene();
+            endTransition.SetActive(true);
+            Invoke("OpenScene", 1.5f);
         }
     }
 

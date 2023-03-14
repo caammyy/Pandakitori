@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
     public bool StopCount;
     string inventory;
     static public int[] InventorySlots;
+
+    [SerializeField] public GameObject startTransition;
+
     void GetInventory() {
         InventorySlots = Inventory.InventorySlots;
         int count = 0;
@@ -76,9 +79,13 @@ public class UIManager : MonoBehaviour
         StopCount = false;
         Countdown = false;
         if (SceneManager.GetActiveScene().buildIndex == 5) {
+            startTransition.SetActive(true);
+            Invoke("startTransitionFalse", 5f);
             SoundManager.Instance.PlayMusic("Forest");
         }
         if (SceneManager.GetActiveScene().buildIndex == 6) {
+            startTransition.SetActive(true);
+            Invoke("startTransitionFalse", 5f);
             SoundManager.Instance.PlayMusic("City");
         }
     }
@@ -99,5 +106,8 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
+    }
 }

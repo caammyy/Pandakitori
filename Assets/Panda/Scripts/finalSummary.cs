@@ -17,9 +17,16 @@ public class finalSummary : MonoBehaviour
 
     int noOfStars = 0;
 
+    [SerializeField] public GameObject startTransition;
+    [SerializeField] public GameObject endTransition;
+
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.PlayMusic("Background");
+
+        startTransition.SetActive(true);
+        Invoke("startTransitionFalse", 5f);
         SetLVl1();
         SetLVl2();
         SetLVl3();
@@ -81,6 +88,15 @@ public class finalSummary : MonoBehaviour
         }
     }
     public void Home()
+    {
+        endTransition.SetActive(true);
+        Invoke("homeScene", 1.5f);
+    }
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
+    }
+    public void homeScene()
     {
         SceneManager.LoadScene(0);
     }
