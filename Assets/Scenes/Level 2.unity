@@ -1852,7 +1852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &973326201
 Transform:
   m_ObjectHideFlags: 0
@@ -1861,7 +1861,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973326200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 0.16, z: 0}
+  m_LocalPosition: {x: 0.1, y: -0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4292,6 +4292,7 @@ MonoBehaviour:
   EndPoint: {fileID: 1012602232}
   Obstacle: {fileID: 7083407131777230033, guid: 4911d79d653709d4f979db7a9b96fb49, type: 3}
   Anim: {fileID: 1703168006}
+  Poof: {fileID: 4156258574685230597, guid: 62e76b578a3401d4aa6a7c49060b1a8b, type: 3}
 --- !u!4 &1894393914
 Transform:
   m_ObjectHideFlags: 0
