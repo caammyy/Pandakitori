@@ -2746,7 +2746,7 @@ MonoBehaviour:
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
   TimeSet: 10
-  MaxCustomers: 4
+  MaxCustomers: 5
   Poof: {fileID: 4156258574685230597, guid: 89484407d57c8af43b71c134097601d6, type: 3}
 --- !u!212 &1106828430
 SpriteRenderer:
@@ -4687,6 +4687,7 @@ MonoBehaviour:
   EndPoint: {fileID: 1897988686}
   Obstacle: {fileID: 7083407131777230033, guid: 4911d79d653709d4f979db7a9b96fb49, type: 3}
   Anim: {fileID: 0}
+  Poof: {fileID: 0}
 --- !u!4 &2018516805
 Transform:
   m_ObjectHideFlags: 0
