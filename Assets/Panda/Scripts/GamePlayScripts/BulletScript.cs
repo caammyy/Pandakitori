@@ -227,6 +227,9 @@ public class BulletScript : MonoBehaviour
         }
     }
     if (other.gameObject.CompareTag("Obstacle")) {
+        Debug.Log("Obstacle hit");
+        Instantiate(DestroyParticle, pos, transform.rotation);
+        SoundManager.Instance.PlaySFX("FoodSplat");  
         Destroy(gameObject);
         InAir = false;
     }
