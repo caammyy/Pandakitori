@@ -20,6 +20,7 @@ public class CustomerSpawn : MonoBehaviour
     public static bool SeatTaken2;
     public static bool SeatTaken3;
     public static bool SeatTaken4;
+    public float TimeSet;
     static public float TimeRemaining;
     static public int AmountOfCustomer = 0;
     public int MaxCustomers;
@@ -35,6 +36,10 @@ public class CustomerSpawn : MonoBehaviour
 
     void GenerateCustomer()
     {
+        if (SeatTaken1 && SeatTaken2 && SeatTaken3 && SeatTaken4) {
+            Debug.Log("All seats taken");
+            return;
+        }
         int SeatNumber = GenerateRandom(4);
         int TypeofCustomer = GenerateRandom(3);
 
@@ -178,7 +183,7 @@ public class CustomerSpawn : MonoBehaviour
     void Start()
     {
         AmountOfCustomer = 0;
-        TimeRemaining = 20;
+        TimeRemaining = TimeSet;
         SeatTaken1 = false;
         SeatTaken2 = false;
         SeatTaken3 = false;
@@ -199,7 +204,7 @@ public class CustomerSpawn : MonoBehaviour
         {
             if (AmountOfCustomer < MaxCustomers){
                 GenerateCustomer();
-                TimeRemaining = 20;
+                TimeRemaining = TimeSet;
             }         
         }
         
