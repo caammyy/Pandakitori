@@ -11,6 +11,8 @@ public class summary : MonoBehaviour
     public Text customerServed;
     public Text customerMissed;
     public Text totalPoints;
+    public float cusServed, cusMissed, totPoints = 0f;
+    public float growthRate = 1f;
 
     public Text winLoseText;
 
@@ -23,12 +25,14 @@ public class summary : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //transition
         startTransition.SetActive(true);
         Invoke("startTransitionFalse", 5f);
 
-        totalPoints.text = Inventory.PlayerScore.ToString();
-        customerServed.text = Inventory.noOfCustomersServed.ToString();
-        customerMissed.text = Inventory.noOfCustomersMissed.ToString();
+
+        totalPoints.text = totPoints.ToString();
+        customerServed.text = cusServed.ToString();
+        customerMissed.text = cusMissed.ToString();
 
         int currentLevel = PlayerPrefs.GetInt("currentLevel") - 5;
         Debug.Log(currentLevel);
@@ -108,8 +112,30 @@ public class summary : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+
+        if (cusServed < Inventory.noOfCustomersServed)
+        {
+            cusServed += growthRate;
+        }
+        if (cusMissed < Inventory.noOfCustomersMissed)
+        {
+            cusMissed += growthRate;
+        }
+        if (totPoints < Inventory.PlayerScore)
+        {
+            totPoints += growthRate;
+        }
+        totalPoints.text = ((int)totPoints).ToString();
+        customerServed.text = ((int)cusServed).ToString();
+        customerMissed.text = ((int)cusMissed).ToString();
+
+    }
+
     public void startTransitionFalse()
     {
         startTransition.SetActive(false);
     }
+
 }

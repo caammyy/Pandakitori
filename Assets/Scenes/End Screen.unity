@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3137255, g: 0.19215687, b: 0.19215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1427,6 +1427,7 @@ GameObject:
   - component: {fileID: 1419095825}
   - component: {fileID: 1419095824}
   - component: {fileID: 1419095823}
+  - component: {fileID: 1419095827}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1519,6 +1520,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1419095827
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419095822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6aecc5ce7ef7e544d845b1e83ccdd1df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1578729163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1644,9 @@ MonoBehaviour:
   customerServed: {fileID: 483673258}
   customerMissed: {fileID: 252461919}
   totalPoints: {fileID: 1216972839}
+  cusServed: 0
+  cusMissed: 0
+  totPoints: 0
   winLoseText: {fileID: 1867898372}
   button: {fileID: 343356218}
   winOrLose: 0

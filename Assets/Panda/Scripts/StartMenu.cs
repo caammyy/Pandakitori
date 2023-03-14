@@ -18,6 +18,12 @@ public class StartMenu : MonoBehaviour
     {
         startTransition.SetActive(true);
         Invoke("startTransitionFalse", 5f);
+
+        Debug.Log(PlayerPrefs.GetFloat("musicVol"));
+        Debug.Log(PlayerPrefs.GetFloat("sfxVol"));
+        MusicSlider.value = PlayerPrefs.GetFloat("musicVol");
+        SFXSlider.value = PlayerPrefs.GetFloat("sfxVol");
+        SoundManager.Instance.PlayMusic("Background");
     }
 
     // Update is called once per frame

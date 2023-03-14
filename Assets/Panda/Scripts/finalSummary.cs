@@ -23,6 +23,8 @@ public class finalSummary : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.PlayMusic("Background");
+
         startTransition.SetActive(true);
         Invoke("startTransitionFalse", 5f);
         SetLVl1();
