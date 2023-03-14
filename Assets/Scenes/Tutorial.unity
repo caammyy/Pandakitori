@@ -1235,6 +1235,7 @@ MonoBehaviour:
   Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
   Countdown: 0
   StopCount: 0
+  startTransition: {fileID: 0}
 --- !u!114 &768328725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,8 +1314,8 @@ MonoBehaviour:
   play: {fileID: 770990119}
   tutorialText: {fileID: 1260970471}
   inventoryText: {fileID: 1423830544}
-  startTransition: {fileID: 0}
-  endTransition: {fileID: 0}
+  startTransition: {fileID: 1237963343}
+  endTransition: {fileID: 1467842300}
 --- !u!1 &770990117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,6 +2418,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188516164}
   m_CullTransparentMesh: 1
+--- !u!1 &1237963343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2185640212336575392, guid: 0e6fd96b6e1af054abbcfdba7f18feed, type: 3}
+  m_PrefabInstance: {fileID: 853504530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1247711192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3219,6 +3225,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423830542}
   m_CullTransparentMesh: 1
+--- !u!1 &1467842300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1190598219806178793, guid: bd4a32b0f61f65940b2ed5f90210465b, type: 3}
+  m_PrefabInstance: {fileID: 1315526436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1519036719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,6 +3440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuPanel: {fileID: 1311824753}
+  endTransition: {fileID: 0}
 --- !u!4 &1656986686
 Transform:
   m_ObjectHideFlags: 0
