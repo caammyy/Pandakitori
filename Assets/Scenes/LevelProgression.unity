@@ -1615,7 +1615,7 @@ MonoBehaviour:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 2e8e4eefca2c76c46b09e7e88428172c, type: 3}
   - name: Start
-    clip: {fileID: 8300000, guid: d2293f93d31f1e446ac3832fb7b0db6a, type: 3}
+    clip: {fileID: 8300000, guid: aaecde80260f97a4db37700a55a36744, type: 3}
   musicSource: {fileID: 342408288}
   sfxSource: {fileID: 1801280303}
 --- !u!4 &795455931
