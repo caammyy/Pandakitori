@@ -88,6 +88,11 @@ public class UIManager : MonoBehaviour
             Invoke("startTransitionFalse", 5f);
             SoundManager.Instance.PlayMusic("City");
         }
+        if (SceneManager.GetActiveScene().buildIndex == 7)
+        {
+            startTransition.SetActive(true);
+            Invoke("startTransitionFalse", 5f);
+        }
     }
 
     // Update is called once per frame
