@@ -2922,6 +2922,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 858143ccc9e9c2342b43a4a5ac55e3ee, type: 3}
   - name: RedWarning
     clip: {fileID: 8300000, guid: 52e0b0c69aa6f164a9e30359ffd566fe, type: 3}
+  - name: SummaryWin
+    clip: {fileID: 8300000, guid: edc2c4e6d002dba4daa80411d99f93ef, type: 3}
+  - name: SummaryLose
+    clip: {fileID: 8300000, guid: 232ac464bb93fd242aba84b8bc88d1f2, type: 3}
   musicSource: {fileID: 191031920}
   sfxSource: {fileID: 2080617994}
 --- !u!4 &1757355755
