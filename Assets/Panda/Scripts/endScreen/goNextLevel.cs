@@ -10,7 +10,6 @@ public class goNextLevel : MonoBehaviour
 
     public void OpenScene()
     {
-        PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
         endTransition.SetActive(true);
         Invoke("currentScene", 1.5f);
     }

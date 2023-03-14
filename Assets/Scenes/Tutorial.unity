@@ -3440,7 +3440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuPanel: {fileID: 1311824753}
-  endTransition: {fileID: 0}
+  endTransition: {fileID: 1467842300}
 --- !u!4 &1656986686
 Transform:
   m_ObjectHideFlags: 0

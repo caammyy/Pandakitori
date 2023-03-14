@@ -4461,10 +4461,14 @@ MonoBehaviour:
   SettingsMenu: {fileID: 935431263}
   MusicSlider: {fileID: 873400625}
   SFXSlider: {fileID: 1267731591}
-  musicInc: {fileID: 0}
-  sfxInc: {fileID: 0}
-  musicIndicator: []
-  sfxIndicator: []
+  musicInc: {fileID: 628769827}
+  sfxInc: {fileID: 62782488}
+  musicIndicator:
+  - {fileID: 21300000, guid: c44e9445fcf704546aa6ac23e94f4589, type: 3}
+  - {fileID: 21300000, guid: 256606d212c431d41a1c69fa8cc9e699, type: 3}
+  sfxIndicator:
+  - {fileID: 21300000, guid: c44e9445fcf704546aa6ac23e94f4589, type: 3}
+  - {fileID: 21300000, guid: 256606d212c431d41a1c69fa8cc9e699, type: 3}
   startTransition: {fileID: 6148779528298843577}
   endTransition: {fileID: 3709108849616413825}
 --- !u!1 &2091212006

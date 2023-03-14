@@ -95,10 +95,16 @@ public class summary : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("levelsunlocked", PlayerPrefs.GetInt("levelsunlocked") + 1);
                 }
+                if (currentLevel < levelDB.maxLevel)
+                {
+                    PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
+                    
+                }
                 else
                 {
-                    PlayerPrefs.SetInt("currentLevel", 3);
+                    PlayerPrefs.SetInt("currentLevel", 4);
                 }
+                
             }
             SoundManager.Instance.PlaySFX("SummaryWin");
             winLoseText.text = "YOU WIN!";

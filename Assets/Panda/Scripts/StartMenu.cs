@@ -79,7 +79,7 @@ public class StartMenu : MonoBehaviour
     public void ToggleMusic()
     {
         SoundManager.Instance.ToggleMusic();
-        //if (musicInc.GetComponent<Image>().sprite == musicIndicator[1])
+        //if (musicInc.sprite == musicIndicator[1])
         //{
         //    musicInc.transform.GetComponent<Image>().sprite == musicIndicator[0];
         //}
@@ -91,7 +91,7 @@ public class StartMenu : MonoBehaviour
     public void ToggleSFX()
     {
         SoundManager.Instance.ToggleSFX();
-        //if (sfxInc.GetComponent<Image>().sprite == sfxIndicator[1])
+        //if (sfxInc.sprite == sfxIndicator[1])
         //{
         //    sfxInc.transform.GetComponent<Image>().sprite == sfxIndicator[0];
         //}
@@ -103,7 +103,7 @@ public class StartMenu : MonoBehaviour
     public void MusicVolume()
     {
         SoundManager.Instance.MusicVolume(MusicSlider.value);
-        //if(MusicSlider.value == 0)
+        //if (MusicSlider.value == 0)
         //{
         //    musicInc.transform.GetComponent<Image>().sprite == musicIndicator[1];
         //}
