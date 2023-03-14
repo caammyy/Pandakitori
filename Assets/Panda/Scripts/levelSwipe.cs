@@ -17,6 +17,7 @@ public class levelSwipe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.PlaySFX("ButtonClick");
         if (!PlayerPrefs.HasKey("currentLevel"))
         {
             PlayerPrefs.SetInt("currentLevel", 5);
