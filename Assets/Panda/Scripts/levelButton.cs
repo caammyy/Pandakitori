@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class levelButton : MonoBehaviour
 {
+    [SerializeField] public GameObject endTransition;
+
     public void OpenScene()
     {
         SoundManager.Instance.PlaySFX("Start");
@@ -12,7 +14,12 @@ public class levelButton : MonoBehaviour
         Debug.LogWarning(PlayerPrefs.GetInt("currentLevel"));
         if (PlayerPrefs.GetInt("levelsunlocked") >= PlayerPrefs.GetInt("currentLevel"))
         {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("currentLevel"));
+            endTransition.SetActive(true);
+            Invoke("currentScene", 1.5f);
         }
+    }
+    public void currentScene()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("currentLevel"));
     }
 }

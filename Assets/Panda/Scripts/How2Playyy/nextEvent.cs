@@ -15,7 +15,10 @@ public class nextEvent : MonoBehaviour
     public Text inventoryText;
 
     int index;
- 
+
+    [SerializeField] public GameObject startTransition;
+    [SerializeField] public GameObject endTransition;
+
     //index 0: welcome to the tutorial, WASD
     //index 1: Press E to pick up
     //index 2: Press F to clear
@@ -26,6 +29,8 @@ public class nextEvent : MonoBehaviour
     void Start()
     {
         index = 0;
+        startTransition.SetActive(true);
+        Invoke("startTransitionFalse", 5f);
     }
 
     // Update is called once per frame
@@ -65,7 +70,9 @@ public class nextEvent : MonoBehaviour
         {
             inventoryText.gameObject.SetActive(false);
             customers.gameObject.SetActive(true);
-            tutorialText.text = "Let's serve our 1st customer! \n Follow the customer's order (above head) and PICK UP 2 food pieces! \n HOLD down your LEFT mouse button, DRAG backwards and AIM. \n Let go of the mouse button to shoot and serve!";
+            tutorialText.text = "Let's serve our 1st customer! " +
+                "\n PICK UP two food ingredients, following the order above his head! " +
+                "\n Hold down the left mouse button and DRAG to aim. Let go to serve!";
             if (Inventory.PlayerScore > 0)
             {
                 index = 4;
@@ -78,6 +85,15 @@ public class nextEvent : MonoBehaviour
         }
     }
     public void Play()
+    {
+        endTransition.SetActive(true);
+        Invoke("Scene2", 1.5f);
+    }
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
+    }
+    public void Scene2()
     {
         SceneManager.LoadScene(2);
     }

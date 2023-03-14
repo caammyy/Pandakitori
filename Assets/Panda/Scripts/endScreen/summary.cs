@@ -17,27 +17,31 @@ public class summary : MonoBehaviour
     public Text button;
 
     public bool winOrLose = false;
+
+    [SerializeField] public GameObject startTransition;
+
     // Start is called before the first frame update
     void Start()
     {
+        startTransition.SetActive(true);
+        Invoke("startTransitionFalse", 5f);
+
         totalPoints.text = Inventory.PlayerScore.ToString();
         customerServed.text = Inventory.noOfCustomersServed.ToString();
         customerMissed.text = Inventory.noOfCustomersMissed.ToString();
 
         int currentLevel = PlayerPrefs.GetInt("currentLevel") - 5;
+        Debug.Log(currentLevel);
 
         bgObject.transform.GetComponent<Image>().sprite = bg[currentLevel];
 
-        Debug.LogWarning(Inventory.PlayerScore);
-        Debug.LogWarning(levelDB.levelScore[currentLevel]);
         if (Inventory.PlayerScore >= levelDB.levelScore[currentLevel])
         {
             winOrLose = true;
-            Debug.LogWarning(winOrLose);
         }
         if (winOrLose == true)
         {
-            if (currentLevel != levelDB.maxLevel)
+            if (currentLevel <= levelDB.maxLevel)
             {
                 if (currentLevel == 0)
                 {
@@ -69,6 +73,7 @@ public class summary : MonoBehaviour
                 }
                 if (currentLevel == 2)
                 {
+
                     if (PlayerPrefs.HasKey("Level3_HS"))
                     {
                         if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level3_HS"))
@@ -80,18 +85,16 @@ public class summary : MonoBehaviour
                     {
                         PlayerPrefs.SetInt("Level3_HS", Inventory.PlayerScore);
                     }
+                    Debug.Log(PlayerPrefs.GetInt("Level3_HS").ToString());
                 }
-                if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked"))
+                if (PlayerPrefs.GetInt("currentLevel") == PlayerPrefs.GetInt("levelsunlocked") && currentLevel < levelDB.maxLevel)
                 {
-                    Debug.LogWarning(PlayerPrefs.GetInt("levelsunlocked"));
                     PlayerPrefs.SetInt("levelsunlocked", PlayerPrefs.GetInt("levelsunlocked") + 1);
-                    Debug.LogWarning(PlayerPrefs.GetInt("levelsunlocked"));
                 }
-                PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
-            }
-            else
-            {
-                PlayerPrefs.SetInt("currentLevel", 4);
+                else
+                {
+                    PlayerPrefs.SetInt("currentLevel", 3);
+                }
             }
             SoundManager.Instance.PlaySFX("SummaryWin");
             winLoseText.text = "YOU WIN!";
@@ -103,5 +106,10 @@ public class summary : MonoBehaviour
             winLoseText.text = "YOU LOSE!";
             button.text = "TRY AGAIN";
         }
+    }
+
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
     }
 }

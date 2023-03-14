@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class imageswitch : MonoBehaviour
 {
+    [SerializeField] public GameObject startTransition;
 
     public GameObject[] background;
     int index;
@@ -16,6 +17,9 @@ public class imageswitch : MonoBehaviour
 
     void Start()
     {
+        startTransition.SetActive(true);
+        Invoke("startTransitionFalse", 5f);
+
         index = 0;
         play.gameObject.SetActive(false);
         previous.gameObject.SetActive(false);
@@ -75,5 +79,8 @@ public class imageswitch : MonoBehaviour
         Debug.Log(index);
     }
 
-
+    public void startTransitionFalse()
+    {
+        startTransition.SetActive(false);
+    }
 }
