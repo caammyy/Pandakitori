@@ -59,7 +59,7 @@ public class StartMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (musindex == 0)
+        if (musindex == 0 || PlayerPrefs.GetFloat("musicVol") == 0f)
         {
             musicInc.transform.GetComponent<Image>().sprite = musicIndicator[0];
         }
@@ -68,7 +68,7 @@ public class StartMenu : MonoBehaviour
             musicInc.transform.GetComponent<Image>().sprite = musicIndicator[1];
         }
 
-        if (sfxindex == 0)
+        if (sfxindex == 0 || PlayerPrefs.GetFloat("sfxVol") == 0f) 
         {
             sfxInc.transform.GetComponent<Image>().sprite = sfxIndicator[0];
         }
