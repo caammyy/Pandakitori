@@ -2293,6 +2293,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 000f6e44e21016b468c7ba2d3816250c, type: 3}
   - name: City
     clip: {fileID: 8300000, guid: 94cbac4a3bd7d5b409980ad626975118, type: 3}
+  - name: FineDIning
+    clip: {fileID: 8300000, guid: deba6616a4c8cac4f89027e3a0ad3e36, type: 3}
   sfxSounds:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 2e8e4eefca2c76c46b09e7e88428172c, type: 3}

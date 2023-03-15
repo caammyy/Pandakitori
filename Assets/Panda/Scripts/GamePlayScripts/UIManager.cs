@@ -86,12 +86,13 @@ public class UIManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 6) {
             startTransition.SetActive(true);
             Invoke("startTransitionFalse", 5f);
-            SoundManager.Instance.PlayMusic("City");
+            SoundManager.Instance.PlayMusic("FineDIning");
         }
         if (SceneManager.GetActiveScene().buildIndex == 7)
         {
             startTransition.SetActive(true);
             Invoke("startTransitionFalse", 5f);
+            SoundManager.Instance.PlayMusic("City");
         }
     }
 
