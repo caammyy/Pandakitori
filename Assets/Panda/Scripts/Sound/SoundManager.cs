@@ -67,13 +67,33 @@ public class SoundManager : MonoBehaviour
         }
     }
     
-    public void ToggleMusic()
+    public void ToggleMusic(float musvolume)
     {
-        musicSource.mute = !musicSource.mute;
+        if (musvolume > 0 && musicSource.volume != 0)
+        {
+            musicSource.volume = 0;
+        }
+        else
+        {
+            musicSource.volume = musvolume;
+        }
+        PlayerPrefs.SetFloat("musicVol", musvolume);
+
+        //musicSource.mute = !musicSource.mute;
     }
-    public void ToggleSFX()
+    public void ToggleSFX(float sfxvolume)
     {
-        sfxSource.mute = !sfxSource.mute;
+        if (sfxvolume > 0 && sfxSource.volume != 0)
+        {
+            sfxSource.volume = 0;
+        }
+        else
+        {
+            sfxSource.volume = sfxvolume;
+        }
+        PlayerPrefs.SetFloat("sfxVol", sfxvolume);
+
+        //sfxSource.mute = !sfxSource.mute;
     }
     public void MusicVolume(float musvolume)
     {

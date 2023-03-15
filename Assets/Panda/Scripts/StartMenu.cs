@@ -113,7 +113,7 @@ public class StartMenu : MonoBehaviour
     }
     public void ToggleMusic()
     {
-        SoundManager.Instance.ToggleMusic();
+        SoundManager.Instance.ToggleMusic(MusicSlider.value);
         if (musindex == 0)
         {
             musindex = 1;
@@ -125,7 +125,7 @@ public class StartMenu : MonoBehaviour
     }
     public void ToggleSFX()
     {
-        SoundManager.Instance.ToggleSFX();
+        SoundManager.Instance.ToggleSFX(SFXSlider.value);
         if (sfxindex == 0)
         {
             sfxindex = 1;
