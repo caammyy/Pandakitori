@@ -491,7 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Background
-    clip: {fileID: 8300000, guid: b6e51e99643108d49a51626ca5cda67b, type: 3}
+    clip: {fileID: 8300000, guid: f08a997538018a544827b72c2023b0af, type: 3}
   sfxSounds:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 2e8e4eefca2c76c46b09e7e88428172c, type: 3}
@@ -866,6 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0546496e4f24d794eb081d8d16561fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTransition: {fileID: 0}
   background:
   - {fileID: 2067956240}
   - {fileID: 1357319382}
@@ -904,6 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715fbd0b3b8b75742933a6a14a709f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endTransition: {fileID: 0}
 --- !u!1 &1243878110
 GameObject:
   m_ObjectHideFlags: 0
