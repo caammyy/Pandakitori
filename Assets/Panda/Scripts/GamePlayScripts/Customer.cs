@@ -170,8 +170,8 @@ public class Customer : MonoBehaviour
 
             if (Inventory.PlayerScore > 0)
             {
-                Inventory.PlayerScore--;
-                Anim.SetTrigger("OrderWrong");
+                // Inventory.PlayerScore--;
+                // Anim.SetTrigger("OrderWrong");
             }
             SoundManager.Instance.PlaySFX("Min1");
             SoundManager.Instance.PlaySFX("CustomerLeave");
@@ -214,8 +214,8 @@ public class Customer : MonoBehaviour
     {
         if (Inventory.PlayerScore > 0)
         {
-            Anim.SetTrigger("OrderWrong");
-            Inventory.PlayerScore--;
+            // Anim.SetTrigger("OrderWrong");
+            // Inventory.PlayerScore--;
             SoundManager.Instance.PlaySFX("Min1");
         }
         Inventory.noOfCustomersMissed += 1;

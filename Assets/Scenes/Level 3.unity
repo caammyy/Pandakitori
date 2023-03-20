@@ -2701,7 +2701,7 @@ MonoBehaviour:
   Penguin: {fileID: 575155249959162989, guid: 49a6dddf986ba254980774c411230e9f, type: 3}
   Dog: {fileID: 575155249959162989, guid: 2157bd97ebdac714d970761166d21f34, type: 3}
   TimeSet: 10
-  MaxCustomers: 5
+  MaxCustomers: 3
   Poof: {fileID: 4156258574685230597, guid: 89484407d57c8af43b71c134097601d6, type: 3}
 --- !u!212 &1106828430
 SpriteRenderer:

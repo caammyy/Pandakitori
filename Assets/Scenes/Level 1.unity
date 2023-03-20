@@ -1819,7 +1819,7 @@ MonoBehaviour:
   Penguin: {fileID: 575155249959162989, guid: 6404acb4042fe5b4e9d39ffd4924c259, type: 3}
   Dog: {fileID: 575155249959162989, guid: ee32ad8c013ea074592141cb45c5a174, type: 3}
   TimeSet: 20
-  MaxCustomers: 3
+  MaxCustomers: 2
   Poof: {fileID: 4156258574685230597, guid: 89484407d57c8af43b71c134097601d6, type: 3}
 --- !u!1 &1160086670
 GameObject:
