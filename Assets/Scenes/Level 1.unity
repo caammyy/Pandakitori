@@ -883,7 +883,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 423388213}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8548dd97fa2c38b4695e4d16644e7825, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1097,7 +1097,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 471074286}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8548dd97fa2c38b4695e4d16644e7825, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2291,7 +2291,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1395358555}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8548dd97fa2c38b4695e4d16644e7825, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2645,7 +2645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539413949}
   m_LocalRotation: {x: -0, y: -0, z: -0.20884395, w: 0.977949}
-  m_LocalPosition: {x: -7.59, y: -1.2, z: 0}
+  m_LocalPosition: {x: -7.15, y: -1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2661,7 +2661,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1539413949}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8548dd97fa2c38b4695e4d16644e7825, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3986,6 +3986,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107935920}
   m_CullTransparentMesh: 1
+--- !u!1 &2128013302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187593380785484947, guid: e78539d29281548428aad1da5c6edce8, type: 3}
+  m_PrefabInstance: {fileID: 347761761820156273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &347761761820156273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4081,6 +4086,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6813001115976b744bb49d3abe9ed46e, type: 3}
+    - target: {fileID: 2187593380785484949, guid: e78539d29281548428aad1da5c6edce8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2187593380785484950, guid: e78539d29281548428aad1da5c6edce8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4125,6 +4134,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2187593380785484951, guid: e78539d29281548428aad1da5c6edce8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 8548dd97fa2c38b4695e4d16644e7825, type: 2}
     - target: {fileID: 2187593380785484954, guid: e78539d29281548428aad1da5c6edce8, type: 3}
       propertyPath: endTransition
       value: 
@@ -4208,7 +4221,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2187593380785484959, guid: e78539d29281548428aad1da5c6edce8, type: 3}
   m_PrefabInstance: {fileID: 347761761820156273}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2128013302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a7d711a18a07b24fae72add83c7412a, type: 3}
@@ -4229,9 +4242,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2187593380785484958, guid: e78539d29281548428aad1da5c6edce8, type: 3}
   m_PrefabInstance: {fileID: 347761761820156273}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2128013302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4396e68f7845fdf4bb29ebf54d75be57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &347761761820156291
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128013302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000023841858, y: -0.63201785}
+  m_Size: {x: 4.280192, y: 4.280192}
+  m_Direction: 0
