@@ -19,12 +19,15 @@ public class summary : MonoBehaviour
     public Text button;
 
     public bool winOrLose = false;
+    public Animator Anim;
 
     [SerializeField] public GameObject startTransition;
 
     // Start is called before the first frame update
     void Start()
     {
+        Anim.SetBool("Win", false);
+        Anim.SetBool("Lose", false);
         //transition
         startTransition.SetActive(true);
         Invoke("startTransitionFalse", 5f);
@@ -109,12 +112,15 @@ public class summary : MonoBehaviour
             SoundManager.Instance.PlaySFX("SummaryWin");
             winLoseText.text = "YOU WIN!";
             button.text = "NEXT LEVEL";
+            Anim.SetTrigger("Win");
+
         }
         else
         {
             SoundManager.Instance.PlaySFX("SummaryLose");
             winLoseText.text = "YOU LOSE!";
             button.text = "TRY AGAIN";
+            Anim.SetTrigger("Lose");
         }
     }
 
