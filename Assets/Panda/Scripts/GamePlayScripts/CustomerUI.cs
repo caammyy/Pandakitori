@@ -30,7 +30,7 @@ public class CustomerUI : MonoBehaviour
     void Update()
     {
         if (customer.TimeRemaining <30) {
-            LinearTimer.color = new Color32(25,188,5,255);
+            LinearTimer.color = new Color32(194,226,96,255);
             Anim.SetBool("Annoyed", false);
             Anim.SetBool("Angry", false);
         }
