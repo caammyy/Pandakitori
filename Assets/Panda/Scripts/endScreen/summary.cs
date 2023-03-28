@@ -16,6 +16,10 @@ public class summary : MonoBehaviour
 
     public Text winLoseText;
 
+    public GameObject[] lvlRating;
+    int noOfStars = 0;
+    public Sprite[] ratingStarTypes;
+
     public Text button;
 
     public bool winOrLose = false;
@@ -48,10 +52,26 @@ public class summary : MonoBehaviour
         }
         if (winOrLose == true)
         {
+            Anim.SetBool("Win", true);
             if (currentLevel <= levelDB.maxLevel)
             {
                 if (currentLevel == 0)
                 {
+                    //stars
+                    noOfStars = 0;
+                    for (int i = 0; i < levelDB.level1_Rating.Length; i++)
+                    {
+                        if (Inventory.PlayerScore >= levelDB.level1_Rating[i])
+                        {
+                            noOfStars += 1;
+                        }
+                    }
+                    for (int i = 0; i < noOfStars; i++)
+                    {
+                        lvlRating[i].transform.GetComponent<Image>().sprite = ratingStarTypes[1];
+                    }
+
+                    //hs
                     if (PlayerPrefs.HasKey("Level1_HS"))
                     {
                         if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level1_HS"))
@@ -66,6 +86,21 @@ public class summary : MonoBehaviour
                 }
                 if (currentLevel == 1)
                 {
+                    //stars
+                    noOfStars = 0;
+                    for (int i = 0; i < levelDB.level2_Rating.Length; i++)
+                    {
+                        if (Inventory.PlayerScore >= levelDB.level2_Rating[i])
+                        {
+                            noOfStars += 1;
+                        }
+                    }
+                    for (int i = 0; i < noOfStars; i++)
+                    {
+                        lvlRating[i].transform.GetComponent<Image>().sprite = ratingStarTypes[1];
+                    }
+
+                    //hs
                     if (PlayerPrefs.HasKey("Level2_HS"))
                     {
                         if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level2_HS"))
@@ -80,7 +115,21 @@ public class summary : MonoBehaviour
                 }
                 if (currentLevel == 2)
                 {
+                    //stars
+                    noOfStars = 0;
+                    for (int i = 0; i < levelDB.level3_Rating.Length; i++)
+                    {
+                        if (Inventory.PlayerScore >= levelDB.level3_Rating[i])
+                        {
+                            noOfStars += 1;
+                        }
+                    }
+                    for (int i = 0; i < noOfStars; i++)
+                    {
+                        lvlRating[i].transform.GetComponent<Image>().sprite = ratingStarTypes[1];
+                    }
 
+                    //hs
                     if (PlayerPrefs.HasKey("Level3_HS"))
                     {
                         if (Inventory.PlayerScore > PlayerPrefs.GetInt("Level3_HS"))
@@ -117,6 +166,7 @@ public class summary : MonoBehaviour
         }
         else
         {
+            Anim.SetBool("Lose", false);
             SoundManager.Instance.PlaySFX("SummaryLose");
             winLoseText.text = "YOU LOSE!";
             button.text = "TRY AGAIN";
