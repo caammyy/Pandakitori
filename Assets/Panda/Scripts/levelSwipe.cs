@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class levelSwipe : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class levelSwipe : MonoBehaviour
     private float time;
 
     public Text lvl1, lvl2, lvl3;
+
+    public GameObject StarBoard;
+    public TMP_Text Star1, Star2, Star3;
 
     [SerializeField] public GameObject startTransition;
 
@@ -95,11 +99,33 @@ public class levelSwipe : MonoBehaviour
                 {
                     locked.SetActive(true);
                     go.SetActive(false);
+                    StarBoard.SetActive(false);
                 }
                 else
                 {
                     locked.SetActive(false);
                     go.SetActive(true);
+                    StarBoard.SetActive(true);
+
+                    //star
+                    if (i == 0)
+                    {
+                        Star1.text = levelDB.level1_Rating[0].ToString();
+                        Star2.text = levelDB.level1_Rating[1].ToString();
+                        Star3.text = levelDB.level1_Rating[2].ToString();
+                    }
+                    else if (i == 1)
+                    {
+                        Star1.text = levelDB.level2_Rating[0].ToString();
+                        Star2.text = levelDB.level2_Rating[1].ToString();
+                        Star3.text = levelDB.level2_Rating[2].ToString();
+                    }
+                    else if (i == 2)
+                    {
+                        Star1.text = levelDB.level3_Rating[0].ToString();
+                        Star2.text = levelDB.level3_Rating[1].ToString();
+                        Star3.text = levelDB.level3_Rating[2].ToString();
+                    }
                 }
                 for (int j = 0; j < pos.Length; j++)
                 {
