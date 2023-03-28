@@ -21,6 +21,11 @@ public class UIManager : MonoBehaviour
     public bool StopCount;
     string inventory;
     static public int[] InventorySlots;
+    public Image Star1;
+    public Image Star2;
+    public Image Star3;
+    public Sprite Star;
+    public Sprite GoldStar;
 
     [SerializeField] public GameObject startTransition;
 
@@ -76,6 +81,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Star1.sprite = Star;
+        Star2.sprite = Star;
+        Star3.sprite = Star;
         StopCount = false;
         Countdown = false;
         if (SceneManager.GetActiveScene().buildIndex == 5) {
@@ -109,6 +117,16 @@ public class UIManager : MonoBehaviour
             SoundManager.Instance.PlaySFX("Last30Sec");
             StopCount = true;
             Countdown = false;
+        }
+
+        if (Inventory.PlayerScore >= 5) {
+            Star1.sprite = GoldStar;
+        }
+        if (Inventory.PlayerScore >= 10) {
+            Star2.sprite = GoldStar;
+        }
+        if (Inventory.PlayerScore >= 15) {
+            Star3.sprite = GoldStar;
         }
     }
 
