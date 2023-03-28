@@ -188,7 +188,8 @@ public class CustomerSpawn : MonoBehaviour
         SeatTaken2 = false;
         SeatTaken3 = false;
         SeatTaken4 = false;
-        GenerateCustomer();
+        // GenerateCustomer();
+        StartCoroutine(CountDownSpawn());
     }
 
     // Update is called once per frame
@@ -208,6 +209,10 @@ public class CustomerSpawn : MonoBehaviour
             }         
         }
         
+    }
 
+    IEnumerator CountDownSpawn() {
+        yield return new WaitForSeconds(3f);
+        GenerateCustomer();
     }
 }

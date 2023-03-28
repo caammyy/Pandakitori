@@ -16,8 +16,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         TimeRemaining = TimeGiven;
         // Instantiate(Obstacle, StartPoint.transform.position, Quaternion.identity);
-        Anim.SetTrigger("ObstacleSpawn");
-        SoundManager.Instance.PlaySFX("Train");
+        StartCoroutine(CountDownObstacle());
         // Instantiate(Poof, StartPoint.transform.position, transform.rotation);
 
     }
@@ -35,5 +34,11 @@ public class ObstacleSpawner : MonoBehaviour
             SoundManager.Instance.PlaySFX("Train");
         }
         
+    }
+
+    IEnumerator CountDownObstacle() {
+        yield return new WaitForSeconds(3f);
+        Anim.SetTrigger("ObstacleSpawn");
+        SoundManager.Instance.PlaySFX("Train");
     }
 }
