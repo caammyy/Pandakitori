@@ -90,14 +90,14 @@ public class finalSummary : MonoBehaviour
     public void Home()
     {
         endTransition.SetActive(true);
-        Invoke("homeScene", 1.5f);
+        Invoke("CutScene", 1.5f);
     }
     public void startTransitionFalse()
     {
         startTransition.SetActive(false);
     }
-    public void homeScene()
+    public void CutScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(10);
     }
 }

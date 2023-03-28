@@ -23,7 +23,8 @@ public class ChangeSceneStartToLvl1 : MonoBehaviour
     }
     public void Home()
     {
-        SceneManager.LoadScene(0);
+        endTransition.SetActive(true);
+        Invoke("Scene0", 1.5f);
     }
 
     public void MoveToPrologue()
@@ -38,6 +39,10 @@ public class ChangeSceneStartToLvl1 : MonoBehaviour
         SoundManager.Instance.PlaySFX("ButtonClick");
         endTransition.SetActive(true);
         Invoke("Scene9", 1.5f);
+    }
+    public void Scene0()
+    {
+        SceneManager.LoadScene(0);
     }
     public void Scene2()
     {

@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 15440f8cdfd0c014d9757c7ae2dbe4b1
+  - enabled: 1
+    path: Assets/Scenes/end-logue.unity
+    guid: adc25acd59677ef4ab61427e2f2b9d00
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
