@@ -52,7 +52,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(KeyCode.Mouse0) && PauseMenu.GameIsPaused == false && PauseButton.HoveringOverPause == false) {
+		if (Input.GetKeyDown(KeyCode.Mouse0) && PauseMenu.GameIsPaused == false && PauseButton.HoveringOverPause == false && Timer.CountDownActive == false) {
             // Debug.Log("Mouse1 down");
             if (BulletScript.InAir == false )
             {
@@ -69,7 +69,7 @@ public class Shooting : MonoBehaviour
                 OnDragStart();
             }
         }
-		if (Input.GetKeyUp(KeyCode.Mouse0) && PauseMenu.GameIsPaused == false && PauseButton.HoveringOverPause == false) {
+		if (Input.GetKeyUp(KeyCode.Mouse0) && PauseMenu.GameIsPaused == false && PauseButton.HoveringOverPause == false && Timer.CountDownActive == false) {
             // Debug.Log("Mouse1 up");
             if (BulletScript.InAir == false )
             {

@@ -1235,6 +1235,11 @@ MonoBehaviour:
   Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
   Countdown: 0
   StopCount: 0
+  Star1: {fileID: 0}
+  Star2: {fileID: 0}
+  Star3: {fileID: 0}
+  Star: {fileID: 0}
+  GoldStar: {fileID: 0}
   startTransition: {fileID: 0}
 --- !u!114 &768328725
 MonoBehaviour:
@@ -1531,6 +1536,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2187593380785484950, guid: e78539d29281548428aad1da5c6edce8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187593380785484954, guid: e78539d29281548428aad1da5c6edce8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2187593380785484958, guid: e78539d29281548428aad1da5c6edce8, type: 3}
