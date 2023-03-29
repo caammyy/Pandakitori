@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Timer : MonoBehaviour
     public int CountDownTimer;
     public TMP_Text CountDownDisplay;
     public static bool CountDownActive = false;
+    public Image Filter;
 
 
     [SerializeField] public GameObject endTransition;
@@ -53,6 +55,7 @@ public class Timer : MonoBehaviour
             yield return new WaitForSeconds(1f);
             CountDownTimer--;
         }
+        Filter.gameObject.SetActive(false);
         CountDownDisplay.text = "GO!";
         CountDownActive = false;
         yield return new WaitForSeconds(1f);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObstacleSpawner : MonoBehaviour
 {
@@ -39,6 +40,13 @@ public class ObstacleSpawner : MonoBehaviour
     IEnumerator CountDownObstacle() {
         yield return new WaitForSeconds(3f);
         Anim.SetTrigger("ObstacleSpawn");
-        SoundManager.Instance.PlaySFX("Train");
+        if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            SoundManager.Instance.PlaySFX("Robot");
+        }
+        
+        if (SceneManager.GetActiveScene().buildIndex == 7) {
+            SoundManager.Instance.PlaySFX("Train");
+        }
     }
 }
