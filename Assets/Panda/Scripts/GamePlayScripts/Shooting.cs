@@ -88,7 +88,7 @@ public class Shooting : MonoBehaviour
             }
 		}
 
-		if (isDragging) {
+		if (isDragging && Timer.CountDownActive == false) {
 			OnDrag ();
 		}
 

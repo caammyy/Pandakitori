@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         TimesUped = false;
-        Level_Time_Remaining = 30;
+        Level_Time_Remaining = 80;
         StartCoroutine(CountdownToStart());
     }
 

@@ -56,6 +56,10 @@ public class TopDownMovement : MonoBehaviour
             Rigid.velocity = new Vector2(HorizontalMovement * MoveSpeed, VerticalMovement * MoveSpeed);
         }
 
+        if (Timer.CountDownActive == true) {
+            Rigid.velocity = new Vector2(0,0);
+        }
+
         Anim.SetFloat("VerticleSpeed", Rigid.velocity.y);
         Anim.SetFloat("HorizontalSpeed", HorizontalMovement);
         // Anim.SetFloat("HorizontalSpeed", Rigid.velocity.x);
