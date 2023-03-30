@@ -14,14 +14,16 @@ public class Timer : MonoBehaviour
     public TMP_Text CountDownDisplay;
     public static bool CountDownActive = false;
     public Image Filter;
-
+    int countdown = 10;
+    bool TimesUped;
 
     [SerializeField] public GameObject endTransition;
 
     // Start is called before the first frame update
     void Start()
     {
-        Level_Time_Remaining = 80;
+        TimesUped = false;
+        Level_Time_Remaining = 30;
         StartCoroutine(CountdownToStart());
     }
 
@@ -33,10 +35,19 @@ public class Timer : MonoBehaviour
             if (Level_Time_Remaining > 0)
             {
                 Level_Time_Remaining -= Time.deltaTime;
+                if (Level_Time_Remaining < (float)countdown && countdown > 0)
+                {
+                    countdown--;
+                    SoundManager.Instance.PlaySFX("Tick");
+                }
             }
             else
             {
                 StartCoroutine(TimesUp());
+                if (TimesUped == false) {
+                    SoundManager.Instance.PlaySFX("TimesUpBeep");
+                    TimesUped = true;
+                }
             }
         }
 
@@ -52,6 +63,7 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         while(CountDownTimer > 0) {
             CountDownDisplay.text = CountDownTimer.ToString();
+            SoundManager.Instance.PlaySFX("Beep");
             yield return new WaitForSeconds(1f);
             CountDownTimer--;
         }
@@ -69,7 +81,6 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(2f);
         CountDownDisplay.gameObject.SetActive(false);
         CountDownActive = false;
-
         ChangeLevel = true;
         endTransition.SetActive(true);
         Invoke("OpenScene", 1.5f);

@@ -2299,7 +2299,7 @@ MonoBehaviour:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 2e8e4eefca2c76c46b09e7e88428172c, type: 3}
   - name: Start
-    clip: {fileID: 8300000, guid: d2293f93d31f1e446ac3832fb7b0db6a, type: 3}
+    clip: {fileID: 0}
   - name: Aim(Stretch)
     clip: {fileID: 8300000, guid: 0fd6f5a47809f9243b0b6f68176d3291, type: 3}
   - name: Release
@@ -2344,6 +2344,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 71f88f3704c2945448dd3151e56db889, type: 3}
   - name: Robot
     clip: {fileID: 8300000, guid: 73371eb5b8fc9c245889cab15a00b802, type: 3}
+  - name: Tick
+    clip: {fileID: 8300000, guid: 9f39a50af4ca75846af6ad28b6e07b28, type: 3}
+  - name: Beep
+    clip: {fileID: 8300000, guid: dec32a58f3bf8824e8e36eec2f5562a8, type: 3}
+  - name: TimesUpBeep
+    clip: {fileID: 8300000, guid: e511540c16c37534da32483fc5210378, type: 3}
+  - name: GoldShimmer
+    clip: {fileID: 8300000, guid: aaecde80260f97a4db37700a55a36744, type: 3}
   musicSource: {fileID: 861853517}
   sfxSource: {fileID: 1750925604}
 --- !u!4 &1024140556

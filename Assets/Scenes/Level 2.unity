@@ -5663,8 +5663,6 @@ MonoBehaviour:
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
   Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
-  Countdown: 0
-  StopCount: 0
   Star1: {fileID: 371405366}
   Star2: {fileID: 997069411}
   Star3: {fileID: 677565878}
@@ -5967,7 +5965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910779023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.8, y: 0.22, z: -1}
+  m_LocalPosition: {x: -9.565, y: -0.044, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6176,6 +6174,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 71f88f3704c2945448dd3151e56db889, type: 3}
   - name: Robot
     clip: {fileID: 8300000, guid: 73371eb5b8fc9c245889cab15a00b802, type: 3}
+  - name: Tick
+    clip: {fileID: 8300000, guid: 9f39a50af4ca75846af6ad28b6e07b28, type: 3}
+  - name: Beep
+    clip: {fileID: 8300000, guid: dec32a58f3bf8824e8e36eec2f5562a8, type: 3}
+  - name: TimesUpBeep
+    clip: {fileID: 8300000, guid: e511540c16c37534da32483fc5210378, type: 3}
+  - name: GoldShimmer
+    clip: {fileID: 8300000, guid: aaecde80260f97a4db37700a55a36744, type: 3}
   musicSource: {fileID: 1242317232}
   sfxSource: {fileID: 164195519}
 --- !u!4 &1941083140
@@ -6930,6 +6936,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.040812492, y: -1.09}
-  m_Size: {x: 4.17, y: 3.9360695}
+  m_Offset: {x: -0.040812492, y: -1.0717864}
+  m_Size: {x: 4.17, y: 5.8822412}
   m_Direction: 0

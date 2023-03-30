@@ -30,15 +30,26 @@ public class ObstacleSpawner : MonoBehaviour
         }else {
             // Instantiate(Obstacle, transform.position, Quaternion.identity);
             TimeRemaining = TimeGiven;
-            Anim.SetTrigger("ObstacleSpawn");
+            ObstacleSpawn();
             Instantiate(Poof, StartPoint.transform.position, transform.rotation);
-            SoundManager.Instance.PlaySFX("Train");
         }
         
     }
 
     IEnumerator CountDownObstacle() {
         yield return new WaitForSeconds(3f);
+        Anim.SetTrigger("ObstacleSpawn");
+        if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            SoundManager.Instance.PlaySFX("Robot");
+        }
+        
+        if (SceneManager.GetActiveScene().buildIndex == 7) {
+            SoundManager.Instance.PlaySFX("Train");
+        }
+    }
+
+        void ObstacleSpawn() {
         Anim.SetTrigger("ObstacleSpawn");
         if (SceneManager.GetActiveScene().buildIndex == 6)
         {

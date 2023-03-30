@@ -2627,6 +2627,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 71f88f3704c2945448dd3151e56db889, type: 3}
   - name: Robot
     clip: {fileID: 8300000, guid: 73371eb5b8fc9c245889cab15a00b802, type: 3}
+  - name: Tick
+    clip: {fileID: 8300000, guid: 9f39a50af4ca75846af6ad28b6e07b28, type: 3}
+  - name: Beep
+    clip: {fileID: 8300000, guid: dec32a58f3bf8824e8e36eec2f5562a8, type: 3}
+  - name: TimesUpBeep
+    clip: {fileID: 8300000, guid: e511540c16c37534da32483fc5210378, type: 3}
+  - name: GoldShimmer
+    clip: {fileID: 8300000, guid: aaecde80260f97a4db37700a55a36744, type: 3}
   musicSource: {fileID: 446653115}
   sfxSource: {fileID: 44946982}
 --- !u!4 &689522189
@@ -5642,8 +5650,6 @@ MonoBehaviour:
   VegMeat: {fileID: 699642809, guid: c7d222e5c9349844396d28e74598412e, type: 3}
   Egg: {fileID: 1870797220, guid: 384ad60a920c8ed479474f03a8ee5705, type: 3}
   Blank: {fileID: 21300000, guid: e6f930de125c6fe4a8c22035fc343694, type: 3}
-  Countdown: 0
-  StopCount: 0
   Star1: {fileID: 1421469487}
   Star2: {fileID: 2011293591}
   Star3: {fileID: 1924540532}
@@ -6426,8 +6432,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: -0.55}
-  m_Size: {x: 3.9360695, y: 3.9360695}
+  m_Offset: {x: -0.049999952, y: -1.1511045}
+  m_Size: {x: 3.9360695, y: 6.376918}
   m_Direction: 0
 --- !u!1001 &1911949480997042971
 PrefabInstance:
@@ -6683,6 +6689,10 @@ PrefabInstance:
     - target: {fileID: 1911949481832152783, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
       propertyPath: m_Size.y
       value: 6.5334854
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911949481832152783, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1911949481832152783, guid: 3630e104fd68d19499357a59cfbb4540, type: 3}
       propertyPath: m_Offset.x
